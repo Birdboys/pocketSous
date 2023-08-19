@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://8mwuiclt6mid"]
+
+[ext_resource type="Texture2D" uid="uid://bouo41lsudgwx" path="res://Assets/foods/berry/blueberry.svg" id="1_fiarg"]
+[ext_resource type="Script" path="res://Scripts/collectable.gd" id="2_767kx"]
+
+[sub_resource type="Animation" id="Animation_4t66x"]
+resource_name = "wiggle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.9, 1.1, 1.3, 1.5),
+"transitions": PackedFloat32Array(-0.5, 1, 1, -0.5),
+"update": 0,
+"values": [0.0, 0.174533, -0.174533, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1i2wh"]
+_data = {
+"wiggle": SubResource("Animation_4t66x")
+}
+
+[node name="collectable" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_fiarg")
+script = ExtResource("2_767kx")
+
+[node name="collectableAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1i2wh")
+}
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

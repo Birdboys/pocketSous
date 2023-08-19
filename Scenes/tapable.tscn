@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce54fcbraywic"]
+
+[ext_resource type="Texture2D" uid="uid://drt4ypk0523xc" path="res://Assets/foods/tomato/tomato.svg" id="1_7raxj"]
+[ext_resource type="Script" path="res://Scripts/tapable.gd" id="2_sun7o"]
+
+[sub_resource type="Animation" id="Animation_4t66x"]
+resource_name = "wiggle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.9, 1.1, 1.3, 1.5),
+"transitions": PackedFloat32Array(-0.5, 1, 1, -0.5),
+"update": 0,
+"values": [0.0, 0.174533, -0.174533, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1i2wh"]
+_data = {
+"wiggle": SubResource("Animation_4t66x")
+}
+
+[node name="tapable" type="TextureButton"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.5
+offset_top = -128.0
+offset_right = 99.5
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("1_7raxj")
+stretch_mode = 5
+script = ExtResource("2_sun7o")
+
+[node name="tapableAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1i2wh")
+}
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

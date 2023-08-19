@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="222.9724"
+   height="204.03806"
+   viewBox="0 0 58.99478 53.985069"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="tomato.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.5340488"
+     inkscape:cx="120.26997"
+     inkscape:cy="100.06201"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4"
+       is_visible="true"
+       lpeversion="1" />
+  </defs>
+  <g
+     inkscape:label="Tomato"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-4.3692751,-6.8741317)">
+    <g
+       id="g4"
+       transform="translate(0,3.0442062)">
+      <g
+         id="g3"
+         transform="translate(0.51130854,-2.2327367)">
+        <ellipse
+           style="fill:#cc1825;stroke:#cc1825;stroke-width:1.065;stroke-linecap:round"
+           id="path1"
+           cx="33.355358"
+           cy="36.099403"
+           rx="28.964891"
+           ry="23.415829" />
+        <ellipse
+           style="fill:#81173f;stroke:#81173f;stroke-width:1.18603;stroke-linecap:round"
+           id="path2"
+           cx="-24.871231"
+           cy="55.857841"
+           rx="4.9177675"
+           ry="9.7224207"
+           transform="matrix(0.91592994,-0.40133819,0.72768776,0.68590854,0,0)" />
+        <ellipse
+           style="fill:#dc4926;stroke:#dc4926;stroke-width:0.882836;stroke-linecap:round"
+           id="ellipse2"
+           cx="7.8341932"
+           cy="54.752785"
+           rx="4.0872097"
+           ry="6.4816537"
+           transform="matrix(0.54729327,-0.8369409,0.821086,0.5708045,0,0)" />
+      </g>
+      <ellipse
+         style="fill:#439d40;stroke:#439d40;stroke-width:0.826562;stroke-linecap:round"
+         id="path3"
+         cx="33.866665"
+         cy="13.255857"
+         rx="3.4548323"
+         ry="1.2778147" />
+      <path
+         style="fill:none;stroke:#439d40;stroke-width:1.365;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="m 34.391999,14.147063 c 0.632402,-0.790114 1.056872,-1.745172 1.219574,-2.744042 0.303969,-1.866142 -0.35384,-3.8630608 -1.707405,-5.1831913"
+         id="path4"
+         inkscape:path-effect="#path-effect4"
+         inkscape:original-d="m 34.391999,14.147063 c 1.199248,-2.459475 3.782467,-1.953711 1.219574,-2.744042 C 25.479438,8.2785276 34.127757,7.5003828 33.904168,6.2198297"
+         sodipodi:nodetypes="csc"
+         transform="translate(-0.60978722,-1.7074042)" />
+    </g>
+  </g>
+</svg>

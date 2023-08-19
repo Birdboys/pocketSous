@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://bltt68ehbph8"]
+
+[ext_resource type="Theme" uid="uid://5fjtmugely5b" path="res://Assets/themes/lightGrayMinigame.tres" id="1_6k488"]
+[ext_resource type="Script" path="res://Scripts/base_mini_game.gd" id="2_07rfj"]
+
+[node name="baseMiniGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6k488")
+script = ExtResource("2_07rfj")
+
+[node name="backgroundColor" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"bg"
+
+[node name="score" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"scoreLabel"
+fit_content = true
+autowrap_mode = 0
+
+[node name="margins" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="gameArea" type="VBoxContainer" parent="margins"]
+layout_mode = 2
+
+[node name="task" type="RichTextLabel" parent="margins/gameArea"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"taskLabel"
+bbcode_enabled = true
+text = "[center]TAKE GOOD EGGS[/center]"
+fit_content = true
+
+[node name="timeBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_type_variation = &"timeBar"
+show_percentage = false
+
+[node name="gameTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="gameTimer" to="." method="_on_game_timer_timeout"]

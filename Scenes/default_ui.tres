@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://d4jespkeusor3"]
+
+[ext_resource type="FontFile" uid="uid://c7w5gskxa8sge" path="res://Assets/fonts/Oswald/static/Oswald-Bold.ttf" id="1_kk7ii"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bot3f"]
+content_margin_top = 8.0
+
+[resource]
+scoreLabel/base_type = &"RichTextLabel"
+scoreLabel/font_sizes/normal_font_size = 512
+scoreLabel/fonts/normal_font = ExtResource("1_kk7ii")
+taskLabel/base_type = &"RichTextLabel"
+taskLabel/colors/default_color = Color(1, 1, 1, 1)
+taskLabel/constants/shadow_offset_x = 8
+taskLabel/constants/shadow_offset_y = 8
+taskLabel/constants/shadow_outline_size = 1
+taskLabel/font_sizes/normal_font_size = 96
+taskLabel/fonts/normal_font = ExtResource("1_kk7ii")
+taskLabel/styles/normal = SubResource("StyleBoxEmpty_bot3f")

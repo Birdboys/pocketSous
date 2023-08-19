@@ -1,0 +1,30 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bkcjla137ay1"]
+
+[ext_resource type="FontFile" uid="uid://c7w5gskxa8sge" path="res://Assets/fonts/Oswald/static/Oswald-Bold.ttf" id="1_b1eet"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0p65w"]
+bg_color = Color(1, 0.509804, 0.627451, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_86fx4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwrdl"]
+bg_color = Color(0.819608, 0.388235, 0.388235, 1)
+
+[resource]
+bg/base_type = &"Panel"
+bg/styles/panel = SubResource("StyleBoxFlat_0p65w")
+scoreLabel/base_type = &"RichTextLabel"
+scoreLabel/colors/default_color = Color(0.819608, 0.388235, 0.388235, 0.498039)
+scoreLabel/font_sizes/normal_font_size = 512
+scoreLabel/fonts/normal_font = ExtResource("1_b1eet")
+taskLabel/base_type = &"RichTextLabel"
+taskLabel/colors/default_color = Color(1, 1, 1, 1)
+taskLabel/colors/font_shadow_color = Color(0.819608, 0.388235, 0.388235, 0.498039)
+taskLabel/constants/shadow_offset_x = 8
+taskLabel/constants/shadow_offset_y = 8
+taskLabel/constants/shadow_outline_size = 1
+taskLabel/font_sizes/normal_font_size = 96
+taskLabel/fonts/normal_font = ExtResource("1_b1eet")
+timeBar/base_type = &"ProgressBar"
+timeBar/styles/background = SubResource("StyleBoxEmpty_86fx4")
+timeBar/styles/fill = SubResource("StyleBoxFlat_kwrdl")

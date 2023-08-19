@@ -1,0 +1,30 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://ddr1yr4qdi1of"]
+
+[ext_resource type="FontFile" uid="uid://c7w5gskxa8sge" path="res://Assets/fonts/Oswald/static/Oswald-Bold.ttf" id="1_sqwkn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0p65w"]
+bg_color = Color(0.709804, 0.596078, 0.341176, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kbipr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7k1yr"]
+bg_color = Color(0.572549, 0.427451, 0.235294, 0.498039)
+
+[resource]
+bg/base_type = &"Panel"
+bg/styles/panel = SubResource("StyleBoxFlat_0p65w")
+scoreLabel/base_type = &"RichTextLabel"
+scoreLabel/colors/default_color = Color(0.572549, 0.427451, 0.235294, 0.498039)
+scoreLabel/font_sizes/normal_font_size = 512
+scoreLabel/fonts/normal_font = ExtResource("1_sqwkn")
+taskLabel/base_type = &"RichTextLabel"
+taskLabel/colors/default_color = Color(1, 1, 1, 1)
+taskLabel/colors/font_shadow_color = Color(0.572549, 0.427451, 0.235294, 0.498039)
+taskLabel/constants/shadow_offset_x = 8
+taskLabel/constants/shadow_offset_y = 8
+taskLabel/constants/shadow_outline_size = 1
+taskLabel/font_sizes/normal_font_size = 96
+taskLabel/fonts/normal_font = ExtResource("1_sqwkn")
+timeBar/base_type = &"ProgressBar"
+timeBar/styles/background = SubResource("StyleBoxEmpty_kbipr")
+timeBar/styles/fill = SubResource("StyleBoxFlat_7k1yr")
