@@ -9,10 +9,12 @@ extends Control
 @onready var game_data_3 = {"type":"collect_tap","theme":"pink","task_text":"COLLECT %s BLUEBERRY","num_collect":10,"good_collect":[["berry","blueberry"]],"bad_collect":[]}
 @onready var game_data_4 = {"type":"single_slice","theme":"orange","task_text":"SLICE THE ZUCCHINI","food":"zucchini"}
 @onready var game_data_5 = {"type":"single_slice","theme":"blue","task_text":"SLICE THE BANANA","food":"banana"}
-@onready var games = [game_data_1,game_data_2,game_data_3,game_data_4,game_data_5]
+@onready var game_data_6 = {"type":"center_plate_food","theme":"blue","task_text":"CENTER THE TOMATO","food":["tomato","tomato"]}
+@onready var games = [game_data_6]#[game_data_1,game_data_2,game_data_3,game_data_4,game_data_5,game_data_6]
 @onready var selectTapMiniGame := preload("res://Scenes/select_tap_game.tscn")
 @onready var collectTapMiniGame := preload("res://Scenes/collect_tap_game.tscn")
 @onready var singleSwipeMiniGame := preload("res://Scenes/single_slice_game.tscn")
+@onready var centerPlateFoodMiniGame := preload("res://Scenes/center_plate_game.tscn")
 @onready var current_game = null
 @onready var current_game_type = null
 @onready var current_task = null
@@ -39,6 +41,7 @@ func generateGame(game_data):
 		'select_tap': generateSelectTapGame(game_data)
 		'collect_tap': generateCollectTapGame(game_data)
 		'single_slice': generateSingleSwipeGame(game_data)
+		'center_plate_food': generateCenterPlateFoodGame(game_data)
 		
 func generateSelectTapGame(game_data):
 	updateTask()
@@ -63,6 +66,15 @@ func generateCollectTapGame(game_data):
 func generateSingleSwipeGame(game_data):
 	updateTask()
 	current_game = singleSwipeMiniGame.instantiate()
+	gameArea.add_child(current_game)
+	current_game.game_win.connect(gameWon)
+	current_game.game_loss.connect(reset)
+	await get_tree().process_frame
+	current_game.initialize(game_data['food'])
+	
+func generateCenterPlateFoodGame(game_data):
+	updateTask()
+	current_game = centerPlateFoodMiniGame.instantiate()
 	gameArea.add_child(current_game)
 	current_game.game_win.connect(gameWon)
 	current_game.game_loss.connect(reset)
