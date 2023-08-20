@@ -1,19 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcl6nm6esj0u7"]
+[gd_scene load_steps=2 format=3 uid="uid://dcl6nm6esj0u7"]
 
 [ext_resource type="Script" path="res://Scripts/collect_tap_game.gd" id="1_hqy3b"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bgu2t"]
-
-[node name="collectTapGame" type="Panel"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+[node name="collectTapGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_bgu2t")
 script = ExtResource("1_hqy3b")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

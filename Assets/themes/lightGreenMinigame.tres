@@ -1,9 +1,14 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://c0lcoqsd1d2sk"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://c0lcoqsd1d2sk"]
 
 [ext_resource type="FontFile" uid="uid://c7w5gskxa8sge" path="res://Assets/fonts/Oswald/static/Oswald-Bold.ttf" id="1_lj4dc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0p65w"]
 bg_color = Color(0.521569, 0.768627, 0.282353, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sb0ld"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rg4y5"]
+bg_color = Color(0.262745, 0.615686, 0.25098, 0.498039)
 
 [resource]
 bg/base_type = &"Panel"
@@ -20,3 +25,6 @@ taskLabel/constants/shadow_offset_y = 8
 taskLabel/constants/shadow_outline_size = 1
 taskLabel/font_sizes/normal_font_size = 96
 taskLabel/fonts/normal_font = ExtResource("1_lj4dc")
+timeBar/base_type = &"ProgressBar"
+timeBar/styles/background = SubResource("StyleBoxEmpty_sb0ld")
+timeBar/styles/fill = SubResource("StyleBoxFlat_rg4y5")

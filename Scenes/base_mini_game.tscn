@@ -55,7 +55,7 @@ layout_mode = 2
 size_flags_vertical = 0
 theme_type_variation = &"taskLabel"
 bbcode_enabled = true
-text = "[center]TAKE GOOD EGGS[/center]"
+text = "[center]SLICE ZUCCHINI[/center]"
 fit_content = true
 
 [node name="timeBar" type="ProgressBar" parent="."]

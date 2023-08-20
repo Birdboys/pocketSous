@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmorwh5hqu2e0"]
+
+[ext_resource type="Shader" path="res://Scripts/sliceable.gdshader" id="1_jhcr4"]
+[ext_resource type="Texture2D" uid="uid://dr3ih0tdtoj6v" path="res://Assets/foods/zucchini/zucchini.svg" id="2_sgdtx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xo88x"]
+shader = ExtResource("1_jhcr4")
+
+[node name="sliceable" type="TextureRect"]
+material = SubResource("ShaderMaterial_xo88x")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_sgdtx")
+expand_mode = 3
+stretch_mode = 5

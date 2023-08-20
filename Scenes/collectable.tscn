@@ -26,8 +26,17 @@ _data = {
 }
 
 [node name="collectable" type="TextureButton"]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -640.0
+offset_right = -186.0
+offset_bottom = -491.0
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("1_fiarg")
 script = ExtResource("2_767kx")
 

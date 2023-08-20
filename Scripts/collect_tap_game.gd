@@ -1,4 +1,4 @@
-extends Panel
+extends Control
 @onready var collectable = preload("res://Scenes/collectable.tscn")
 var rotation_range = 30
 var current_collect = 0
@@ -10,9 +10,8 @@ signal collected(num_left)
 func _ready():
 	print("READY")
 func _process(delta):
-	print(size)
 	pass
-	#print(size)
+	#print(size, get_rect().size, get_parent_area_size())
 func initialize(num_collects, good_collects):
 	print(size)
 	total_collect = num_collects
