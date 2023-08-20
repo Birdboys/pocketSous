@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://buxydwxmo61gw"]
+
+[ext_resource type="Script" path="res://Scripts/vslice.gd" id="1_qxs1v"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_or1e2"]
+radius = 64.0
+height = 512.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqeb6"]
+size = Vector2(20, 128)
+
+[node name="slice" type="Node2D"]
+script = ExtResource("1_qxs1v")
+
+[node name="touchBegin" type="Area2D" parent="."]
+
+[node name="touchBeginArea" type="CollisionShape2D" parent="touchBegin"]
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_or1e2")
+
+[node name="touchEnd" type="Area2D" parent="."]
+
+[node name="touchEndArea" type="CollisionShape2D" parent="touchEnd"]
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_or1e2")
+
+[node name="sliceLine" type="Line2D" parent="."]
+
+[node name="touchLine" type="Area2D" parent="."]
+
+[node name="touchLineShape" type="CollisionShape2D" parent="touchLine"]
+shape = SubResource("RectangleShape2D_uqeb6")
+
+[node name="touchBeginArea" type="CollisionShape2D" parent="touchLine"]
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_or1e2")
+
+[node name="touchEndArea" type="CollisionShape2D" parent="touchLine"]
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_or1e2")
+
+[connection signal="mouse_entered" from="touchBegin" to="." method="_on_touch_begin_mouse_entered"]
+[connection signal="mouse_entered" from="touchEnd" to="." method="_on_touch_end_mouse_entered"]
+[connection signal="mouse_entered" from="touchLine" to="." method="_on_touch_line_mouse_entered"]
+[connection signal="mouse_exited" from="touchLine" to="." method="_on_touch_line_mouse_exited"]

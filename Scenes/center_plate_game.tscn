@@ -26,6 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 rotation = 0.00179875
 texture = ExtResource("1_vi08t")
+expand_mode = 1
 stretch_mode = 5
 
 [node name="centerArea" type="Area2D" parent="."]

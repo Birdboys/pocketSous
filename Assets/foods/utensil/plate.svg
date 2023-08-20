@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="483.68735"
-   height="483.68735"
-   viewBox="0 0 127.9756 127.97561"
+   width="1451.062"
+   height="1451.062"
+   viewBox="0 0 383.92679 383.92682"
    version="1.1"
    id="svg1"
    sodipodi:docname="plate.svg"
@@ -23,14 +23,14 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.5340488"
-     inkscape:cx="212.50953"
-     inkscape:cy="282.58553"
-     inkscape:window-width="1920"
-     inkscape:window-height="1057"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
+     inkscape:zoom="0.7670244"
+     inkscape:cx="517.58458"
+     inkscape:cy="969.33031"
+     inkscape:window-width="1350"
+     inkscape:window-height="1041"
+     inkscape:window-x="167"
+     inkscape:window-y="199"
+     inkscape:window-maximized="0"
      inkscape:current-layer="layer1" />
   <defs
      id="defs1">
@@ -44,7 +44,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-3.7455249,-3.7455249)">
+     transform="matrix(3,0,0,3,-11.236575,-11.236575)">
     <circle
        style="fill:#feffe5;stroke:#e4cd5a;stroke-width:0;stroke-linecap:round;paint-order:stroke markers fill"
        id="path1"

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 @onready var sprite := $plateFoodSprite
 
-const SPEED = 150.0
+const SPEED = 300
 const INPUT_SENS = 0.5
 func _physics_process(delta):
 	#var acc_input = Vector2(Input.get_accelerometer().x, -Input.get_accelerometer().y)
@@ -9,8 +9,9 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	var acc_input = Vector2(Input.get_accelerometer().x, -Input.get_accelerometer().y)
-	if acc_input.length() > 0.5:
-		velocity = acc_input.normalized() * SPEED
+	var acc_strength = acc_input.length()
+	if acc_strength > 0.5:
+		velocity = acc_input.normalized() * SPEED * acc_strength/10.0
 	velocity = lerp(velocity, Vector2.ZERO, 0.25)
 	move_and_slide()
 

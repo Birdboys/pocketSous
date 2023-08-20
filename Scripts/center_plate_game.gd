@@ -17,7 +17,9 @@ func _process(delta):
 	pass
 
 func initialize(food):
-	centerArea.position = size/2
+	print($plate.size)
+	centerArea.position = $plate.position + $plate.size/2
+	#centerArea.position = Vector2(size.x/2,size.x/2)
 	current_food = plate_food.instantiate()
 	add_child(current_food)
 	#var pos = Vector2(randi_range(0,size.x), randi_range(0,size.y))

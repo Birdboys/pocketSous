@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="210.3074"
-   height="440.58063"
-   viewBox="0 0 55.643833 116.57029"
+   width="946.38336"
+   height="1978.0179"
+   viewBox="0 0 250.39727 523.35058"
    version="1.1"
    id="svg1"
    inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
@@ -23,13 +23,13 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.5340488"
-     inkscape:cx="22.815441"
-     inkscape:cy="191.6497"
+     inkscape:zoom="0.27118408"
+     inkscape:cx="22.125193"
+     inkscape:cy="1108.1034"
      inkscape:window-width="1920"
-     inkscape:window-height="1080"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
@@ -38,7 +38,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-3.8939622,-15.30839)">
+     transform="matrix(4.5,0,0,4.5,-17.52283,-68.887754)">
     <ellipse
        style="fill:#4b0c30;stroke:#e4cd5a;stroke-width:0;stroke-linecap:round;stroke-dasharray:none;paint-order:stroke markers fill"
        id="path3"
