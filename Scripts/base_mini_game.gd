@@ -18,7 +18,9 @@ extends Control
 @onready var game_data_12 = {"type":"single_slice","theme":"pink","task_text":"SLICE THE LIME","food":["lime","lime"], "cut":90}
 @onready var game_data_13 = {"type":"radial_slice","theme":"lightGreen","task_text":"SLICE THE APPLE","food":["apple","red_apple"], "cut":3}
 @onready var game_data_14 = {"type":"radial_slice","theme":"lightGray","task_text":"SLICE THE APPLE","food":["apple","yellow_apple"], "cut":2}
-@onready var games = [game_data_13,game_data_14]#[game_data_1,game_data_2,game_data_3,game_data_4,game_data_5,game_data_6,game_data_7,game_data_8,game_data_9,game_data_10,game_data_11,game_data_12,game_data_13]
+@onready var game_data_15 = {"type":"collect_tap","theme":"yellow","task_text":"COLLECT %s BLACKBERRY","num_collect":10,"good_collect":[["berry","blackberry"]],"bad_collect":[]}
+@onready var game_data_16 = {"type":"collect_tap","theme":"darkBlue","task_text":"COLLECT %s RASPBERRY","num_collect":10,"good_collect":[["berry","raspberry"]],"bad_collect":[]}
+@onready var games = [game_data_3, game_data_15,game_data_16]#[game_data_1,game_data_2,game_data_3,game_data_4,game_data_5,game_data_6,game_data_7,game_data_8,game_data_9,game_data_10,game_data_11,game_data_12,game_data_13]
 @onready var selectTapMiniGame := preload("res://Scenes/select_tap_game.tscn")
 @onready var collectTapMiniGame := preload("res://Scenes/collect_tap_game.tscn")
 @onready var singleSwipeMiniGame := preload("res://Scenes/single_slice_game.tscn")
@@ -70,6 +72,7 @@ func generateCollectTapGame(game_data):
 	current_game.game_win.connect(gameWon)
 	current_game.game_loss.connect(reset)
 	current_game.collected.connect(updateTask)
+	await get_tree().process_frame
 	await get_tree().process_frame
 	current_game.initialize(game_data['num_collect'],game_data['good_collect'])
 	

@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dorq11xt28nax"]
+[gd_scene load_steps=2 format=3 uid="uid://dupmwlsyjqddu"]
 
-[ext_resource type="Script" path="res://Scripts/radial_slice_game.gd" id="1_m4q4i"]
+[ext_resource type="Script" path="res://Scripts/multi_slice_game.gd" id="1_tatbu"]
 
-[node name="radialSliceGame" type="Control"]
+[node name="multiSliceGame" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_m4q4i")
+script = ExtResource("1_tatbu")
 
 [node name="sliceMargin" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -32,14 +32,9 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="sliceArea" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-color = Color(0.870588, 1, 1, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="gui_input" from="sliceArea" to="." method="_on_slice_area_gui_input"]
 [connection signal="mouse_entered" from="sliceArea" to="." method="_on_slice_area_mouse_entered"]

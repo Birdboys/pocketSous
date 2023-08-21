@@ -1,5 +1,6 @@
 extends Control
 @onready var collectable = preload("res://Scenes/collectable.tscn")
+@onready var collectSpace := $collectMargin/collectSpace
 var rotation_range = 30
 var current_collect = 0
 var total_collect = 0
@@ -15,15 +16,15 @@ func _process(delta):
 func initialize(num_collects, good_collects):
 	print(size)
 	total_collect = num_collects
-	var play_area = size
+	var play_area = collectSpace.size
 	for x in range(num_collects):
 		var new_collect = collectable.instantiate()
-		add_child(new_collect)
+		collectSpace.add_child(new_collect)
 		new_collect.collected.connect(onCollected)
 		var collect_choice = good_collects[randi() % good_collects.size()]
-		var new_x = randi_range(offset, play_area.x-offset)
-		var new_y = randi_range(offset, play_area.y-offset)
-		new_collect.initialize(new_x,new_y,randi_range(-rotation_range,rotation_range),collect_choice[0],collect_choice[1])
+		var new_x = randi_range(0, play_area.x)
+		var new_y = randi_range(0, play_area.y)
+		new_collect.initialize(new_x,new_y,collectSpace.size/3,randi_range(-rotation_range,rotation_range),collect_choice[0],collect_choice[1])
 
 func onCollected():
 	current_collect += 1
