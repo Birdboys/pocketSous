@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://btkli4o4lblpu"]
+
+[ext_resource type="Script" path="res://Scripts/rotation_game.gd" id="1_swtao"]
+
+[node name="rotationGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_swtao")
+
+[node name="margins" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 128
+
+[node name="rotator" type="TextureRect" parent="margins"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="touchArea" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.690196, 1, 0)
+
+[connection signal="gui_input" from="touchArea" to="." method="_on_touch_area_gui_input"]
+[connection signal="mouse_exited" from="touchArea" to="." method="_on_touch_area_mouse_exited"]

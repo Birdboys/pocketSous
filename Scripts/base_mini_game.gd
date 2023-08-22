@@ -20,12 +20,14 @@ extends Control
 @onready var game_data_14 = {"type":"radial_slice","theme":"lightGray","task_text":"SLICE THE APPLE","food":["apple","yellow_apple"], "cut":2}
 @onready var game_data_15 = {"type":"collect_tap","theme":"yellow","task_text":"COLLECT %s BLACKBERRY","num_collect":10,"good_collect":[["berry","blackberry"]],"bad_collect":[]}
 @onready var game_data_16 = {"type":"collect_tap","theme":"darkBlue","task_text":"COLLECT %s RASPBERRY","num_collect":10,"good_collect":[["berry","raspberry"]],"bad_collect":[]}
-@onready var games = [game_data_1,game_data_2]#[game_data_1,game_data_2,game_data_3,game_data_4,game_data_5,game_data_6,game_data_7,game_data_8,game_data_9,game_data_10,game_data_11,game_data_12,game_data_13]
+@onready var game_data_17 = {"type":"rotate_food","theme":"darkBlue","task_text":"ROTATE THE APPLE","food":["apple","yellow_apple"]}
+@onready var games = [game_data_17]#[game_data_1,game_data_2,game_data_3,game_data_4,game_data_5,game_data_6,game_data_7,game_data_8,game_data_9,game_data_10,game_data_11,game_data_12,game_data_13]
 @onready var selectTapMiniGame := preload("res://Scenes/select_tap_game.tscn")
 @onready var collectTapMiniGame := preload("res://Scenes/collect_tap_game.tscn")
 @onready var singleSwipeMiniGame := preload("res://Scenes/single_slice_game.tscn")
 @onready var centerPlateFoodMiniGame := preload("res://Scenes/center_plate_game.tscn")
 @onready var radialSliceMiniGame := preload("res://Scenes/radial_slice_game.tscn")
+@onready var rotateFoodMiniGame := preload("res://Scenes/rotation_game.tscn")
 @onready var current_game = null
 @onready var current_game_type = null
 @onready var current_task = null
@@ -54,7 +56,7 @@ func generateGame(game_data):
 		'single_slice': generateSingleSwipeGame(game_data)
 		'center_plate_food': generateCenterPlateFoodGame(game_data)
 		'radial_slice': generateRadialSliceGame(game_data)
-		
+		'rotate_food': rotateFoodGame(game_data)
 func generateSelectTapGame(game_data):
 	updateTask()
 	current_game = selectTapMiniGame.instantiate()
@@ -103,6 +105,15 @@ func generateRadialSliceGame(game_data):
 	current_game.game_loss.connect(reset)
 	await get_tree().process_frame
 	current_game.initialize(game_data['food'], game_data['cut'])
+
+func rotateFoodGame(game_data):
+	updateTask()
+	current_game = rotateFoodMiniGame.instantiate()
+	gameArea.add_child(current_game)
+	current_game.game_win.connect(gameWon)
+	current_game.game_loss.connect(reset)
+	await get_tree().process_frame
+	current_game.initialize(game_data['food'])
 	
 func reset():
 	clearGame()
