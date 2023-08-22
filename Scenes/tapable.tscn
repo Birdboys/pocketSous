@@ -31,13 +31,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 223.0
-offset_bottom = 204.0
+offset_left = -360.0
+offset_top = -640.0
+offset_right = -360.0
+offset_bottom = -640.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture_normal = ExtResource("1_7raxj")
+ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("2_sun7o")
 
@@ -45,5 +48,16 @@ script = ExtResource("2_sun7o")
 libraries = {
 "": SubResource("AnimationLibrary_1i2wh")
 }
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(1, 0.729412, 1, 0.764706)
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bltt68ehbph8"]
+[gd_scene load_steps=5 format=3 uid="uid://bltt68ehbph8"]
 
 [ext_resource type="Theme" uid="uid://5fjtmugely5b" path="res://Assets/themes/lightGrayMinigame.tres" id="1_6k488"]
 [ext_resource type="Script" path="res://Scripts/base_mini_game.gd" id="2_07rfj"]
+[ext_resource type="Script" path="res://Scripts/select_tap_game.gd" id="3_hakvl"]
+[ext_resource type="PackedScene" uid="uid://ce54fcbraywic" path="res://Scenes/tapable.tscn" id="4_ycjki"]
 
 [node name="baseMiniGame" type="Control"]
 layout_mode = 3
@@ -58,6 +60,35 @@ theme_override_constants/line_separation = -32
 bbcode_enabled = true
 text = "[center]SLICE MY ZUCCHINI[/center]"
 fit_content = true
+
+[node name="selectTapGame" type="Control" parent="margins/gameArea"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("3_hakvl")
+
+[node name="margins" type="MarginContainer" parent="margins/gameArea/selectTapGame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 128
+
+[node name="grid" type="GridContainer" parent="margins/gameArea/selectTapGame/margins"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+
+[node name="tapable" parent="margins/gameArea/selectTapGame/margins/grid" instance=ExtResource("4_ycjki")]
+layout_mode = 2
 
 [node name="timeBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(0, 32)
