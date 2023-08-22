@@ -24,7 +24,7 @@ func initialize(num_collects, good_collects):
 		var collect_choice = good_collects[randi() % good_collects.size()]
 		var new_x = randi_range(0, play_area.x)
 		var new_y = randi_range(0, play_area.y)
-		var min_dim = play_area[play_area.min_axis_index()]
+		var min_dim = play_area[play_area.max_axis_index()]
 		new_collect.initialize(new_x,new_y,min_dim/3,randi_range(-rotation_range,rotation_range),collect_choice[0],collect_choice[1])
 
 func onCollected():

@@ -4,8 +4,8 @@ extends Control
 @onready var gameArea := $margins/gameArea
 @onready var gameTimer := $gameTimer
 @onready var timeBar := $timeBar
-@onready var game_data_1 = {"type":"select_tap","theme":"blue","task_text":"TAKE GOOD EGGS","num_tap":24,"num_col":4,"num_bad_tap":3,"good_tap":[["egg","egg"],["egg","egg_white"]],"bad_tap":[["egg","egg_crack"],["egg","egg_crack_white"]]}
-@onready var game_data_2 = {"type":"select_tap","theme":"tan","task_text":"TAKE GOOD TOMATOES","num_tap":20,"num_col":4,"num_bad_tap":2,"good_tap":[["tomato","tomato"]],"bad_tap":[["tomato","tomato_bad"]]}
+@onready var game_data_1 = {"type":"select_tap","theme":"blue","task_text":"TAKE GOOD EGGS","num_tap":12,"num_col":3,"num_bad_tap":3,"good_tap":[["egg","egg"],["egg","egg_white"]],"bad_tap":[["egg","egg_crack"],["egg","egg_crack_white"]]}
+@onready var game_data_2 = {"type":"select_tap","theme":"tan","task_text":"TAKE GOOD TOMATOES","num_tap":6,"num_col":2,"num_bad_tap":2,"good_tap":[["tomato","tomato"]],"bad_tap":[["tomato","tomato_bad"]]}
 @onready var game_data_3 = {"type":"collect_tap","theme":"pink","task_text":"COLLECT %s BLUEBERRY","num_collect":10,"good_collect":[["berry","blueberry"]],"bad_collect":[]}
 @onready var game_data_4 = {"type":"single_slice","theme":"orange","task_text":"SLICE THE ZUCCHINI","food":["zucchini","zucchini"],"cut":0}
 @onready var game_data_5 = {"type":"single_slice","theme":"blue","task_text":"SLICE THE BANANA","food":["banana","banana"], "cut":0}
@@ -21,13 +21,17 @@ extends Control
 @onready var game_data_15 = {"type":"collect_tap","theme":"yellow","task_text":"COLLECT %s BLACKBERRY","num_collect":10,"good_collect":[["berry","blackberry"]],"bad_collect":[]}
 @onready var game_data_16 = {"type":"collect_tap","theme":"darkBlue","task_text":"COLLECT %s RASPBERRY","num_collect":10,"good_collect":[["berry","raspberry"]],"bad_collect":[]}
 @onready var game_data_17 = {"type":"rotate_food","theme":"darkBlue","task_text":"ROTATE THE APPLE","food":["apple","yellow_apple"]}
-@onready var games = [game_data_17]#[game_data_1,game_data_2,game_data_3,game_data_4,game_data_5,game_data_6,game_data_7,game_data_8,game_data_9,game_data_10,game_data_11,game_data_12,game_data_13]
+@onready var game_data_18 = {"type":"rotate_food","theme":"yellow","task_text":"ROTATE THE RASPBERRY","food":["berry","raspberry"]}
+@onready var game_data_19 = {"type":"rapid_tap","theme":"darkBlue","task_text":"TENDERIZE THE CHICKEN","num_tap":30,"food":["pork","pork_chop_raw"]}
+@onready var game_data_20 = {"type":"rapid_tap","theme":"blue","task_text":"TENDERIZE THE STEAK","num_tap":15,"food":["beef","steak_raw"]}
+@onready var games = [game_data_1,game_data_2,game_data_3,game_data_4,game_data_5,game_data_6,game_data_7,game_data_8,game_data_9,game_data_10,game_data_11,game_data_12,game_data_13,game_data_14,game_data_15,game_data_16,game_data_17,game_data_18]
 @onready var selectTapMiniGame := preload("res://Scenes/select_tap_game.tscn")
 @onready var collectTapMiniGame := preload("res://Scenes/collect_tap_game.tscn")
 @onready var singleSwipeMiniGame := preload("res://Scenes/single_slice_game.tscn")
 @onready var centerPlateFoodMiniGame := preload("res://Scenes/center_plate_game.tscn")
 @onready var radialSliceMiniGame := preload("res://Scenes/radial_slice_game.tscn")
 @onready var rotateFoodMiniGame := preload("res://Scenes/rotation_game.tscn")
+@onready var rapidTapFoodMiniGame := preload("res://Scenes/rapid_tap_game.tscn")
 @onready var current_game = null
 @onready var current_game_type = null
 @onready var current_task = null
@@ -35,6 +39,7 @@ extends Control
 @onready var game_time = 5
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	timeBar.custom_minimum_size = Vector2(0,size.y/20)
 	task.clear()
 	score.parse_bbcode("0")
 	generateGame(games[randi() % games.size()])
@@ -57,6 +62,7 @@ func generateGame(game_data):
 		'center_plate_food': generateCenterPlateFoodGame(game_data)
 		'radial_slice': generateRadialSliceGame(game_data)
 		'rotate_food': rotateFoodGame(game_data)
+		'rapid_tap': rapidTapGame(game_data)
 func generateSelectTapGame(game_data):
 	updateTask()
 	current_game = selectTapMiniGame.instantiate()
@@ -114,6 +120,15 @@ func rotateFoodGame(game_data):
 	current_game.game_loss.connect(reset)
 	await get_tree().process_frame
 	current_game.initialize(game_data['food'])
+	
+func rapidTapGame(game_data):
+	updateTask()
+	current_game = rapidTapFoodMiniGame.instantiate()
+	gameArea.add_child(current_game)
+	current_game.game_win.connect(gameWon)
+	current_game.game_loss.connect(reset)
+	await get_tree().process_frame
+	current_game.initialize(game_data['food'], game_data['num_tap'])
 	
 func reset():
 	clearGame()
