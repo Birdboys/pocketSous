@@ -3,10 +3,10 @@ extends CharacterBody2D
 
 const INPUT_SENS = 0.5
 @onready var initial_orientation := Vector3.ZERO
-@onready var sensitivity = 0.5
-@onready var acceleration = 20
+@onready var sensitivity = 1.5
+@onready var acceleration = 100
 @onready var friction = 0.1
-@onready var max_speed = 100
+@onready var max_speed = 350
 func _process(delta):
 	if initial_orientation == Vector3.ZERO and Input.get_accelerometer().length() >= 9.5:
 		initial_orientation = Input.get_accelerometer()
@@ -15,7 +15,7 @@ func _process(delta):
 		var rotation_difference = current_orientation-initial_orientation
 		var acc_input = Vector2(rotation_difference.x, -rotation_difference.y)
 		if acc_input.length() > sensitivity :
-			velocity = velocity + acc_input.normalized() * acceleration #.move_toward(acc_input.normalized() * SPEED, slippy_factor)
+			velocity = velocity + acc_input.normalized() * acceleration * (acc_input.length()/10)#.move_toward(acc_input.normalized() * SPEED, slippy_factor)
 		if velocity.length() >= max_speed:
 			velocity.normalized() * max_speed
 	velocity = lerp(velocity, Vector2.ZERO, friction)

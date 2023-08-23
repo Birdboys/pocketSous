@@ -11,7 +11,7 @@ extends Control
 @onready var game_data_5 = {"type":"single_slice","theme":"blue","task_text":"SLICE THE BANANA","food":["banana","banana"], "cut":0}
 @onready var game_data_6 = {"type":"single_slice","theme":"lightGreen","task_text":"SLICE THE APPLE","food":["apple","red_apple"], "cut":90}
 @onready var game_data_7 = {"type":"single_slice","theme":"tan","task_text":"SLICE THE APPLE","food":["apple","green_apple"], "cut":90}
-@onready var game_data_8 = {"type":"center_plate_food","theme":"blue","task_text":"PLATE THE TOMATO","food":["tomato","tomato"]}
+@onready var game_data_8 = {"type":"center_plate","theme":"blue","task_text":"PLATE THE TOMATO","food":["tomato","tomato"]}
 @onready var game_data_9 = {"type":"single_slice","theme":"blue","task_text":"SLICE THE LEMON","food":["lemon","lemon"], "cut":0}
 @onready var game_data_10 = {"type":"single_slice","theme":"pink","task_text":"SLICE THE LIME","food":["lime","lime"], "cut":0}
 @onready var game_data_11 = {"type":"single_slice","theme":"blue","task_text":"SLICE THE LEMON","food":["lemon","lemon"], "cut":90}
@@ -22,9 +22,10 @@ extends Control
 @onready var game_data_16 = {"type":"collect_tap","theme":"darkBlue","task_text":"COLLECT %s RASPBERRY","num_collect":10,"good_collect":[["berry","raspberry"]],"bad_collect":[]}
 @onready var game_data_17 = {"type":"rotate_food","theme":"darkBlue","task_text":"ROTATE THE APPLE","food":["apple","yellow_apple"]}
 @onready var game_data_18 = {"type":"rotate_food","theme":"yellow","task_text":"ROTATE THE RASPBERRY","food":["berry","raspberry"]}
-@onready var game_data_19 = {"type":"rapid_tap","theme":"darkBlue","task_text":"TENDERIZE THE CHICKEN","num_tap":30,"food":["pork","pork_chop_raw"]}
-@onready var game_data_20 = {"type":"rapid_tap","theme":"blue","task_text":"TENDERIZE THE STEAK","num_tap":15,"food":["beef","steak_raw"]}
-@onready var games = [game_data_1,game_data_2,game_data_3,game_data_4,game_data_5,game_data_6,game_data_7,game_data_8,game_data_9,game_data_10,game_data_11,game_data_12,game_data_13,game_data_14,game_data_15,game_data_16,game_data_17,game_data_18]
+@onready var game_data_19 = {"type":"rapid_tap","theme":"darkBlue","task_text":"TENDERIZE THE PORK","num_tap":10,"food":["pork","pork_chop_raw"]}
+@onready var game_data_20 = {"type":"rapid_tap","theme":"blue","task_text":"TENDERIZE THE STEAK","num_tap":6,"food":["beef","steak_raw"]}
+@onready var game_data_21 = {"type":"center_pan","theme":"darkGreen","task_text":"BUTTER THE PAN","food":["butter","butter_pat"]}
+@onready var games = [game_data_1,game_data_2,game_data_3,game_data_4,game_data_5,game_data_6,game_data_7,game_data_8,game_data_9,game_data_10,game_data_11,game_data_12,game_data_13,game_data_14,game_data_15,game_data_16,game_data_17,game_data_18,game_data_19,game_data_20]
 @onready var selectTapMiniGame := preload("res://Scenes/select_tap_game.tscn")
 @onready var collectTapMiniGame := preload("res://Scenes/collect_tap_game.tscn")
 @onready var singleSwipeMiniGame := preload("res://Scenes/single_slice_game.tscn")
@@ -32,6 +33,7 @@ extends Control
 @onready var radialSliceMiniGame := preload("res://Scenes/radial_slice_game.tscn")
 @onready var rotateFoodMiniGame := preload("res://Scenes/rotation_game.tscn")
 @onready var rapidTapFoodMiniGame := preload("res://Scenes/rapid_tap_game.tscn")
+@onready var centerPanMiniGame := preload("res://Scenes/center_pan_game.tscn")
 @onready var current_game = null
 @onready var current_game_type = null
 @onready var current_task = null
@@ -59,10 +61,12 @@ func generateGame(game_data):
 		'select_tap': generateSelectTapGame(game_data)
 		'collect_tap': generateCollectTapGame(game_data)
 		'single_slice': generateSingleSwipeGame(game_data)
-		'center_plate_food': generateCenterPlateFoodGame(game_data)
+		'center_plate': generateCenterPlateFoodGame(game_data)
 		'radial_slice': generateRadialSliceGame(game_data)
 		'rotate_food': rotateFoodGame(game_data)
 		'rapid_tap': rapidTapGame(game_data)
+		'center_pan': generateCenterPanGame(game_data)
+		
 func generateSelectTapGame(game_data):
 	updateTask()
 	current_game = selectTapMiniGame.instantiate()
@@ -97,6 +101,15 @@ func generateSingleSwipeGame(game_data):
 func generateCenterPlateFoodGame(game_data):
 	updateTask()
 	current_game = centerPlateFoodMiniGame.instantiate()
+	gameArea.add_child(current_game)
+	current_game.game_win.connect(gameWon)
+	current_game.game_loss.connect(reset)
+	await get_tree().process_frame
+	current_game.initialize(game_data['food'])
+	
+func generateCenterPanGame(game_data):
+	updateTask()
+	current_game = centerPanMiniGame.instantiate()
 	gameArea.add_child(current_game)
 	current_game.game_win.connect(gameWon)
 	current_game.game_loss.connect(reset)
@@ -141,6 +154,7 @@ func clearGame():
 
 func gameWon():
 	score_val += 1
+	score.clear()
 	score.parse_bbcode(str(score_val))
 	reset()
 	

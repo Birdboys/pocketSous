@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://0soudsjrvx8e"]
+
+[ext_resource type="Script" path="res://Scripts/center_pan_game.gd" id="1_etksa"]
+[ext_resource type="Texture2D" uid="uid://cx2j3aymjgamp" path="res://Assets/foods/utensil/pan.svg" id="2_d8eb2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jcovg"]
+radius = 32.0
+
+[node name="centerPlateGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_etksa")
+
+[node name="plate" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.00179875
+texture = ExtResource("2_d8eb2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="centerArea" type="Area2D" parent="."]
+
+[node name="centerAreaShape" type="CollisionShape2D" parent="centerArea"]
+shape = SubResource("CircleShape2D_jcovg")
+
+[node name="centerTimer" type="Timer" parent="."]
+one_shot = true
