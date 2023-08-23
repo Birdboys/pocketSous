@@ -26,7 +26,7 @@ extends Control
 @onready var game_data_20 = {"type":"rapid_tap","theme":"blue","task_text":"TENDERIZE THE STEAK","num_tap":6,"food":["beef","steak_raw"]}
 @onready var game_data_21 = {"type":"center_pan","theme":"darkGreen","task_text":"BUTTER THE PAN","food":["butter","butter_pat"]}
 @onready var games = [game_data_1,game_data_2,game_data_3,game_data_4,game_data_5,game_data_6,game_data_7,game_data_8,game_data_9,game_data_10,game_data_11,game_data_12,game_data_13,game_data_14,game_data_15,game_data_16,game_data_17,game_data_18,game_data_19,game_data_20]
-@onready var selectTapMiniGame := preload("res://Scenes/select_tap_game.tscn")
+@onready var selectTapMiniGame := preload("res://Scenes/select_tap_game.tscn") 
 @onready var collectTapMiniGame := preload("res://Scenes/collect_tap_game.tscn")
 @onready var singleSwipeMiniGame := preload("res://Scenes/single_slice_game.tscn")
 @onready var centerPlateFoodMiniGame := preload("res://Scenes/center_plate_game.tscn")
@@ -34,22 +34,22 @@ extends Control
 @onready var rotateFoodMiniGame := preload("res://Scenes/rotation_game.tscn")
 @onready var rapidTapFoodMiniGame := preload("res://Scenes/rapid_tap_game.tscn")
 @onready var centerPanMiniGame := preload("res://Scenes/center_pan_game.tscn")
-@onready var current_game = null
-@onready var current_game_type = null
-@onready var current_task = null
-@onready var score_val = 0
-@onready var game_time = 5
-# Called when the node enters the scene tree for the first time.
+@onready var current_game = null #current game playing
+@onready var current_game_type = null #type of current game
+@onready var current_task = null #task text for current game
+@onready var score_val = 0 #current score
+@onready var game_time = 5 #time limit for started game
+
 func _ready():
 	timeBar.custom_minimum_size = Vector2(0,size.y/20)
 	task.clear()
 	score.parse_bbcode("0")
 	generateGame(games[randi() % games.size()])
 	pass # Replace with function body.
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	timeBar.value = gameTimer.time_left
-	pass
+	
+func _process(delta): #
+	if not gameTimer.is_stopped(): #if game timer is counting down
+		timeBar.value = gameTimer.time_left #update time bar value
 
 func generateGame(game_data):
 	theme = load("res://Assets/themes/%sMinigame.tres" % game_data['theme'])
