@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b67vu4tkgtr6"]
+[gd_scene load_steps=4 format=3 uid="uid://b67vu4tkgtr6"]
 
 [ext_resource type="Script" path="res://Scripts/plate_food.gd" id="1_belbd"]
+[ext_resource type="Texture2D" uid="uid://cansbpaf4ki53" path="res://Assets/foods/apple/green_apple.svg" id="2_pt543"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hks5i"]
 radius = 32.0
@@ -10,6 +11,7 @@ motion_mode = 1
 script = ExtResource("1_belbd")
 
 [node name="plateFoodSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_pt543")
 
 [node name="plateFoodArea" type="Area2D" parent="."]
 

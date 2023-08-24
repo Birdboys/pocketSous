@@ -11,11 +11,9 @@ var total_collect : int #total number of collectables spawned - set in initializ
 signal game_win
 signal game_loss
 signal collected(num_left)
+
 func _ready():
-	collectMargin.add_theme_constant_override("margin_top", offset) #set margins of collect space
-	collectMargin.add_theme_constant_override("margin_left", offset)
-	collectMargin.add_theme_constant_override("margin_bottom", offset)
-	collectMargin.add_theme_constant_override("margin_right", offset)
+	setMargins(offset)
 	
 func initialize(game_data): #initialize collect game from data
 	print("COLLECT GAME SIZE: %s" % size)
@@ -38,3 +36,8 @@ func onCollected(): #connected to collected signal in collectables
 	else:
 		emit_signal("collected", total_collect-current_collect) #emit collected signal
 
+func setMargins(val):
+	collectMargin.add_theme_constant_override("margin_top", val) #set margins of collect space
+	collectMargin.add_theme_constant_override("margin_left", val)
+	collectMargin.add_theme_constant_override("margin_bottom", val)
+	collectMargin.add_theme_constant_override("margin_right", val)
