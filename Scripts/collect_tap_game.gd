@@ -1,38 +1,40 @@
 extends Control
-@onready var collectable = preload("res://Scenes/collectable.tscn")
-@onready var collectSpace := $collectMargin/collectSpace
-var rotation_range = 30
-var current_collect = 0
-var total_collect = 0
-var offset = 128
+@onready var collectable = preload("res://Scenes/collectable.tscn") #instantiatable collectable scene
+@onready var collectSpace := $collectMargin/collectSpace #area where collectables are added
+@onready var collectMargin := $collectMargin #margin for collect space - keeps food from spawning off screen (ideally)
+@onready var offset = 128 #length of collect margin
+@onready var collectable_scale = 1.0/4.0 #scale of collectable relative to collect area
+var rotation_range := 30 #max value for range of degrees collectable can be rotated when spawned in for variety (-range,range)
+var current_collect := 0 #current collectables collected - used to determine when game is finished
+var total_collect : int #total number of collectables spawned - set in initialize from game data
+
 signal game_win
 signal game_loss
 signal collected(num_left)
 func _ready():
-	print("READY")
-func _process(delta):
-	pass
-	#print(size, get_rect().size, get_parent_area_size())
-func initialize(num_collects, good_collects):
-	print(size)
-	total_collect = num_collects
-	var play_area = collectSpace.size
-	for x in range(num_collects):
-		var new_collect = collectable.instantiate()
-		collectSpace.add_child(new_collect)
-		new_collect.collected.connect(onCollected)
-		var collect_choice = good_collects[randi() % good_collects.size()]
-		var new_x = randi_range(0, play_area.x)
-		var new_y = randi_range(0, play_area.y)
-		var min_dim = play_area[play_area.max_axis_index()]
-		new_collect.initialize(new_x,new_y,min_dim/3,randi_range(-rotation_range,rotation_range),collect_choice[0],collect_choice[1])
+	collectMargin.add_theme_constant_override("margin_top", offset) #set margins of collect space
+	collectMargin.add_theme_constant_override("margin_left", offset)
+	collectMargin.add_theme_constant_override("margin_bottom", offset)
+	collectMargin.add_theme_constant_override("margin_right", offset)
+	
+func initialize(game_data): #initialize collect game from data
+	print("COLLECT GAME SIZE: %s" % size)
+	total_collect = game_data['num_collect'] #get total collectables to spawn
+	var play_area = collectSpace.size #get play area of collectSpace within margin
+	print("COLLECT GAME AREA SIZE: %s" % play_area)
+	for x in range(total_collect): #loop for creating collectables
+		var new_collect = collectable.instantiate() #instantiate collectable from scene
+		collectSpace.add_child(new_collect) #add it to collect space
+		new_collect.collected.connect(onCollected) #connect collected signal to onCollected - used to keep track of collectables left
+		var new_x = randi_range(0, play_area.x) #get x value within play area
+		var new_y = randi_range(0, play_area.y) #get y value within play area
+		var min_dim = play_area[play_area.min_axis_index()] #get length of minimum play area dimension - used to set collectable size relative to play area
+		new_collect.initialize(new_x,new_y,min_dim*collectable_scale,randi_range(-rotation_range,rotation_range),game_data['food'][0],game_data['food'][1]) #initialize collectable
 
-func onCollected():
-	current_collect += 1
-	if current_collect == total_collect:
-		current_collect = 0
-		emit_signal("game_win")
-		pass
+func onCollected(): #connected to collected signal in collectables
+	current_collect += 1 #increment number of collectables collected
+	if current_collect >= total_collect: #if we have collected them all
+		emit_signal("game_win") #emit win signal
 	else:
-		emit_signal("collected", total_collect-current_collect)
+		emit_signal("collected", total_collect-current_collect) #emit collected signal
 

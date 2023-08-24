@@ -9,9 +9,7 @@ signal game_loss
 func _ready():
 	print(rad_to_deg(Vector2(390.6, 199.2517).angle_to(Vector2(393.0111, 196.8389))))
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
+
 func initialize(food, num_tap):
 	tapper.texture =  load("res://Assets/foods/%s/%s.svg" % [food[0], food[1]])
 	tapper.pivot_offset = tapper.size/2

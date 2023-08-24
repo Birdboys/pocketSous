@@ -1,33 +1,24 @@
 extends TextureButton
-@export var rotation_offset := 0
-var original_rotation
-signal collected
-# Called when the node enters the scene tree for the first time.
-func _ready():
+@export var rotation_offset := 0 #rotation offset used for wiggle animation
+@onready var original_rotation #original rotation used for wiggle animation
+@onready var anim = $collectableAnimator #animator for animations
+signal collected 
+
+func _process(_delta):
+	rotation = deg_to_rad(original_rotation + rotation_offset) #calculate rotation
 	
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	#print(rotation)
-	#rint(deg_to_rad(original_rotation + rotation_offset))
-	rotation = deg_to_rad(original_rotation + rotation_offset)
 func initialize(x, y, s, rot, food, food_type):
-	texture_normal = load("res://Assets/foods/%s/%s.svg" % [food, food_type])
+	texture_normal = load("res://Assets/foods/%s/%s.svg" % [food, food_type]) #load textures based on food
 	texture_hover = load("res://Assets/foods/%s/%s.svg" % [food, food_type])
-	var texture_size = texture_normal.get_size()
-	var max_texture_dim = texture_size[texture_size.max_axis_index()]
-	#print(texture_normal.get_size(), [texture_normal.get_size().x,texture_normal.get_size().y].max())
-	size = texture_size * (s/max_texture_dim)
-	pivot_offset = size/2
-	print(size, s)
-	original_rotation = rot
-	$collectableAnimator.play("wiggle")
-	position = Vector2(x,y) - size/2
-	#texture_disabled = load("res://Assets/foods/%s/%s_disabled.svg" % [food, food])
+	var texture_size = texture_normal.get_size() #get size of texture
+	var max_texture_dim = texture_size[texture_size.max_axis_index()] #get length of max texture dimension
+	size = texture_size * (s/max_texture_dim) #use max texutre dim length and min width provided by parent container to scale collectable
+	pivot_offset = size/2 #set pivot offset to center 
+	original_rotation = rot #set original rotation 
+	anim.play("wiggle") #wiggle wiggle wiggle
+	position = Vector2(x,y) - size/2 #set position
 	
-func _on_pressed():
-	emit_signal("collected")
-	queue_free()
+func _on_pressed(): #when pressed
+	emit_signal("collected") #emit collected signal
+	queue_free() #delete
 	pass # Replace with function body.

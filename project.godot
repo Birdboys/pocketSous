@@ -15,11 +15,14 @@ run/main_scene="res://Scenes/base_mini_game.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameMaster="*res://Scripts/game_master.gd"
+
 [display]
 
 window/size/viewport_width=720
 window/size/viewport_height=1280
-window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1

@@ -25,6 +25,7 @@ grow_vertical = 2
 theme_type_variation = &"bg"
 
 [node name="score" type="RichTextLabel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -51,10 +52,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
 
 [node name="gameArea" type="VBoxContainer" parent="margins"]
 layout_mode = 2
@@ -68,17 +66,11 @@ bbcode_enabled = true
 text = "[center]SLICE MY ZUCCHINI[/center]"
 fit_content = true
 
-[node name="timeBar" type="ProgressBar" parent="."]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="timeBar" type="ProgressBar" parent="margins/gameArea"]
+layout_mode = 2
 size_flags_vertical = 8
 theme_type_variation = &"timeBar"
+value = 100.0
 show_percentage = false
 
 [node name="gameTimer" type="Timer" parent="."]
