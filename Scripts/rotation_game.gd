@@ -6,25 +6,20 @@ extends Control
 signal game_win
 signal game_loss
 
-func _ready():
-	print(rad_to_deg(Vector2(390.6, 199.2517).angle_to(Vector2(393.0111, 196.8389))))
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(abs(int(rad_to_deg(rotator.rotation))))
 	var rot_degrees = abs(int(rad_to_deg(rotator.rotation))) % 360
 	if rot_degrees < sensitivity:
 		gameWon()
 	pass
 	
-func initialize(food):
+func initialize(game_data):
 	print(size)
 	rotator.rotation = deg_to_rad(randi_range(10,350))
-	rotator.texture =  load("res://Assets/foods/%s/%s.svg" % [food[0], food[1]])
+	rotator.texture =  load("res://Assets/foods/%s/%s.svg" % [game_data['food'][0], game_data['food'][1]])
 	rotator.pivot_offset = rotator.size/2
 	rotation_center = rotator.position+rotator.size/2
 
 func _on_touch_area_gui_input(event: InputEvent):
-	
 	if event is InputEventMouseMotion:
 		if Input.is_action_pressed("screen_touch"):
 			if prev_position:
