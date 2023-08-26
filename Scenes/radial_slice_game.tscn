@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dorq11xt28nax"]
+[gd_scene load_steps=5 format=3 uid="uid://dorq11xt28nax"]
 
 [ext_resource type="Script" path="res://Scripts/radial_slice_game.gd" id="1_m4q4i"]
+[ext_resource type="Shader" path="res://Scripts/sliceable.gdshader" id="2_t4kt4"]
+[ext_resource type="Texture2D" uid="uid://myu3x5ttwg7" path="res://Assets/foods/banana/banana.svg" id="3_uoh5i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hqhl3"]
+shader = ExtResource("2_t4kt4")
+shader_parameter/percent = 50.0
+shader_parameter/cut = true
+shader_parameter/cut_time = -2.99
+shader_parameter/horizontal = null
 
 [node name="radialSliceGame" type="Control"]
 layout_mode = 3
@@ -26,8 +35,10 @@ theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 64
 
 [node name="sliceable" type="TextureRect" parent="sliceMargin"]
+material = SubResource("ShaderMaterial_hqhl3")
 layout_mode = 2
 mouse_filter = 2
+texture = ExtResource("3_uoh5i")
 expand_mode = 1
 stretch_mode = 5
 

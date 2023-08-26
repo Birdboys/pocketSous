@@ -10,7 +10,7 @@ extends Node
 			"fill_cup":preload("res://Scenes/fill_cup_game.tscn"),
 			"vertical_slice":preload("res://Scenes/single_slice_game.tscn"),
 			"horizontal_slice":preload("res://Scenes/single_slice_game.tscn")}
-@onready var games = ["vertical_slice"]#["collect_tap","rapid_tap","center_plate","rotate_food"]
+@onready var games = ["collect_tap","rapid_tap","center_plate","rotate_food","horizontal_slice","vertical_slice","radial_slice","fill_cup"]
 
 func getGame(game):
 	return game_types[game].instantiate()
@@ -27,6 +27,7 @@ func generateRandomGame(): #generates data for random game, returns instantiatio
 		"fill_cup" : game_data = await getRandomFillCup()
 		"vertical_slice" : game_data = await getRandomSingleVSlice()
 		"horizontal_slice" : game_data = await getRandomSingleHSlice()
+		"radial_slice" : game_data = await getRandomRadialSlice()
 		_: print("HOW'D WE GET HERE") #shouldn't hit, temp
 	game_data['type'] = new_game_type #set game data type to randomely selected type
 	return [game_data, game_types[new_game_type].instantiate()] #return game data and instantiated mini game
@@ -51,7 +52,7 @@ func getRandomRapidTap():
 func getRandomCenterPlate():
 	var game_data = {} #game data container
 	var center_foods = [["apple","red_apple"],["apple","green_apple"],
-	["apple","yellow_apple"],["lime","lime"],["lemon","lemon"]] #centerable foods
+	["apple","yellow_apple"],["lime","lime"],["lemon","lemon"],["pork","pork_chop_cooked"],["beef","steak_cooked"]] #centerable foods
 	game_data['food'] = center_foods[randi() % center_foods.size()] #select centerable food
 	game_data['task'] = "PLATE THE %s" % game_data['food'][1].to_upper() #set task
 	return game_data
@@ -90,4 +91,12 @@ func getRandomSingleVSlice():
 	game_data['food'] = cut_foods[randi() % cut_foods.size()]
 	game_data['task'] = "CUT THE %s" % [game_data['food'][0].to_upper()]
 	game_data['cut_type'] = 90
+	return game_data
+
+func getRandomRadialSlice():
+	var game_data = {}
+	var cut_foods = [["apple","red_apple"]]
+	game_data['food'] = cut_foods[randi() % cut_foods.size()]
+	game_data['task'] = "SLICE THE %s" % [game_data['food'][0].to_upper()]
+	game_data['num_cut'] = randi_range(2,5)
 	return game_data
