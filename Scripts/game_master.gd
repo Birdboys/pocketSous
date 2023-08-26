@@ -10,12 +10,13 @@ extends Node
 			"fill_cup":preload("res://Scenes/fill_cup_game.tscn"),
 			"vertical_slice":preload("res://Scenes/single_slice_game.tscn"),
 			"horizontal_slice":preload("res://Scenes/single_slice_game.tscn")}
-@onready var games = ["collect_tap","rapid_tap","center_plate","rotate_food","horizontal_slice","vertical_slice","radial_slice","fill_cup"]
+@onready var games = ["collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup"]
 
 func getGame(game):
 	return game_types[game].instantiate()
 	
 func generateRandomGame(): #generates data for random game, returns instantiation for game and game data
+	print("GENERATING RANDOM GAME")
 	var new_game_type = games[randi() % games.size()]
 	var game_data #store game data for initialization
 	match new_game_type: #get random game data per game type
@@ -55,7 +56,7 @@ func getRandomCenterPlate():
 	["apple","yellow_apple"],["lime","lime"],["lemon","lemon"],["pork","pork_chop_cooked"],["beef","steak_cooked"]] #centerable foods
 	game_data['food'] = center_foods[randi() % center_foods.size()] #select centerable food
 	game_data['task'] = "PLATE THE %s" % game_data['food'][1].to_upper() #set task
-	return game_data
+	return game_data #return game data
 
 func getRandomRotateFood():
 	var game_data = {} #game data container
@@ -64,25 +65,25 @@ func getRandomRotateFood():
 	["berry","raspberry"],["berry","blueberry"],["berry","blackberry"]] #rotatable foods
 	game_data['food'] = rotate_foods[randi() % rotate_foods.size()] #select rotatable food
 	game_data['task'] = "ROTATE THE %s" % game_data['food'][1].to_upper() #set task
-	return game_data
+	return game_data #return game data
 	
 func getRandomFillCup():
-	var game_data = {}
-	var fill_liquids = ["milk","water","oil","juice"]
-	var fill_val = randi_range(1,4)
-	game_data['food'] = fill_liquids[randi() % fill_liquids.size()]
-	game_data['task'] = "FILL %s CUPS OF %s" % [fill_val,game_data['food'].to_upper()]
-	game_data['fill_val'] = fill_val
-	game_data['color'] =  Color.hex(0x8bf5c6ff)
-	return game_data
+	var game_data = {} #game data container
+	var fill_liquids = ["milk","water","oil","juice"] #fillable liquids
+	var fill_val = randi_range(1,4) #get number of cups to fill from range
+	game_data['food'] = fill_liquids[randi() % fill_liquids.size()] #get fillable liquid
+	game_data['task'] = "FILL %s CUPS OF %s" % [fill_val,game_data['food'].to_upper()] #create task text based on num cups and liquid
+	game_data['fill_val'] = fill_val #set fill val in game data
+	game_data['color'] =  Color.hex(0x8bf5c6ff) #get color of liquid - TODO : NOT FINISHED 
+	return game_data #return game data
 
 func getRandomSingleHSlice():
-	var game_data = {}
-	var cut_foods = [["banana","banana"],["zucchini","zucchini"],["lemon","lemon_vertical"],["lime","lime_vertical"]]
-	game_data['food'] = cut_foods[randi() % cut_foods.size()]
-	game_data['task'] = "CUT THE %s" % [game_data['food'][0].to_upper()]
-	game_data['cut_type'] = 0
-	return game_data
+	var game_data = {} #game data container
+	var cut_foods = [["banana","banana"],["zucchini","zucchini"],["lemon","lemon_vertical"],["lime","lime_vertical"]] #sliceable foods
+	game_data['food'] = cut_foods[randi() % cut_foods.size()] #get food
+	game_data['task'] = "CUT THE %s" % [game_data['food'][0].to_upper()] #set task based on food
+	game_data['cut_type'] = 0 #set cut type to be 0 for horizontal (no rotation)
+	return game_data #return game data
 	
 func getRandomSingleVSlice():
 	var game_data = {}
@@ -90,13 +91,13 @@ func getRandomSingleVSlice():
 	["apple","yellow_apple"],["pork","pork_chop_raw"],["beef","steak_raw"]]
 	game_data['food'] = cut_foods[randi() % cut_foods.size()]
 	game_data['task'] = "CUT THE %s" % [game_data['food'][0].to_upper()]
-	game_data['cut_type'] = 90
-	return game_data
+	game_data['cut_type'] = 90 #set cut type to be 90 for vertical (90 degree rotation on instantiated cut)
+	return game_data #return game data
 
 func getRandomRadialSlice():
 	var game_data = {}
 	var cut_foods = [["apple","red_apple"]]
 	game_data['food'] = cut_foods[randi() % cut_foods.size()]
 	game_data['task'] = "SLICE THE %s" % [game_data['food'][0].to_upper()]
-	game_data['num_cut'] = randi_range(2,5)
-	return game_data
+	game_data['num_cut'] = randi_range(2,5) #get number of slices from range
+	return game_data #return game data

@@ -1,13 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxs8r8o88wcm8"]
+[gd_scene load_steps=5 format=3 uid="uid://cxs8r8o88wcm8"]
 
 [ext_resource type="Script" path="res://Scripts/fill_cup_game.gd" id="1_0reas"]
 [ext_resource type="Shader" path="res://Scripts/fill_cup_game.gdshader" id="2_eyb2a"]
 [ext_resource type="Texture2D" uid="uid://dwubfpda6vhfo" path="res://Assets/foods/utensil/measuring_cup_liquid.svg" id="2_um18p"]
-[ext_resource type="PackedScene" uid="uid://b6tn5pd2xhgam" path="res://Scenes/liquid_particles.tscn" id="5_ofnyp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ls278"]
 shader = ExtResource("2_eyb2a")
-shader_parameter/color = Color(0.894118, 0.803922, 0.352941, 1)
+shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/percent = 0.0
 
 [node name="fillCupGame" type="Control"]
@@ -53,9 +52,6 @@ grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
-
-[node name="liquidParticles" parent="." instance=ExtResource("5_ofnyp")]
-emitting = false
 
 [node name="fillTimer" type="Timer" parent="."]
 

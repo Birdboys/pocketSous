@@ -16,10 +16,8 @@ func _ready():
 	setMargins(offset)
 	
 func initialize(game_data): #initialize collect game from data
-	print("COLLECT GAME SIZE: %s" % size)
 	total_collect = game_data['num_collect'] #get total collectables to spawn
 	var play_area = collectSpace.size #get play area of collectSpace within margin
-	print("COLLECT GAME AREA SIZE: %s" % play_area)
 	for x in range(total_collect): #loop for creating collectables
 		var new_collect = collectable.instantiate() #instantiate collectable from scene
 		collectSpace.add_child(new_collect) #add it to collect space
