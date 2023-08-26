@@ -15,6 +15,7 @@ func _ready():
 	score.parse_bbcode("0")
 	var new_game_info = await GameMaster.generateRandomGame()
 	print(new_game_info[0]['type'],new_game_info[0])
+	theme = load("res://Assets/themes/%sMinigame.tres" % FoodMaster.food[new_game_info[0]['food'][1]]['theme'])
 	await createGame(new_game_info[0],new_game_info[1])
 	pass # Replace with function body.
 	
@@ -42,6 +43,7 @@ func createGame(game_data, game_scene): #initializes minigame from game data
 func reset():
 	clearGame()
 	var new_game_info = await GameMaster.generateRandomGame()
+	theme = load("res://Assets/themes/%sMinigame.tres" % FoodMaster.food[new_game_info[0]['food'][1]]['theme'])
 	print(new_game_info[0]['type'],new_game_info[0])
 	await createGame(new_game_info[0],new_game_info[1])
 	pass

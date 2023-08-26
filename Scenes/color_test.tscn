@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://brfry7qcy0oia"]
+[gd_scene load_steps=3 format=3 uid="uid://brfry7qcy0oia"]
 
 [ext_resource type="Theme" uid="uid://h0mxtcwa0hor" path="res://Assets/themes/blueMinigame.tres" id="1_kqeap"]
+[ext_resource type="Texture2D" uid="uid://hbrqaokhg0jv" path="res://Assets/foods/pork/pork_chop_raw.svg" id="2_jtkmw"]
 
 [node name="colorTest" type="Control"]
 layout_mode = 3
@@ -496,3 +497,14 @@ theme_override_colors/font_shadow_color = Color(0.572549, 0.427451, 0.235294, 0.
 bbcode_enabled = true
 text = "[center]TAKE GOOD EGGS[/center]"
 fit_content = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jtkmw")
+expand_mode = 1
+stretch_mode = 5
