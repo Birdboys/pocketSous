@@ -59,6 +59,9 @@ func createGame(game_data, game_scene): #initializes minigame from game data
 	gameArea.move_child(current_game, 1)
 	current_game.game_win.connect(gameWon) #connect win signal in game to win function
 	current_game.game_loss.connect(reset) #connect loss signal in game to loss function
+	match current_game_type: #special game based signals
+		"fill_cup": current_game.over_flow.connect(reset)
+		_: pass
 	await get_tree().process_frame #await process frame so rects update (weird sizes if we don't wait for expansion, dont like this code)
 	await get_tree().process_frame
 	current_game.initialize(game_data) #initialize th 
@@ -154,7 +157,7 @@ func rapidTapGame(game_data):
 	current_game.game_loss.connect(reset)
 	await get_tree().process_frame
 	current_game.initialize(game_data['food'], game_data['num_tap'])
-	
+
 func reset():
 	clearGame()
 	var new_game_info = await GameMaster.generateRandomGame()

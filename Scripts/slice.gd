@@ -15,20 +15,22 @@ func _process(delta):
 	#print(inDrag)
 	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-
 func initialize(x, y, length, rot, id=0):
+	print(length)
 	position = Vector2(x,y)
-	var end_points = [Vector2(-length,0),Vector2(length,0)]
-	touchLineShape.shape.size=Vector2(length*2,drag_width)
-	rotate(deg_to_rad(rot))
+	var end_points = [Vector2(-length/4,0),Vector2(length/4,0)]
+	touchLineShape.shape.size=Vector2(length/2,drag_width)
 		
 	line.points = end_points
 	touchZoneA.position = end_points[0]
 	touchZoneB.position = end_points[1]
 	touchLineZoneA.position = end_points[0]
 	touchLineZoneB.position = end_points[1]
+	touchLineZoneA.shape.height = length/4
+	touchLineZoneB.shape.height = length/4
 	cut_id = id
+	rotate(deg_to_rad(rot))
+	
 func _on_touch_begin_mouse_entered():
 	print("ENTERED ZONE A")
 	zoneAEntered = true
@@ -36,7 +38,6 @@ func _on_touch_begin_mouse_entered():
 		emit_signal("sliced", cut_id)
 		queue_free()
 	pass # Replace with function body.
-
 
 func _on_touch_end_mouse_entered():
 	print("ENTERED ZONE B")

@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.54236816"
-     inkscape:cx="479.37917"
-     inkscape:cy="581.70819"
+     inkscape:zoom="0.3835122"
+     inkscape:cx="195.56092"
+     inkscape:cy="408.07046"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
@@ -41,8 +41,8 @@
      transform="translate(63.93864,117.74247)">
     <path
        id="path12"
-       style="display:inline;fill:#ffffff;stroke:none;stroke-width:23.1494;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;fill-opacity:1"
-       d="M 177.3358,-71.348601 V 170.39961 c 0,14.63279 -10.67007,26.41298 -23.92394,26.41298 H -19.617469 c -13.253863,0 -23.923935,-11.78019 -23.923935,-26.41298 V -71.348601 Z"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:23.1494;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       d="m 177.3358,-117.69243 0,288.09204 c 0,14.63279 -10.67007,26.41298 -23.92394,26.41298 H -19.617469 c -13.253863,0 -23.923935,-11.78019 -23.923935,-26.41298 l 0,-288.09204 z"
        sodipodi:nodetypes="csssscc" />
     <path
        id="rect1"

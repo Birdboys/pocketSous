@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/fill_cup_game.gd" id="1_0reas"]
 [ext_resource type="Shader" path="res://Scripts/fill_cup_game.gdshader" id="2_eyb2a"]
 [ext_resource type="Texture2D" uid="uid://dwubfpda6vhfo" path="res://Assets/foods/utensil/measuring_cup_liquid.svg" id="2_um18p"]
-[ext_resource type="Texture2D" uid="uid://jb2kxrmj1lcr" path="res://Assets/foods/utensil/measuring_cup.svg" id="3_q7322"]
+[ext_resource type="PackedScene" uid="uid://b6tn5pd2xhgam" path="res://Scenes/liquid_particles.tscn" id="5_ofnyp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ls278"]
 shader = ExtResource("2_eyb2a")
@@ -17,6 +17,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_0reas")
 
 [node name="cupMargin" type="MarginContainer" parent="."]
@@ -49,10 +51,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_q7322")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="liquidParticles" parent="." instance=ExtResource("5_ofnyp")]
+emitting = false
+
+[node name="fillTimer" type="Timer" parent="."]
 
 [connection signal="gui_input" from="cupMargin/cupContainer" to="." method="_on_cup_container_gui_input"]
 [connection signal="mouse_entered" from="cupMargin/cupContainer" to="." method="_on_cup_container_mouse_entered"]
 [connection signal="mouse_exited" from="cupMargin/cupContainer" to="." method="_on_cup_container_mouse_exited"]
+[connection signal="timeout" from="fillTimer" to="." method="_on_fill_timer_timeout"]

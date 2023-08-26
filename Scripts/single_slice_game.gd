@@ -3,11 +3,14 @@ extends Control
 @onready var slice := preload("res://Scenes/slice.tscn")
 @onready var margin := $sliceMargin
 @onready var cut
+@onready var offset = 128 #length of collect margin
 signal game_win
 signal game_loss
-
-func initialize(food_type, cut_type):
-	sliceable.texture = load("res://Assets/foods/%s/%s.svg" %[food_type[0],food_type[1]])
+func _ready():
+	setMargins(offset)
+	
+func initialize(game_data):
+	sliceable.texture = load("res://Assets/foods/%s/%s.svg" %[game_data['food'][0],game_data['food'][1]])
 	var cut_range = margin.size
 	await get_tree().process_frame
 	
@@ -15,9 +18,10 @@ func initialize(food_type, cut_type):
 	cut = slice.instantiate()
 	margin.add_child(cut)
 	cut.sliced.connect(gameWon)
-	match cut_type:
-		0: cut.initialize(margin.size.x/2,margin.size.y*cut_site,margin.size.x/2, 0)
-		90: cut.initialize(margin.size.x*cut_site,margin.size.y/2,margin.size.x/2, 90)
+	var min_dim = margin.size[margin.size.min_axis_index()]
+	match game_data['cut_type']:
+		0: cut.initialize(margin.size.x/2,margin.size.y*cut_site,min_dim, 0)
+		90: cut.initialize(margin.size.x*cut_site,margin.size.y/2,min_dim, 90)
 
 func gameWon(_id):
 	cut = null
@@ -54,3 +58,9 @@ func _on_slice_area_mouse_exited():
 	#$ColorRect.color = "43c4fb3b"
 	#$ColorRect.color = "43c4fb3b"
 	pass # Replace with function body.
+
+func setMargins(val):
+	margin.add_theme_constant_override("margin_top", val) #set margins of collect space
+	margin.add_theme_constant_override("margin_left", val)
+	margin.add_theme_constant_override("margin_bottom", val)
+	margin.add_theme_constant_override("margin_right", val)

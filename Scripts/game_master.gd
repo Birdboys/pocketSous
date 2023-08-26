@@ -6,8 +6,11 @@ extends Node
 			"radial_slice":preload("res://Scenes/radial_slice_game.tscn"),
 			"rotate_food":preload("res://Scenes/rotation_game.tscn"),
 			"center_pan":preload("res://Scenes/center_pan_game.tscn"),
-			"center_plate":preload("res://Scenes/center_plate_game.tscn")}
-@onready var games = ["rotate_food"]#["collect_tap","rapid_tap","center_plate","rotate_food"]
+			"center_plate":preload("res://Scenes/center_plate_game.tscn"),
+			"fill_cup":preload("res://Scenes/fill_cup_game.tscn"),
+			"vertical_slice":preload("res://Scenes/single_slice_game.tscn"),
+			"horizontal_slice":preload("res://Scenes/single_slice_game.tscn")}
+@onready var games = ["vertical_slice"]#["collect_tap","rapid_tap","center_plate","rotate_food"]
 
 func getGame(game):
 	return game_types[game].instantiate()
@@ -21,6 +24,9 @@ func generateRandomGame(): #generates data for random game, returns instantiatio
 		"rapid_tap" : game_data = await getRandomRapidTap()
 		"center_plate" : game_data = await getRandomCenterPlate()
 		"rotate_food" : game_data = await getRandomRotateFood()
+		"fill_cup" : game_data = await getRandomFillCup()
+		"vertical_slice" : game_data = await getRandomSingleVSlice()
+		"horizontal_slice" : game_data = await getRandomSingleHSlice()
 		_: print("HOW'D WE GET HERE") #shouldn't hit, temp
 	game_data['type'] = new_game_type #set game data type to randomely selected type
 	return [game_data, game_types[new_game_type].instantiate()] #return game data and instantiated mini game
@@ -59,3 +65,29 @@ func getRandomRotateFood():
 	game_data['task'] = "ROTATE THE %s" % game_data['food'][1].to_upper() #set task
 	return game_data
 	
+func getRandomFillCup():
+	var game_data = {}
+	var fill_liquids = ["milk","water","oil","juice"]
+	var fill_val = randi_range(1,4)
+	game_data['food'] = fill_liquids[randi() % fill_liquids.size()]
+	game_data['task'] = "FILL %s CUPS OF %s" % [fill_val,game_data['food'].to_upper()]
+	game_data['fill_val'] = fill_val
+	game_data['color'] =  Color.hex(0x8bf5c6ff)
+	return game_data
+
+func getRandomSingleHSlice():
+	var game_data = {}
+	var cut_foods = [["banana","banana"],["zucchini","zucchini"],["lemon","lemon_vertical"],["lime","lime_vertical"]]
+	game_data['food'] = cut_foods[randi() % cut_foods.size()]
+	game_data['task'] = "CUT THE %s" % [game_data['food'][0].to_upper()]
+	game_data['cut_type'] = 0
+	return game_data
+	
+func getRandomSingleVSlice():
+	var game_data = {}
+	var cut_foods = [["lemon","lemon"],["lime","lime"],["apple","red_apple"],["apple","green_apple"],
+	["apple","yellow_apple"],["pork","pork_chop_raw"],["beef","steak_raw"]]
+	game_data['food'] = cut_foods[randi() % cut_foods.size()]
+	game_data['task'] = "CUT THE %s" % [game_data['food'][0].to_upper()]
+	game_data['cut_type'] = 90
+	return game_data

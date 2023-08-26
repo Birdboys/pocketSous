@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6tn5pd2xhgam"]
+
+[ext_resource type="Texture2D" uid="uid://bus7hs0xlv12" path="res://Assets/foods/particle/liquid_particle.svg" id="1_l4uh1"]
+
+[node name="liquidParticles" type="CPUParticles2D"]
+amount = 5
+randomness = 0.5
+texture = ExtResource("1_l4uh1")
+emission_shape = 3
+emission_rect_extents = Vector2(64, 1)
+direction = Vector2(0, 1)
+spread = 60.0
+color = Color(0.894118, 0.803922, 0.352941, 1)

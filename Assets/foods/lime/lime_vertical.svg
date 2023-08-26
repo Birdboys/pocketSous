@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="1383.3573"
-   height="1029.3058"
-   viewBox="0 0 366.01328 272.33715"
+   width="1029.3058"
+   height="1383.3573"
+   viewBox="0 0 272.33715 366.01328"
    version="1.1"
    id="svg1"
    inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
-   sodipodi:docname="lime.svg"
+   sodipodi:docname="lime_vertical.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,8 +24,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="0.27118408"
-     inkscape:cx="-7.3750642"
-     inkscape:cy="713.53746"
+     inkscape:cx="-184.3766"
+     inkscape:cy="890.539"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
@@ -71,7 +71,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="matrix(7,0,0,7,-56.343964,-88.717255)">
+     transform="matrix(7,0,0,7,-103.18203,-41.879185)">
     <path
        style="fill:#85c448;stroke:#85c448;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
        d="m 34.192944,12.806183 c -19.10148,0 -17.031793,9.313589 -18.79965,11.943815 -1.767858,2.630227 -1.783833,2.395993 -1.783833,2.395993 -5.455811,-0.172289 -5.5570041,3.476687 -5.3853426,5.294031 4.137e-4,0.03187 -0.558551,4.850013 5.2344266,4.667077 0,0 0.166892,-0.234234 1.934748,2.395993 1.767857,2.630226 -0.30183,11.943815 18.799651,11.943815 19.101481,0 17.031794,-9.313589 18.799651,-11.943815 1.767856,-2.630227 1.934748,-2.395993 1.934748,-2.395993 5.792978,0.182936 5.234013,-4.635207 5.234427,-4.667077 0.171661,-1.817344 0.07047,-5.46632 -5.385343,-5.294031 0,0 -0.01597,0.234234 -1.783833,-2.395993 -1.767857,-2.630226 0.30183,-11.943815 -18.79965,-11.943815 z"
@@ -79,7 +79,7 @@
        sodipodi:nodetypes="cscccsc"
        inkscape:path-effect="#path-effect4"
        inkscape:original-d="m 34.192945,12.806183 c -19.101481,0 -17.031794,9.313589 -18.799651,11.943815 -1.767858,2.630227 -1.783833,2.395993 -1.783833,2.395993 -5.455811,-0.172289 -5.5570041,3.476687 -5.3853426,5.294031 4.137e-4,0.03187 -0.558551,4.850013 5.2344266,4.667077 0,0 0.166892,-0.234234 1.934748,2.395993 1.767857,2.630226 -0.30183,11.943815 18.799651,11.943815"
-       transform="matrix(1,0,0,-1,0,64.253092)" />
+       transform="matrix(0,1,1,0,2.066399,-2.066397)" />
     <ellipse
        style="fill:#feffe5;stroke:none;stroke-width:2.69332;stroke-linecap:round;paint-order:stroke markers fill"
        id="path4"

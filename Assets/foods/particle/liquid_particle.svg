@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="216.64252"
+   height="216.64252"
+   viewBox="0 0 57.319999 57.319999"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="liquid_particle.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.1694726"
+     inkscape:cx="126.29797"
+     inkscape:cy="106.70796"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-5.4880829,-5.6100426)">
+    <circle
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke-width:8.46667;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="path1"
+       cx="34.148083"
+       cy="34.270042"
+       r="28.66" />
+    <circle
+       style="display:none;fill:#f2f2f2;fill-opacity:1;stroke-width:8.46667;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="path2"
+       cx="46.953617"
+       cy="18.781445"
+       r="5.9759145" />
+    <circle
+       style="display:none;fill:#f2f2f2;fill-opacity:1;stroke-width:3.11021;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="circle3"
+       cx="52.075829"
+       cy="29.025869"
+       r="2.1952338" />
+  </g>
+</svg>

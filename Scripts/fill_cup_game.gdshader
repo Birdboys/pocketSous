@@ -10,3 +10,9 @@ void fragment() {
 		COLOR.a = 0.0;
 	}
 }
+
+void vertex() {
+	if (UV.y < 1.0) {
+		//VERTEX.y += sin((VERTEX.x + TIME)*2.0) * 32.0;
+	}
+}
