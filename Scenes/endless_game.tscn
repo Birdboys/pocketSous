@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0osw27b6rde1"]
+
+[ext_resource type="Theme" uid="uid://5fjtmugely5b" path="res://Assets/themes/lightGrayMinigame.tres" id="1_i1cpy"]
+[ext_resource type="Script" path="res://Scripts/endless_game.gd" id="1_oteal"]
+
+[node name="endlessGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_i1cpy")
+script = ExtResource("1_oteal")
+
+[node name="backgroundColor" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"bg"
+
+[node name="margins" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 16
+
+[node name="gameArea" type="VBoxContainer" parent="margins"]
+layout_mode = 2
+
+[node name="task" type="RichTextLabel" parent="margins/gameArea"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"taskLabel"
+theme_override_constants/line_separation = -32
+bbcode_enabled = true
+text = "[center]SLICE MY ZUCCHINI[/center]"
+fit_content = true
+
+[node name="timeBar" type="ProgressBar" parent="margins/gameArea"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme_type_variation = &"timeBar"
+value = 100.0
+show_percentage = false
