@@ -100,7 +100,14 @@
   "lime": {
     "main_type": "lime",
     "sub_type": "lime",
-    "name": "lime_vertical",
+    "name": "lime",
+    "theme": "pink",
+    "main_color": "#85c448"
+  },
+  "lime_vertical": {
+    "main_type": "lime",
+    "sub_type": "lime_vertical",
+    "name": "lime",
     "theme": "pink",
     "main_color": "#85c448"
   },

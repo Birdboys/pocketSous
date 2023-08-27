@@ -1,7 +1,83 @@
-[gd_scene load_steps=3 format=3 uid="uid://bltt68ehbph8"]
+[gd_scene load_steps=6 format=3 uid="uid://bltt68ehbph8"]
 
 [ext_resource type="Theme" uid="uid://5fjtmugely5b" path="res://Assets/themes/lightGrayMinigame.tres" id="1_6k488"]
 [ext_resource type="Script" path="res://Scripts/base_mini_game.gd" id="2_07rfj"]
+
+[sub_resource type="Animation" id="Animation_7kcq6"]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [null],
+"method": &"gameFinished"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("score:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("margins:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cs3v5"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("score:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("margins:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r8mka"]
+_data = {
+"fade": SubResource("Animation_7kcq6"),
+"fade_in": SubResource("Animation_cs3v5")
+}
 
 [node name="baseMiniGame" type="Control"]
 layout_mode = 3
@@ -26,6 +102,7 @@ theme_type_variation = &"bg"
 
 [node name="score" type="RichTextLabel" parent="."]
 visible = false
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -46,6 +123,7 @@ fit_content = true
 autowrap_mode = 0
 
 [node name="margins" type="MarginContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,7 +141,6 @@ size_flags_vertical = 0
 theme_type_variation = &"taskLabel"
 theme_override_constants/line_separation = -32
 bbcode_enabled = true
-text = "[center]SLICE MY ZUCCHINI[/center]"
 fit_content = true
 
 [node name="timeBar" type="ProgressBar" parent="margins/gameArea"]
@@ -74,5 +151,10 @@ value = 100.0
 show_percentage = false
 
 [node name="gameTimer" type="Timer" parent="."]
+
+[node name="gameAnimtor" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r8mka")
+}
 
 [connection signal="timeout" from="gameTimer" to="." method="_on_game_timer_timeout"]
