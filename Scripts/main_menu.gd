@@ -10,15 +10,21 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-
+	print('wenis')
 	pass
 
 
-func _on_button_pressed():
-	get_tree().change_scene_to_packed(timed_game)
+
+func _on_gui_input(event):
+	#print(event)
 	pass # Replace with function body.
 
 
-func _on_button_2_pressed():
-	get_tree().change_scene_to_packed(endless_game)
+func _on_timed_game_pressed():
+	get_tree().change_scene_to_file("res://Scenes/time_game.tscn")
+	pass # Replace with function body.
+
+
+func _on_endless_game_pressed():
+	get_tree().change_scene_to_file("res://Scenes/endless_game.tscn")
 	pass # Replace with function body.

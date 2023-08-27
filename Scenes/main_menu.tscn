@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://c7w5gskxa8sge" path="res://Assets/fonts/Oswald/static/Oswald-Bold.ttf" id="2_ghwhb"]
 
 [node name="mainMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.298039, 0.772549, 0.894118, 1)
 
 [node name="title" type="Label" parent="."]
@@ -69,5 +71,6 @@ theme_override_font_sizes/font_size = 128
 text = "ENDLESS"
 flat = true
 
-[connection signal="pressed" from="VBoxContainer/timed_game" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/endless_game" to="." method="_on_button_2_pressed"]
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="pressed" from="VBoxContainer/timed_game" to="." method="_on_timed_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/endless_game" to="." method="_on_endless_game_pressed"]
