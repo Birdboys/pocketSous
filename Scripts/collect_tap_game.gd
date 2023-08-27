@@ -3,7 +3,7 @@ extends Control
 @onready var collectSpace := $collectMargin/collectSpace #area where collectables are added
 @onready var collectMargin := $collectMargin #margin for collect space - keeps food from spawning off screen (ideally)
 @onready var offset = 128 #length of collect margin
-@onready var collectable_scale = 1.0/4.0 #scale of collectable relative to collect area
+@onready var collectable_scale = 1.0/3.0 #scale of collectable relative to collect area
 var rotation_range := 30 #max value for range of degrees collectable can be rotated when spawned in for variety (-range,range)
 var current_collect := 0 #current collectables collected - used to determine when game is finished
 var total_collect : int #total number of collectables spawned - set in initialize from game data
@@ -15,9 +15,13 @@ signal collected(num_left)
 func _ready():
 	setMargins(offset)
 	
+func _process(delta):
+	print(collectSpace.size)
+	
 func initialize(game_data): #initialize collect game from data
 	total_collect = game_data['num_collect'] #get total collectables to spawn
 	var play_area = collectSpace.size #get play area of collectSpace within margin
+	#print("PLAY AREA SIZE:", play_area.size)
 	for x in range(total_collect): #loop for creating collectables
 		var new_collect = collectable.instantiate() #instantiate collectable from scene
 		collectSpace.add_child(new_collect) #add it to collect space

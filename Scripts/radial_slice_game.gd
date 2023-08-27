@@ -31,7 +31,6 @@ func sliceSliced(s): #when cut is sliced successfully by player - slice index s 
 func gameWon():
 	cuts = []
 	emit_signal("game_win")
-	print("WON THE GAME")
 
 func _on_slice_area_gui_input(event):
 	if event.is_action_pressed("screen_touch"): #if we touch cut area

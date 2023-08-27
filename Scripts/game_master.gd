@@ -75,7 +75,6 @@ func getRandomFillCup():
 	game_data['task'] = "FILL %s CUPS OF %s" % [fill_val,game_data['food'][1].to_upper()] #create task text based on num cups and liquid
 	game_data['fill_val'] = fill_val #set fill val in game data
 	game_data['color'] = Color(FoodMaster.food[game_data['food'][1]]['main_color']) #Color.hex(0x8bf5c6ff) #get color of liquid - TODO : NOT FINISHED 
-	print(Color(FoodMaster.food[game_data['food'][1]]['main_color']))
 	return game_data #return game data
 
 func getRandomSingleHSlice():

@@ -6,7 +6,7 @@ extends Control
 @onready var offset = 128 #offset for tapper margin
 @onready var is_filling := false #is the player holding on screen to fill
 @onready var fill_amount := 0.0 #current fill amount - used to keep track of fill
-@onready var fill_rate := 0.5 #fill rate 
+@onready var fill_rate := 0.75 #fill rate 
 @onready var fill_range := 5.0 #range of fill values that are acceptable for winning - -fill_range,fill_range
 @onready var fill_time := 0.5 #time in seconds liquid must be in range for winning
 @onready var desired_fill : int #holds desired fill percent - set in initialize
@@ -36,7 +36,6 @@ func initialize(game_data):
 
 func gameWon():
 	emit_signal("game_win")
-	print("WON THE GAME")
 
 func setMargins(val):
 	cupMargin.add_theme_constant_override("margin_top", val) #set margins of cup space

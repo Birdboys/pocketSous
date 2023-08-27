@@ -4,6 +4,7 @@
 
 [sub_resource type="Animation" id="Animation_ull1m"]
 resource_name = "transition"
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -23,10 +24,10 @@ tracks/1/path = NodePath("newColor:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [false, true]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -41,6 +42,18 @@ tracks/2/keys = {
 "args": [],
 "method": &"transitionDone"
 }]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("split:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.05),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hpxhr"]
@@ -64,9 +77,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.254902, 0.447059, 0.415686, 1)
 
 [node name="split" type="SplitContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,12 +91,10 @@ vertical = true
 [node name="color1" type="ColorRect" parent="split"]
 layout_mode = 2
 size_flags_horizontal = 3
-color = Color(0.254902, 0.447059, 0.415686, 1)
 
 [node name="color2" type="ColorRect" parent="split"]
 layout_mode = 2
 size_flags_horizontal = 3
-color = Color(0.662745, 0.247059, 0.239216, 1)
 
 [node name="newColor" type="ColorRect" parent="."]
 visible = false
@@ -93,7 +104,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.254902, 0.447059, 0.415686, 1)
 
 [node name="transitionAnimator" type="AnimationPlayer" parent="."]
 libraries = {

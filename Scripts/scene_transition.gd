@@ -9,15 +9,17 @@ extends Control
 @onready var distance
 @onready var split_offset_initial
 @export var splitPercent := 0.0
+@export var is_goin := false
 signal transition_done
 
 func _ready():
-	initialize("left-right","blue","orange")
+	#initialize("left-right","blue","orange")
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	split.split_offset = split_offset_initial + distance * splitPercent
+	if is_goin:
+		split.split_offset = split_offset_initial + distance * splitPercent
 
 func initialize(t, og_theme, new_theme):
 	var og_color = load("res://Assets/themes/%sMinigame.tres" % og_theme).get_stylebox("panel","bg").bg_color
@@ -56,7 +58,7 @@ func initialize(t, og_theme, new_theme):
 			color2.color = og_color
 			newRect.color = new_color
 			color1.color = new_color
-			
+	is_goin = true
 	anim.play("transition")
 
 func transitionDone():

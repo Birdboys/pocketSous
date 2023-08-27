@@ -48,12 +48,14 @@ func gameWon():
 		win = true
 		finished = true
 		anim.play("fade")
+		#gameFinished(win)
 
 func gameLost():
 	if not finished:
 		win = false
 		finished = true
 		anim.play("fade")
+		#gameFinished(win)
 		
 func updateTask(data):
 	task.clear()
@@ -66,7 +68,7 @@ func _on_game_timer_timeout():
 	emit_signal("game_finished", false)
 	pass # Replace with function body.
 
-func gameFinished(is_win):
+func gameFinished():
 	emit_signal("game_finished",win)
 
 func fadeIn():

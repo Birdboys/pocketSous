@@ -28,4 +28,5 @@ layout_mode = 2
 [node name="ColorRect" type="ColorRect" parent="collectMargin"]
 visible = false
 layout_mode = 2
+mouse_filter = 2
 color = Color(1, 1, 0.721569, 0.72549)
