@@ -11,7 +11,6 @@ extends Node
 			"vertical_slice":preload("res://Scenes/single_slice_game.tscn"),
 			"horizontal_slice":preload("res://Scenes/single_slice_game.tscn")}
 @onready var games = ["collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup"]
-
 func getGame(game):
 	return game_types[game].instantiate()
 	

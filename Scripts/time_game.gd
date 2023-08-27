@@ -7,13 +7,15 @@ extends Control
 @onready var prev_transition_type = null
 @onready var current_score := 0
 @onready var game_time := 10.0
+@onready var main_menu := preload("res://Scenes/main_menu.tscn")
+@onready var pause_menu := preload("res://Scenes/pause_menu.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("TIMED GAME")
 	var current_game_data = await GameMaster.generateRandomGame()
 	current_game = await createGame(current_game_data)
 	current_theme = FoodMaster.food[current_game_data[0]['food'][1]]['theme']
 	current_game.fadeIn()
-	pass # Replace with function body.
 	
 func createGame(game_data):
 	var new_game = mini_game.instantiate()
@@ -21,11 +23,15 @@ func createGame(game_data):
 	move_child(new_game, 0)
 	new_game.initialize(game_data, game_time, current_score)
 	new_game.game_finished.connect(nextGame)
+	new_game.pause.connect(pauseGame)
 	return new_game
 
 func nextGame(win):
-	if win:
-		current_score += 1
+	if not win:
+		get_tree().change_scene_to_packed(main_menu)
+		return
+	current_score += 1
+	updateTime()
 	var ogTheme = current_theme
 	current_game.queue_free()
 	current_game = null
@@ -48,7 +54,16 @@ func nextGame(win):
 		4: transition.initialize("bottom-top", ogTheme, current_theme)
 	
 	current_game = await createGame(new_game_data)
+
+func updateTime():
+	if current_score % 5 == 0 and game_time > 5:
+		game_time -= 1
+		
 func fadeInGame():
 	current_game.visible = true
 	current_game.fadeIn()
-	
+
+func pauseGame():
+	var new_menu = pause_menu.instantiate()
+	add_child(new_menu)
+	get_tree().paused = true

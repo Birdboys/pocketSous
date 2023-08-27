@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://12vkl8c40hos"]
+
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_v2y31"]
+
+[node name="pauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_v2y31")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.709804, 0.596078, 0.341176, 1)
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

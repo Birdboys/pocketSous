@@ -10,16 +10,18 @@ extends Control
 @onready var current_task = null #task text for current game
 @onready var score_val #current score
 @onready var finished := false
+@onready var paused := false
 @onready var win
 @onready var is_timed := false
 @onready var game_time := 0.0
 signal game_finished(win)
+signal pause
 
 func _ready():
 	timeBar.custom_minimum_size = Vector2(0,size.y/20)
 func _process(delta):
 	if is_timed:
-		timeBar.value = int((gameTimer.time_left/game_time) * 100)
+		timeBar.value = float((gameTimer.time_left/game_time) * 100)
 		
 func initialize(game_data, time=null, current_score=null):
 	if time != null:
@@ -83,3 +85,7 @@ func gameFinished():
 
 func fadeIn():
 	anim.play("fade_in")
+	
+func _on_task_gui_input(event):
+	if Input.is_action_just_pressed("screen_touch"):# and not paused:
+		emit_signal("pause")

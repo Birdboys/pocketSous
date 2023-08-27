@@ -4,9 +4,12 @@ extends Control
 @onready var next_game = null
 @onready var mini_game = preload("res://Scenes/base_mini_game.tscn")
 @onready var scene_transition = preload("res://Scenes/scene_transition.tscn")
+@onready var main_menu = preload("res://Scenes/main_menu.tscn")
+@onready var pause_menu = preload("res://Scenes/pause_menu.tscn")
 @onready var prev_transition_type = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("ENDLESS GAME")
 	var current_game_data = await GameMaster.generateRandomGame()
 	current_game = await createGame(current_game_data)
 	current_theme = FoodMaster.food[current_game_data[0]['food'][1]]['theme']
@@ -19,6 +22,7 @@ func createGame(game_data):
 	move_child(new_game, 0)
 	new_game.initialize(game_data)
 	new_game.game_finished.connect(nextGame)
+	new_game.pause.connect(pauseGame)
 	return new_game
 
 func nextGame(win):
@@ -48,3 +52,9 @@ func fadeInGame():
 	current_game.visible = true
 	current_game.fadeIn()
 	
+func pauseGame():
+	print("MAIN PAUSE SIGNAl")
+	var new_menu = pause_menu.instantiate()
+	add_child(new_menu)
+	get_tree().paused = true
+	#print(await get_tree().change_scene_to_file("res://Scenes/main_menu.tscn") == OK)
