@@ -11,22 +11,31 @@ extends Control
 @onready var score_val #current score
 @onready var finished := false
 @onready var win
+@onready var is_timed := false
+@onready var game_time := 0.0
 signal game_finished(win)
 
 func _ready():
 	timeBar.custom_minimum_size = Vector2(0,size.y/20)
-	
-func initialize(game_data, timer=false, current_score=null):
-	if timer:
+func _process(delta):
+	if is_timed:
+		timeBar.value = int((gameTimer.time_left/game_time) * 100)
+		
+func initialize(game_data, time=null, current_score=null):
+	if time != null:
+		is_timed = true
 		score.visible = true
+		game_time = time
 	else:
 		timeBar.modulate.a = 0.0
-	if current_score:
+	if current_score != null:
+		score.clear()
 		score.parse_bbcode("%s" % str(current_score))
 	score_val = current_score
 	theme = load("res://Assets/themes/%sMinigame.tres" % FoodMaster.food[game_data[0]['food'][1]]['theme'])
 	await createGame(game_data[0],game_data[1])
 	return 
+	
 func createGame(game_data, game_scene): #initializes minigame from game data
 	current_game = game_scene #set current game pointer to instantiated game
 	current_game_type = game_data['type'] #set current type to type of game
@@ -61,11 +70,12 @@ func updateTask(data):
 	task.clear()
 	task.parse_bbcode("[center]%s[/center]" % data)
 	
-func startTimer(time):
-	gameTimer.start(time)
+func startTimer():
+	if is_timed:
+		gameTimer.start(game_time)
 	
 func _on_game_timer_timeout():
-	emit_signal("game_finished", false)
+	gameLost()
 	pass # Replace with function body.
 
 func gameFinished():

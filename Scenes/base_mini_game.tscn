@@ -151,6 +151,7 @@ value = 100.0
 show_percentage = false
 
 [node name="gameTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="gameAnimtor" type="AnimationPlayer" parent="."]
 libraries = {

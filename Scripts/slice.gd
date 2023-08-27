@@ -16,7 +16,6 @@ func _process(delta):
 	pass
 
 func initialize(x, y, length, rot, id=0):
-	print(length)
 	position = Vector2(x,y)
 	var end_points = [Vector2(-length/4,0),Vector2(length/4,0)]
 	touchLineShape.shape.size=Vector2(length/2,drag_width)
@@ -32,7 +31,6 @@ func initialize(x, y, length, rot, id=0):
 	rotate(deg_to_rad(rot))
 	
 func _on_touch_begin_mouse_entered():
-	print("ENTERED ZONE A")
 	zoneAEntered = true
 	if inDrag and zoneBEntered:
 		emit_signal("sliced", cut_id)
@@ -40,7 +38,6 @@ func _on_touch_begin_mouse_entered():
 	pass # Replace with function body.
 
 func _on_touch_end_mouse_entered():
-	print("ENTERED ZONE B")
 	zoneBEntered = true
 	if inDrag and zoneAEntered:
 		emit_signal("sliced", cut_id)
@@ -51,12 +48,10 @@ func resetZones():
 	zoneBEntered = false
 
 func _on_touch_line_mouse_exited():
-	print("DRAG ENDED")
 	inDrag = false
 	resetZones()
 	pass # Replace with function body.
 
 func _on_touch_line_mouse_entered():
-	#print("DRAG BEGIN")
 	#inDrag = true
 	pass # Replace with function body.
