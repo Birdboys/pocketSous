@@ -9,8 +9,9 @@ extends Node
 			"center_plate":preload("res://Scenes/center_plate_game.tscn"),
 			"fill_cup":preload("res://Scenes/fill_cup_game.tscn"),
 			"vertical_slice":preload("res://Scenes/single_slice_game.tscn"),
-			"horizontal_slice":preload("res://Scenes/single_slice_game.tscn")}
-@onready var games = ["collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup"]
+			"horizontal_slice":preload("res://Scenes/single_slice_game.tscn"),
+			"dont_burn":preload("res://Scenes/dont_burn_game.tscn")}
+@onready var games = ["collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn"]
 func getGame(game):
 	return game_types[game].instantiate()
 	
@@ -28,6 +29,7 @@ func generateRandomGame(): #generates data for random game, returns instantiatio
 		"vertical_slice" : game_data = await getRandomSingleVSlice()
 		"horizontal_slice" : game_data = await getRandomSingleHSlice()
 		"radial_slice" : game_data = await getRandomRadialSlice()
+		"dont_burn" : game_data = await getRandomDontBurn()
 		_: print("HOW'D WE GET HERE") #shouldn't hit, temp
 	game_data['type'] = new_game_type #set game data type to randomely selected type
 	return [game_data, game_types[new_game_type].instantiate()] #return game data and instantiated mini game
@@ -99,4 +101,12 @@ func getRandomRadialSlice():
 	game_data['food'] = cut_foods[randi() % cut_foods.size()]
 	game_data['task'] = "SLICE THE %s" % [game_data['food'][0].to_upper()]
 	game_data['num_cut'] = randi_range(2,5) #get number of slices from range
+	return game_data #return game data
+	
+func getRandomDontBurn():
+	var game_data = {}
+	var cut_foods = [["beef","burger_raw"],["beef","steak_raw"],["pork","pork_chop_raw"]]
+	game_data['food'] = cut_foods[randi() % cut_foods.size()]
+	game_data['task'] = "DONT BURN THE %s" % [game_data['food'][0].to_upper()]
+	game_data['time_scale'] = randi_range(1,4) #get number of slices from range
 	return game_data #return game data

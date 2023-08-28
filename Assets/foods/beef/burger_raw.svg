@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1245.4639"
+   height="1314.2073"
+   viewBox="0 0 329.52898 347.71734"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="burger_raw.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.1917561"
+     inkscape:cx="-166.87865"
+     inkscape:cy="1739.1885"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect2"
+       is_visible="true"
+       lpeversion="1" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="matrix(7,0,0,7,-69.149857,-60.612866)">
+    <circle
+       style="fill:#602631;stroke:#894835;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="circle2"
+       cx="33.355358"
+       cy="34.856079"
+       r="23.476807" />
+    <circle
+       style="fill:#d16363;stroke:#894835;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="path1"
+       cx="33.477314"
+       cy="32.135788"
+       r="23.476807" />
+    <path
+       style="fill:none;stroke:#602631;stroke-width:4.43336;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 16.859884,37.270641 c 1.484289,3.470155 3.639736,6.651781 6.31203,9.317101 2.498968,2.492446 5.447742,4.532554 8.661213,5.992257"
+       id="path2"
+       inkscape:path-effect="#path-effect2"
+       inkscape:original-d="m 16.859884,37.270641 c -24.6825851,1.542177 4.482668,4.276193 6.31203,9.317101 1.829362,5.040908 3.891897,26.964633 8.661213,5.992257"
+       sodipodi:nodetypes="csc"
+       transform="matrix(0.7161614,0,0,0.7161614,2.7479282,13.157936)" />
+  </g>
+</svg>

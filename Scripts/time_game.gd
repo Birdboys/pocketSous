@@ -6,7 +6,7 @@ extends Control
 @onready var scene_transition = preload("res://Scenes/scene_transition.tscn")
 @onready var prev_transition_type = null
 @onready var current_score := 0
-@onready var game_time := 1.0
+@onready var game_time := 10.0
 @onready var pause_menu := preload("res://Scenes/pause_menu.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():

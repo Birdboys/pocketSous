@@ -41,6 +41,20 @@
     "theme": "darkBlue",
     "main_color": "#602631"
   },
+  "burger_raw": {
+    "main_type": "beef",
+    "sub_type": "burger_raw",
+    "name": "raw burger",
+    "theme": "darkBlue",
+    "main_color": "#d16363"
+  },
+  "burger_cooked": {
+    "main_type": "beef",
+    "sub_type": "burger_cooked",
+    "name": "burger",
+    "theme": "darkBlue",
+    "main_color": "#602631"
+  },
   "blueberry": {
     "main_type": "berry",
     "sub_type": "blueberry",

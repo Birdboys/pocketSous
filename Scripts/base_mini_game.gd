@@ -76,6 +76,9 @@ func updateTask(data):
 func startTimer():
 	if is_timed:
 		gameTimer.start(game_time)
+	match current_game_type:
+		"dont_burn": current_game.startCooking()
+		_: pass
 	
 func _on_game_timer_timeout():
 	gameLost()

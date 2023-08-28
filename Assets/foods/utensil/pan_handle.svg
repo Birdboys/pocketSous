@@ -7,7 +7,7 @@
    viewBox="0 0 392.98169 392.98169"
    version="1.1"
    id="svg1"
-   sodipodi:docname="pan.svg"
+   sodipodi:docname="pan_handle.svg"
    inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.76702441"
-     inkscape:cx="637.5286"
-     inkscape:cy="1447.8027"
+     inkscape:zoom="0.3835122"
+     inkscape:cx="717.05671"
+     inkscape:cy="535.83693"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
@@ -57,31 +57,9 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(162.81532,225.50921)">
-    <circle
-       style="fill:#404863;stroke-width:4.34489;stroke-linejoin:round;paint-order:stroke fill markers"
-       id="path1"
-       cx="33.675522"
-       cy="-29.018366"
-       r="196.49084" />
-    <circle
-       style="fill:#2a2a41;stroke-width:4.15801;stroke-linejoin:round;paint-order:stroke fill markers"
-       id="circle1"
-       cx="33.675522"
-       cy="-29.018366"
-       r="188.03963" />
-    <circle
-       style="fill:#120a1a;stroke:#2a2a41;stroke-width:3.21028;stroke-linejoin:round;paint-order:stroke fill markers"
-       id="circle2"
-       cx="33.675522"
-       cy="-29.018366"
-       r="145.17987" />
-    <ellipse
-       style="fill:#59607a;stroke:none;stroke-width:2.80473;stroke-linejoin:round;paint-order:stroke fill markers"
-       id="path3"
-       cx="-78.455376"
-       cy="-0.057344291"
-       rx="12.798226"
-       ry="38.394676"
-       transform="rotate(-45)" />
+    <path
+       id="path2"
+       style="fill:#404863;stroke:none;stroke-width:2.34543px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M -13.322777,-224.62597 C 9.8112239,-93.549697 10.453246,39.339137 0.22163747,166.58924 H 32.903131 34.447922 67.129415 C 56.897807,39.339137 57.539829,-93.549697 80.673829,-224.62597 H 35.016092 32.334961 Z" />
   </g>
 </svg>
