@@ -7,7 +7,7 @@ extends Control
 signal game_win
 signal game_loss
 
-func _process(delta): 
+func _process(_delta): 
 	var rot_degrees = abs(int(rad_to_deg(rotator.rotation))) % 360 #get rotation degrees from food
 	if rot_degrees < sensitivity and not game_won and rotation_center: #if rotation is close enough to 0
 		gameWon() #we won game

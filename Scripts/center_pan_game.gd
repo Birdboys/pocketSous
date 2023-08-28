@@ -7,15 +7,6 @@ extends Control
 signal game_win
 signal game_loss
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func initialize(food):
 	print($plate.size)
 	centerArea.position = $plate.position + $plate.size/2
@@ -28,11 +19,11 @@ func initialize(food):
 	var pos = size/2 + pos_dir*pos_dist
 	current_food.initialize(pos,food)
 	
-func _on_center_area_area_entered(area):
+func _on_center_area_area_entered(_area):
 	centerTimer.start(center_time)
 	pass # Replace with function body.
 
-func _on_center_area_area_exited(area):
+func _on_center_area_area_exited(_area):
 	centerTimer.stop()
 	pass # Replace with function body.
 

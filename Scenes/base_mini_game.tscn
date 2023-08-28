@@ -116,6 +116,7 @@ theme_type_variation = &"bg"
 
 [node name="score" type="RichTextLabel" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -136,6 +137,7 @@ fit_content = true
 autowrap_mode = 0
 
 [node name="margins" type="MarginContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

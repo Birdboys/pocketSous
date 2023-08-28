@@ -12,13 +12,12 @@ signal game_loss
 func _ready():
 	setMargins(offset)
 	
-func _process(delta):
+func _process(_delta):
 	if cut == null:
 		sliceable.get_material().set_shader_parameter("cut_time",slice_anim_percent) #set slice shader params based on animation
 
 func initialize(game_data):
 	sliceable.texture = load("res://Assets/foods/%s/%s.svg" %[game_data['food'][0],game_data['food'][1]]) #load food sprite
-	var cut_range = margin.size #get size of cut area
 	var cut_site = randf_range(0.25,0.75) #get specific area of cut within margin based on range
 	cut = slice.instantiate() #instantaite new slice
 	margin.add_child(cut) #add to margin
@@ -29,7 +28,7 @@ func initialize(game_data):
 		0: cut.initialize(margin.size.x/2,margin.size.y*cut_site,min_dim,0);sliceable.get_material().set_shader_parameter("horizontal",true) #instantiate slice - horizontal so dont rotate it - tell shader cut is horizontal
 		90: cut.initialize(margin.size.x*cut_site,margin.size.y/2,min_dim,90);sliceable.get_material().set_shader_parameter("horizontal",false) #instantiate slice - vertical so rotate 90 - tell shader cut is not horizontal
 
-func cutSliced(data): #if we slice the cut
+func cutSliced(_data): #if we slice the cut
 	cut = null #get rid of cut pointer so code doesn't break
 	sliceAnim.play("sliced") #play sliced animation to update shader and win game
 	

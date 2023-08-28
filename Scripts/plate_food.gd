@@ -7,7 +7,7 @@ extends CharacterBody2D
 @onready var friction = 0.1 #friction force of food
 @onready var max_speed = 350 #max speed of food
 
-func _process(delta):
+func _process(_delta):
 	if initial_orientation == Vector3.ZERO and Input.get_accelerometer().length() >= 9.5: #if we have full accelerometer data from device
 		initial_orientation = Input.get_accelerometer() #set initial orientation
 	if initial_orientation.length() > 0: #if we have initial orientation
@@ -17,7 +17,7 @@ func _process(delta):
 		if acc_input.length() > sensitivity : #if force is greater than sensitivity
 			velocity = velocity + acc_input.normalized() * acceleration * (acc_input.length()/10) #add acceleration to velocity - value scaled based on accelerometer force relative to gravity
 		if velocity.length() >= max_speed: #if going to fast
-			velocity.normalized() * max_speed #set speed to max speed
+			velocity = velocity.normalized() * max_speed #set speed to max speed
 	velocity = lerp(velocity, Vector2.ZERO, friction) #induce friction
 	move_and_slide() #move it move it
 

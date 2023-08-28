@@ -27,10 +27,10 @@ func initialize(game_data):
 	var pos = size/2 + pos_dir*pos_dist #get food position from direction and distance
 	current_food.initialize(pos,game_data['food'],plate.size[plate.size.min_axis_index()]/plate_food_ratio) #initialize food
 	
-func _on_center_area_area_entered(area):
+func _on_center_area_area_entered(_area):
 	centerTimer.start(center_time) #when food enters center area start timer
 
-func _on_center_area_area_exited(area):
+func _on_center_area_area_exited(_area):
 	centerTimer.stop() #when food exits center area stop timer
 
 func _on_center_timer_timeout():

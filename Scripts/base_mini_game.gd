@@ -19,7 +19,8 @@ signal pause
 
 func _ready():
 	timeBar.custom_minimum_size = Vector2(0,size.y/20)
-func _process(delta):
+	
+func _process(_delta):
 	if is_timed:
 		timeBar.value = float((gameTimer.time_left/game_time) * 100)
 		
@@ -86,6 +87,6 @@ func gameFinished():
 func fadeIn():
 	anim.play("fade_in")
 	
-func _on_task_gui_input(event):
+func _on_task_gui_input(_event):
 	if Input.is_action_just_pressed("screen_touch"):# and not paused:
 		emit_signal("pause")

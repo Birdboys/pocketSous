@@ -11,9 +11,6 @@ extends Node2D
 @onready var drag_width := 128
 @onready var cut_id = 0
 signal sliced(i)
-func _process(delta):
-	#print(inDrag)
-	pass
 
 func initialize(x, y, length, rot, id=0):
 	position = Vector2(x,y)

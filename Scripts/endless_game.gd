@@ -4,7 +4,6 @@ extends Control
 @onready var next_game = null
 @onready var mini_game = preload("res://Scenes/base_mini_game.tscn")
 @onready var scene_transition = preload("res://Scenes/scene_transition.tscn")
-@onready var main_menu = preload("res://Scenes/main_menu.tscn")
 @onready var pause_menu = preload("res://Scenes/pause_menu.tscn")
 @onready var prev_transition_type = null
 # Called when the node enters the scene tree for the first time.
@@ -25,7 +24,7 @@ func createGame(game_data):
 	new_game.pause.connect(pauseGame)
 	return new_game
 
-func nextGame(win):
+func nextGame(_win):
 	var ogTheme = current_theme
 	current_game.queue_free()
 	current_game = null
@@ -47,7 +46,7 @@ func nextGame(win):
 		3: transition.initialize("top-bottom", ogTheme, current_theme)
 		4: transition.initialize("bottom-top", ogTheme, current_theme)
 	
-	current_game = await createGame(new_game_data)
+	current_game = createGame(new_game_data)
 func fadeInGame():
 	current_game.visible = true
 	current_game.fadeIn()

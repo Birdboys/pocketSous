@@ -7,7 +7,6 @@ extends Control
 @onready var prev_transition_type = null
 @onready var current_score := 0
 @onready var game_time := 1.0
-@onready var main_menu := preload("res://Scenes/main_menu.tscn")
 @onready var pause_menu := preload("res://Scenes/pause_menu.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,7 +27,7 @@ func createGame(game_data):
 
 func nextGame(win):
 	if not win:
-		await get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn") 
 	else:
 		current_score += 1
 		updateTime()
@@ -53,7 +52,7 @@ func nextGame(win):
 			3: transition.initialize("top-bottom", ogTheme, current_theme)
 			4: transition.initialize("bottom-top", ogTheme, current_theme)
 		
-		current_game = await createGame(new_game_data)
+		current_game = createGame(new_game_data)
 
 func updateTime():
 	if current_score % 5 == 0 and game_time > 5:

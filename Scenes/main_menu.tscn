@@ -71,6 +71,5 @@ theme_override_font_sizes/font_size = 128
 text = "ENDLESS"
 flat = true
 
-[connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="pressed" from="VBoxContainer/timed_game" to="." method="_on_timed_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/endless_game" to="." method="_on_endless_game_pressed"]
