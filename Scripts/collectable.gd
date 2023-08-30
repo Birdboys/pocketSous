@@ -2,7 +2,7 @@ extends TextureButton
 @export var rotation_offset := 0 #rotation offset used for wiggle animation
 @onready var original_rotation #original rotation used for wiggle animation
 @onready var anim = $collectableAnimator #animator for animations
-signal collected 
+signal collected(pos)
 
 func _process(_delta):
 	rotation = deg_to_rad(original_rotation + rotation_offset) #calculate rotation
@@ -19,6 +19,6 @@ func initialize(x, y, s, rot, food, food_type):
 	position = Vector2(x,y) - size/2 #set position
 	
 func _on_pressed(): #when pressed
-	emit_signal("collected") #emit collected signal
+	emit_signal("collected", position + size/2) #emit collected signal
 	queue_free() #delete
 	pass # Replace with function body.

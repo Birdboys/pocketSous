@@ -5,6 +5,7 @@ extends Control
 @onready var gameTimer := $gameTimer
 @onready var timeBar := $margins/gameArea/timeBar
 @onready var anim := $gameAnimtor
+@onready var shadowShader := $shadowShader
 @onready var current_game = null #current game playing
 @onready var current_game_type = null #type of current game
 @onready var current_task = null #task text for current game
@@ -36,6 +37,8 @@ func initialize(game_data, time=null, current_score=null):
 		score.parse_bbcode("%s" % str(current_score))
 	score_val = current_score
 	theme = load("res://Assets/themes/%sMinigame.tres" % FoodMaster.food[game_data[0]['food'][1]]['theme'])
+	shadowShader.get_material().set_shader_parameter("background_color",theme.get_stylebox("panel","bg").bg_color)
+	shadowShader.get_material().set_shader_parameter("shadow_color",theme.get_color("default_color","scoreLabel"))
 	await createGame(game_data[0],game_data[1])
 	return 
 	

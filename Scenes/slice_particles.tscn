@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://00hgmlhq6am5"]
+
+[ext_resource type="Texture2D" uid="uid://r17bq2kea2d8" path="res://Assets/foods/particle/slice_particle.svg" id="1_dccmu"]
+[ext_resource type="Script" path="res://Scripts/slice_particles.gd" id="2_dpljw"]
+
+[sub_resource type="Gradient" id="Gradient_0dvgo"]
+offsets = PackedFloat32Array(0.757576, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Animation" id="Animation_t0twr"]
+resource_name = "self_destruct"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1oe8p"]
+_data = {
+"self_destruct": SubResource("Animation_t0twr")
+}
+
+[node name="sliceParticles" type="CPUParticles2D"]
+emitting = false
+lifetime = 0.75
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+texture = ExtResource("1_dccmu")
+emission_shape = 4
+emission_points = PackedVector2Array(0, -64)
+emission_colors = PackedColorArray()
+particle_flag_align_y = true
+direction = Vector2(0, -1)
+spread = 75.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 800.0
+initial_velocity_max = 800.0
+color_ramp = SubResource("Gradient_0dvgo")
+script = ExtResource("2_dpljw")
+
+[node name="partAnim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1oe8p")
+}

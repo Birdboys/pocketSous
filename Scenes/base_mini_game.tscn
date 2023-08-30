@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bltt68ehbph8"]
+[gd_scene load_steps=8 format=3 uid="uid://bltt68ehbph8"]
 
 [ext_resource type="Theme" uid="uid://5fjtmugely5b" path="res://Assets/themes/lightGrayMinigame.tres" id="1_6k488"]
 [ext_resource type="Script" path="res://Scripts/base_mini_game.gd" id="2_07rfj"]
+[ext_resource type="Shader" path="res://Scripts/game_shadow.gdshader" id="3_f4onv"]
 
 [sub_resource type="Animation" id="Animation_7kcq6"]
 resource_name = "fade"
@@ -93,6 +94,12 @@ _data = {
 "fade_in": SubResource("Animation_cs3v5")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_emt0x"]
+shader = ExtResource("3_f4onv")
+shader_parameter/background_color = null
+shader_parameter/shadow_color = null
+shader_parameter/offset_in_pixels = Vector2(12, 12)
+
 [node name="baseMiniGame" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -116,7 +123,6 @@ theme_type_variation = &"bg"
 
 [node name="score" type="RichTextLabel" parent="."]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -137,7 +143,6 @@ fit_content = true
 autowrap_mode = 0
 
 [node name="margins" type="MarginContainer" parent="."]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -150,6 +155,14 @@ theme_override_constants/margin_top = 16
 layout_mode = 2
 
 [node name="task" type="RichTextLabel" parent="margins/gameArea"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"taskLabel"
+theme_override_constants/line_separation = -32
+bbcode_enabled = true
+fit_content = true
+
+[node name="task2" type="RichTextLabel" parent="margins/gameArea"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_type_variation = &"taskLabel"
@@ -172,5 +185,16 @@ libraries = {
 "": SubResource("AnimationLibrary_r8mka")
 }
 
+[node name="shadowShader" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_emt0x")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
 [connection signal="gui_input" from="margins/gameArea/task" to="." method="_on_task_gui_input"]
+[connection signal="gui_input" from="margins/gameArea/task2" to="." method="_on_task_gui_input"]
 [connection signal="timeout" from="gameTimer" to="." method="_on_game_timer_timeout"]

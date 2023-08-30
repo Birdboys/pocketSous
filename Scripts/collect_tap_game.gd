@@ -2,8 +2,10 @@ extends Control
 @onready var collectable = preload("res://Scenes/collectable.tscn") #instantiatable collectable scene
 @onready var collectSpace := $collectMargin/collectSpace #area where collectables are added
 @onready var collectMargin := $collectMargin #margin for collect space - keeps food from spawning off screen (ideally)
+@onready var collectParticle := preload("res://Scenes/collect_particles.tscn")
 @onready var offset = 128 #length of collect margin
 @onready var collectable_scale = 1.0/3.0 #scale of collectable relative to collect area
+@onready var particle_color
 var rotation_range := 30 #max value for range of degrees collectable can be rotated when spawned in for variety (-range,range)
 var current_collect := 0 #current collectables collected - used to determine when game is finished
 var total_collect : int #total number of collectables spawned - set in initialize from game data
@@ -17,6 +19,7 @@ func _ready():
 	
 func initialize(game_data): #initialize collect game from data
 	total_collect = game_data['num_collect'] #get total collectables to spawn
+	particle_color = FoodMaster.food[game_data['food'][1]]['main_color']
 	var play_area = collectSpace.size #get play area of collectSpace within margin
 	#print("PLAY AREA SIZE:", play_area.size)
 	for x in range(total_collect): #loop for creating collectables
@@ -28,7 +31,12 @@ func initialize(game_data): #initialize collect game from data
 		var min_dim = play_area[play_area.min_axis_index()] #get length of minimum play area dimension - used to set collectable size relative to play area
 		new_collect.initialize(new_x,new_y,min_dim*collectable_scale,randi_range(-rotation_range,rotation_range),game_data['food'][0],game_data['food'][1]) #initialize collectable
 
-func onCollected(): #connected to collected signal in collectables
+func onCollected(pos): #connected to collected signal in collectables
+	var parts = collectParticle.instantiate()
+	collectSpace.add_child(parts)
+	parts.position = pos
+	parts.spread = 180
+	parts.color = particle_color
 	current_collect += 1 #increment number of collectables collected
 	if current_collect >= total_collect: #if we have collected them all
 		emit_signal("game_win") #emit win signal

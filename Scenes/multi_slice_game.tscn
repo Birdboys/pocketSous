@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dupmwlsyjqddu"]
+[gd_scene load_steps=4 format=3 uid="uid://dupmwlsyjqddu"]
 
 [ext_resource type="Script" path="res://Scripts/multi_slice_game.gd" id="1_tatbu"]
+[ext_resource type="Shader" path="res://Scripts/sliceable_multi.gdshader" id="2_j4u0x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7a2ly"]
+shader = ExtResource("2_j4u0x")
+shader_parameter/percent = 79.595
+shader_parameter/horizontal = null
 
 [node name="multiSliceGame" type="Control"]
 layout_mode = 3
@@ -26,15 +32,20 @@ theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 64
 
 [node name="sliceable" type="TextureRect" parent="sliceMargin"]
+material = SubResource("ShaderMaterial_7a2ly")
 layout_mode = 2
 mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
 
 [node name="sliceArea" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
 
 [connection signal="gui_input" from="sliceArea" to="." method="_on_slice_area_gui_input"]
 [connection signal="mouse_entered" from="sliceArea" to="." method="_on_slice_area_mouse_entered"]
