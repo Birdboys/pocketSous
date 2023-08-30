@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf3c3ko0yvng1"]
+
+[ext_resource type="Shader" path="res://Scripts/game_shadow.gdshader" id="1_8i335"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r3q35"]
+shader = ExtResource("1_8i335")
+shader_parameter/background_color = null
+shader_parameter/shadow_color = null
+shader_parameter/offset_in_pixels = Vector2(12, 12)
+
+[node name="shadowShader" type="ColorRect"]
+material = SubResource("ShaderMaterial_r3q35")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2

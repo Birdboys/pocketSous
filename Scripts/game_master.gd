@@ -13,7 +13,7 @@ extends Node
 			"dont_burn":preload("res://Scenes/dont_burn_game.tscn"),
 			"horizontal_multi_slice":preload("res://Scenes/multi_slice_game.tscn"),
 			"vertical_multi_slice":preload("res://Scenes/multi_slice_game.tscn")}
-@onready var games = ["collect_tap"]#["collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn"]
+@onready var games = ["rotate_food","collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn","vertical_multi_slice","horizontal_multi_slice"]
 func getGame(game):
 	return game_types[game].instantiate()
 	

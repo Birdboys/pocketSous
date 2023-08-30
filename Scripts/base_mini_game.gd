@@ -5,7 +5,7 @@ extends Control
 @onready var gameTimer := $gameTimer
 @onready var timeBar := $margins/gameArea/timeBar
 @onready var anim := $gameAnimtor
-@onready var shadowShader := $shadowShader
+@onready var shadowShader := preload("res://Scenes/shadow_shader.tscn")
 @onready var current_game = null #current game playing
 @onready var current_game_type = null #type of current game
 @onready var current_task = null #task text for current game
@@ -37,16 +37,18 @@ func initialize(game_data, time=null, current_score=null):
 		score.parse_bbcode("%s" % str(current_score))
 	score_val = current_score
 	theme = load("res://Assets/themes/%sMinigame.tres" % FoodMaster.food[game_data[0]['food'][1]]['theme'])
-	shadowShader.get_material().set_shader_parameter("background_color",theme.get_stylebox("panel","bg").bg_color)
-	shadowShader.get_material().set_shader_parameter("shadow_color",theme.get_color("default_color","scoreLabel"))
+	var new_shader = shadowShader.instantiate()
+	new_shader.get_material().set_shader_parameter("background_color",theme.get_stylebox("panel","bg").bg_color)
+	new_shader.get_material().set_shader_parameter("shadow_color",theme.get_color("default_color","scoreLabel"))
 	await createGame(game_data[0],game_data[1])
+	current_game.add_child(new_shader)
 	return 
 	
 func createGame(game_data, game_scene): #initializes minigame from game data
 	current_game = game_scene #set current game pointer to instantiated game
 	current_game_type = game_data['type'] #set current type to type of game
 	updateTask(game_data['task']) #update task label with task text for game
-	gameArea.add_child(game_scene) #add new game to game area
+	gameArea.add_child(current_game) #add new game to game area
 	gameArea.move_child(current_game, 1)
 	current_game.game_win.connect(gameWon) #connect win signal in game to win function
 	current_game.game_loss.connect(gameLost) #connect loss signal in game to loss function
@@ -87,7 +89,7 @@ func _on_game_timer_timeout():
 	gameLost()
 	pass # Replace with function body.
 
-func gameFinished():
+func gameFinished(): 
 	emit_signal("game_finished",win)
 
 func fadeIn():
