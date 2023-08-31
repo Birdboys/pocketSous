@@ -3,6 +3,7 @@
 shader_type canvas_item;
 
 uniform vec4 background_color : source_color;
+uniform vec4 shadow_on_background_color: source_color;
 uniform vec4 shadow_color : source_color;
 // Currently pixels always in application size, so zooming in further wouldn't increase the size of the dropdown
 // but changing that would also be relatively trivial
@@ -20,7 +21,7 @@ void fragment() {
 		vec4 offset_color = textureLod(SCREEN_TEXTURE, SCREEN_UV - offset_in_pixels * SCREEN_PIXEL_SIZE, 0.0);
 		
 		// Check if at our offset position we have a color which is not the background (meaning here we need a shadow actually)
-		if (length(offset_color - background_color) > 0.01) {
+		if (length(offset_color - background_color) > 0.01 && length(offset_color - shadow_on_background_color) > 0.03) {
 			// If so set it to our shadow color
 			current_color = shadow_color;
 		}

@@ -4,6 +4,7 @@ extends Control
 @onready var gameTimer := $gameTimer
 @onready var timeBar := $margins/gameArea/timeBar
 @onready var anim := $gameAnimtor
+@onready var bgShader := $backgroundColor/backgroundShader
 @onready var shadowShader := preload("res://Scenes/shadow_shader.tscn")
 @onready var current_game = null #current game playing
 @onready var current_game_type = null #type of current game
@@ -33,8 +34,13 @@ func initialize(game_data, time=null, current_score=null):
 	score_val = current_score
 	theme = load("res://Assets/themes/%sMinigame.tres" % FoodMaster.food[game_data[0]['food'][1]]['theme'])
 	var new_shader = shadowShader.instantiate()
-	new_shader.get_material().set_shader_parameter("background_color",theme.get_stylebox("panel","bg").bg_color)
-	new_shader.get_material().set_shader_parameter("shadow_color",theme.get_color("default_color","scoreLabel"))
+	var background_color = theme.get_stylebox("panel","bg").bg_color
+	var shadow_color = theme.get_color("default_color","scoreLabel")
+	print(background_color, shadow_color, shadow_color.blend(background_color))
+	new_shader.get_material().set_shader_parameter("background_color",background_color)
+	new_shader.get_material().set_shader_parameter("shadow_color",shadow_color)
+	new_shader.get_material().set_shader_parameter("shadow_on_background_color",background_color.blend(shadow_color))
+	bgShader.get_material().set_shader_parameter("color",theme.get_color("default_color","scoreLabel"))
 	await createGame(game_data[0],game_data[1])
 	current_game.add_child(new_shader)
 	return 

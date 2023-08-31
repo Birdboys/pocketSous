@@ -5,6 +5,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r3q35"]
 shader = ExtResource("1_8i335")
 shader_parameter/background_color = null
+shader_parameter/shadow_on_background_color = null
 shader_parameter/shadow_color = null
 shader_parameter/offset_in_pixels = Vector2(-16, 16)
 
