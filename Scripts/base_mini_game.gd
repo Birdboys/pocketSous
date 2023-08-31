@@ -1,5 +1,4 @@
 extends Control
-@onready var score := $score
 @onready var task := $margins/gameArea/task
 @onready var gameArea := $margins/gameArea
 @onready var gameTimer := $gameTimer
@@ -28,13 +27,9 @@ func _process(_delta):
 func initialize(game_data, time=null, current_score=null):
 	if time != null:
 		is_timed = true
-		score.visible = true
 		game_time = time
 	else:
 		timeBar.modulate.a = 0.0
-	if current_score != null:
-		score.clear()
-		score.parse_bbcode("%s" % str(current_score))
 	score_val = current_score
 	theme = load("res://Assets/themes/%sMinigame.tres" % FoodMaster.food[game_data[0]['food'][1]]['theme'])
 	var new_shader = shadowShader.instantiate()

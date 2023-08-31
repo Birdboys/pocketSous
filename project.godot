@@ -24,6 +24,7 @@ FoodMaster="*res://Scripts/food_master.gd"
 
 window/size/viewport_width=720
 window/size/viewport_height=1280
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
@@ -35,6 +36,10 @@ screen_touch={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(143, 17),"global_position":Vector2(147, 60),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://Assets/translations.en.translation", "res://Assets/translations.es.translation", "res://Assets/translations.fi.translation", "res://Assets/translations.fr.translation", "res://Assets/translations.gr.translation", "res://Assets/translations.pl.translation", "res://Assets/translations.pt.translation", "res://Assets/translations.ru.translation")
 
 [rendering]
 

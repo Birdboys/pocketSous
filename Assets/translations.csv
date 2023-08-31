@@ -1,0 +1,38 @@
+KEY,en,es,fr,gr,fi,pt,ru,pl
+COLLECT_TASK,collect %s,recolectar %s,Collectez% s,%s sammeln s,kerätä %s,coletar %s,Соберите %с,Zbierz %s
+ROTATE_TASK,rotate %s,girar %s,tourner% s,rotieren %s,pyöriä %s,gire %s,вращение %с,Obrócić %s
+SLICE_TASK,cut %s,Cortar %s,couper% s,Schnitt %s,leikata %s,cut %s,сократить %с,Cut %s
+MULTI_SLICE_TASK,slice %s,rebanada %s,tranche% s,Slice %s,viipaloi,fatia %s,среза %с,Slice %s
+RADIAL_SLICE_TASK,slice %s,rebanada %s,tranche% s,Slice %s,viipaloi,fatia %s,среза %с,Slice %s
+CENTER_PLATE_TASK,plate %s,platos,plaque% s,Platten,levy %s,pratos,тарелки,talerze
+FILL_CUP_TASK,fill %s cups %s,llenar %s tazas %s,Remplissez% s tasses% s,Füllen Sie %s Cups %s,Täytä %S -kupit %s,preencher %s xícaras %s,заполнить %s чашки %s,Wypełnij kubki %S %s
+RAPID_TAP_TASK,tenderize %s,ablandar %s,attendre% s,Tendizes %s,Tarjous %s,Tender %s,Тендинизировать %с,zmiękczyć %s
+ENDLESS_BUTTON,endless,sin fin,sans fin,endlos,loputon,sem fim,бесконечный,nieskończony
+TIMED_BUTTON,time,tiempo,temps,Zeit,aika,tempo,время,czas
+RECIPE_BUTTON,recipes,recetas,recettes,Rezepte,reseptit,receitas,рецепты,przepisy
+GREEN APPLE,GREEN APPLE,MANZANA VERDE,POMME VERTE,GRÜNER APFEL,VIHREÄ OMENA,MAÇÃ VERDE,ЗЕЛЕНОЕ ЯБЛОКО,ZIELONE JABŁKO
+YELLOW APPLE,YELLOW APPLE,Manzana amarilla,Pomme jaune,Gelber Apfel,Keltainen omena,Maçã amarela,Желтое яблоко,Żółte jabłko
+RED APPLE,RED APPLE,MANZANA ROJA,POMME ROUGE,ROTER APFEL,PUNAINEN OMENA,MAÇÃ VERMELHA,КРАСНОЕ ЯБЛОКО,CZERWONE JABŁKO
+BANANA,BANANA,BANANA,BANANE,BANANE,BANAANI,BANANA,БАНАН,BANAN
+STEAK,STEAK,BIFE,STEAK,STEAK,PIHVI,BIFE,Стейк,STEK
+STEAK,STEAK,BIFE,STEAK,STEAK,PIHVI,BIFE,Стейк,STEK
+BURGER,BURGER,HAMBURGUESA,BURGER,Burger,HAMPURILAINEN,Hambúrguer,Бургер,Burger
+BURGER,BURGER,HAMBURGUESA,BURGER,Burger,HAMPURILAINEN,Hambúrguer,Бургер,Burger
+BLUEBERRY,BLUEBERRY,ARÁNDANO,MYRTILLE,BLAUBEERE,MUSTIKKA,MIRTILO,ЧЕРНИКА,JAGODA
+RASPBERRY,RASPBERRY,FRAMBUESA,FRAMBOISE,HIMBEERE,VADELMA,FRAMBOESA,МАЛИНА,MALINA
+BLACKBERRY,BLACKBERRY,MORA,MÛRE,BROMBEERE,KARHUNVATUKKA,AMORA,ЕЖЕВИКА,JEŻYNA
+BUTTER,BUTTER,MANTECA,BEURRE,BUTTER,Voita,MANTEIGA,МАСЛО,MASŁO
+EGG,EGG,HUEVO,ŒUF,EI,KANANMUNA,OVO,ЯЙЦО,JAJKO
+EGG,EGG,HUEVO,ŒUF,EI,KANANMUNA,OVO,ЯЙЦО,JAJKO
+LEMON,LEMON,LIMÓN,CITRON,ZITRONE,SITRUUNA,LIMÃO,ЛИМОН,CYTRYNOWY
+LEMON,LEMON,LIMÓN,CITRON,ZITRONE,SITRUUNA,LIMÃO,ЛИМОН,CYTRYNOWY
+LIME,LIME,CAL,CITRON VERT,KALK,LIME,LIMA,ЛАЙМ,LIMONKA
+LIME,LIME,CAL,CITRON VERT,KALK,LIME,LIMA,ЛАЙМ,LIMONKA
+PORK CHOP,PORK CHOP,CHULETA DE CERDO,CÔTELETTE DE PORC,SCHWEINEKOTELETT,PORSAANKYLJYS,COSTELINHA DE PORCO,СВИНАЯ ОТБИВНАЯ,KOTLET SCHABOWY
+PORK CHOP,PORK CHOP,CHULETA DE CERDO,CÔTELETTE DE PORC,SCHWEINEKOTELETT,PORSAANKYLJYS,COSTELINHA DE PORCO,СВИНАЯ ОТБИВНАЯ,KOTLET SCHABOWY
+ZUCCHINI,ZUCCHINI,CALABACÍN,COURGETTES,ZUCCHINI,KESÄKURPITSA,ABOBRINHA,ЦУККИНИ,CUKINIA
+MILK,MILK,LECHE,LAIT,MILCH,MAITO,LEITE,МОЛОКО,MLEKO
+WATER,WATER,AGUA,EAU,WASSER,Vettä,ÁGUA,ВОДА,WODA
+OIL,OIL,ACEITE,HUILE,ÖL,ÖLJY,ÓLEO,МАСЛО,OLEJ
+ORANGE JUICE,ORANGE JUICE,ZUMO DE NARANJA,DU JUS D'ORANGE,ORANGENSAFT,APPELSIINIMEHU,SUCO DE LARANJA,АПЕЛЬСИНОВЫЙ СОК,SOK POMARAŃCZOWY
+APPLE JUICE,APPLE JUICE,JUGO DE MANZANA,JUS DE POMME,APFELSAFT,OMENA MEHU,SUCO DE MAÇÃ,ЯБЛОЧНЫЙ СОК,SOK JABŁKOWY

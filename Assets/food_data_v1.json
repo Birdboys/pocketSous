@@ -2,182 +2,182 @@
   "green_apple": {
     "main_type": "apple",
     "sub_type": "green_apple",
-    "name": "green apple",
+    "name": "GREEN APPLE",
     "theme": "orange",
     "main_color": "#85c448"
   },
   "yellow_apple": {
     "main_type": "apple",
     "sub_type": "yellow_apple",
-    "name": "yellow apple",
+    "name": "YELLOW APPLE",
     "theme": "pink",
     "main_color": "#e4cd5a"
   },
   "red_apple": {
     "main_type": "apple",
     "sub_type": "red_apple",
-    "name": "red apple",
+    "name": "RED APPLE",
     "theme": "tan",
     "main_color": "#cc1825"
   },
   "banana": {
     "main_type": "banana",
     "sub_type": "banana",
-    "name": "banana",
+    "name": "BANANA",
     "theme": "blue",
     "main_color": "#e4cd5a"
   },
   "steak_raw": {
     "main_type": "beef",
     "sub_type": "steak_raw",
-    "name": "raw steak",
+    "name": "STEAK",
     "theme": "darkGreen",
     "main_color": "#d16363"
   },
   "steak_cooked": {
     "main_type": "beef",
     "sub_type": "steak_cooked",
-    "name": "steak",
+    "name": "STEAK",
     "theme": "darkBlue",
     "main_color": "#602631"
   },
   "burger_raw": {
     "main_type": "beef",
     "sub_type": "burger_raw",
-    "name": "raw burger",
+    "name": "BURGER",
     "theme": "darkBlue",
     "main_color": "#d16363"
   },
   "burger_cooked": {
     "main_type": "beef",
     "sub_type": "burger_cooked",
-    "name": "burger",
+    "name": "BURGER",
     "theme": "darkBlue",
     "main_color": "#602631"
   },
   "blueberry": {
     "main_type": "berry",
     "sub_type": "blueberry",
-    "name": "blueberry",
+    "name": "BLUEBERRY",
     "theme": "orange",
     "main_color": "#4477ff"
   },
   "raspberry": {
     "main_type": "berry",
     "sub_type": "raspberry",
-    "name": "raspberry",
+    "name": "RASPBERRY",
     "theme": "yellow",
     "main_color": "#ff82a0"
   },
   "blackberry": {
     "main_type": "berry",
     "sub_type": "blackberry",
-    "name": "blackberry",
+    "name": "BLACKBERRY",
     "theme": "pink",
     "main_color": "#2a2a41"
   },
   "butter_pat": {
     "main_type": "butter",
     "sub_type": "butter_pat",
-    "name": "butter",
+    "name": "BUTTER",
     "theme": "blue",
     "main_color": "#e4cd5a"
   },
   "egg": {
     "main_type": "egg",
     "sub_type": "egg",
-    "name": "egg",
+    "name": "EGG",
     "theme": "lightGray",
     "main_color": "#fad5af"
   },
   "egg_white": {
     "main_type": "egg",
     "sub_type": "egg_white",
-    "name": "egg",
+    "name": "EGG",
     "theme": "lightGreen",
     "main_color": "#feffe5"
   },
   "lemon": {
     "main_type": "lemon",
     "sub_type": "lemon",
-    "name": "lemon",
+    "name": "LEMON",
     "theme": "blue",
     "main_color": "#e4cd5a"
   },
   "lemon_vertical": {
     "main_type": "lemon",
     "sub_type": "lemon_vertical",
-    "name": "lemon",
+    "name": "LEMON",
     "theme": "blue",
     "main_color": "#e4cd5a"
   },
   "lime": {
     "main_type": "lime",
     "sub_type": "lime",
-    "name": "lime",
+    "name": "LIME",
     "theme": "pink",
     "main_color": "#85c448"
   },
   "lime_vertical": {
     "main_type": "lime",
     "sub_type": "lime_vertical",
-    "name": "lime",
+    "name": "LIME",
     "theme": "pink",
     "main_color": "#85c448"
   },
   "pork_chop_raw": {
     "main_type": "pork",
     "sub_type": "pork_chop_raw",
-    "name": "raw pork chop",
+    "name": "PORK CHOP",
     "theme": "darkBlue",
     "main_color": "#ed9d7c"
   },
   "pork_chop_cooked": {
     "main_type": "pork",
     "sub_type": "pork_chop_cooked",
-    "name": "cooked pork chop",
+    "name": "PORK CHOP",
     "theme": "darkBlue",
     "main_color": "#fad5af"
   },
   "zucchini": {
     "main_type": "zucchini",
     "sub_type": "zucchini",
-    "name": "zucchini",
+    "name": "ZUCCHINI",
     "theme": "orange",
     "main_color": "#439d40"
   },
   "milk": {
     "main_type": "liquid",
     "sub_type": "milk",
-    "name": "milk",
+    "name": "MILK",
     "theme": "tan",
     "main_color": "#feffe5"
   },
   "water": {
     "main_type": "liquid",
     "sub_type": "water",
-    "name": "water",
+    "name": "WATER",
     "theme": "yellow",
     "main_color": "#8bf5c6"
   },
   "oil": {
     "main_type": "liquid",
     "sub_type": "oil",
-    "name": "oil",
+    "name": "OIL",
     "theme": "pink",
     "main_color": "#e4cd5a"
   },
   "orange_juice": {
     "main_type": "liquid",
     "sub_type": "orange_juice",
-    "name": "orange juice",
+    "name": "ORANGE JUICE",
     "theme": "darkGreen",
     "main_color": "#f1934c"
   },
   "apple_juice": {
     "main_type": "liquid",
     "sub_type": "apple_juice",
-    "name": "apple juice",
+    "name": "APPLE JUICE",
     "theme": "lightGreen",
     "main_color": "#be5a1e"
   }
