@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://5fjtmugely5b" path="res://Assets/themes/lightGrayMinigame.tres" id="1_6k488"]
 [ext_resource type="Script" path="res://Scripts/base_mini_game.gd" id="2_07rfj"]
 [ext_resource type="Shader" path="res://Scripts/background.gdshader" id="3_ysosn"]
-[ext_resource type="Texture2D" uid="uid://cr5fg1jorve3s" path="res://Assets/backgrounds/circles_tile.svg" id="4_6ltpn"]
+[ext_resource type="Texture2D" uid="uid://c2asjtdq0ls2g" path="res://Assets/backgrounds/vstripes.svg" id="4_whi77"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x5ugd"]
 shader = ExtResource("3_ysosn")
@@ -11,7 +11,7 @@ shader_parameter/color = null
 shader_parameter/speed = 6.0
 shader_parameter/direction_x = -1.0
 shader_parameter/direction_y = 1.0
-shader_parameter/bg = ExtResource("4_6ltpn")
+shader_parameter/bg = ExtResource("4_whi77")
 
 [sub_resource type="Animation" id="Animation_7kcq6"]
 resource_name = "fade"
@@ -37,6 +37,18 @@ tracks/1/path = NodePath("margins:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("backgroundColor/backgroundShader:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(2, 1),
 "update": 0,
@@ -72,6 +84,18 @@ tracks/1/keys = {
 "method": &"startTimer"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("backgroundColor/backgroundShader:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r8mka"]
 _data = {
@@ -101,6 +125,7 @@ grow_vertical = 2
 theme_type_variation = &"bg"
 
 [node name="backgroundShader" type="ColorRect" parent="backgroundColor"]
+modulate = Color(1, 1, 1, 0)
 material = SubResource("ShaderMaterial_x5ugd")
 layout_mode = 1
 anchors_preset = 15

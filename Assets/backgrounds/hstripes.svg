@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
-   sodipodi:docname="squares_tile.svg"
+   sodipodi:docname="hstripes.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -39,22 +39,12 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#ffffff;stroke-width:38.097;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;fill-opacity:1"
-       id="rect1"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="rect3"
        width="33.866665"
-       height="33.866665"
-       x="0"
-       y="0"
-       rx="0"
-       ry="0" />
-    <rect
-       style="fill:#ffffff;stroke-width:38.097;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;fill-opacity:1"
-       id="rect2"
-       width="33.866665"
-       height="33.866665"
-       x="33.866669"
-       y="33.866669"
-       rx="0"
-       ry="0" />
+       height="67.73333"
+       x="-50.799999"
+       y="1.9073486e-06"
+       transform="rotate(-90)" />
   </g>
 </svg>

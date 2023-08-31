@@ -15,6 +15,7 @@ extends Control
 @onready var win
 @onready var is_timed := false
 @onready var game_time := 0.0
+@onready var backgrounds = ["squares_tile","circles_tile","hstripes","vstripes"]
 signal game_finished(win)
 signal pause
 
@@ -34,6 +35,7 @@ func initialize(game_data, time=null, current_score=null):
 	score_val = current_score
 	theme = load("res://Assets/themes/%sMinigame.tres" % FoodMaster.food[game_data[0]['food'][1]]['theme'])
 	var new_shader = shadowShader.instantiate()
+	var random_background = backgrounds[randi() % backgrounds.size()]
 	var background_color = theme.get_stylebox("panel","bg").bg_color
 	var shadow_color = theme.get_color("default_color","scoreLabel")
 	print(background_color, shadow_color, shadow_color.blend(background_color))
@@ -41,6 +43,8 @@ func initialize(game_data, time=null, current_score=null):
 	new_shader.get_material().set_shader_parameter("shadow_color",shadow_color)
 	new_shader.get_material().set_shader_parameter("shadow_on_background_color",background_color.blend(shadow_color))
 	bgShader.get_material().set_shader_parameter("color",theme.get_color("default_color","scoreLabel"))
+
+	bgShader.get_material().set_shader_parameter("bg",load("res://Assets/backgrounds/%s.svg" % random_background))
 	await createGame(game_data[0],game_data[1])
 	current_game.add_child(new_shader)
 	return 
