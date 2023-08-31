@@ -5,7 +5,7 @@ extends Control
 @onready var mini_game = preload("res://Scenes/base_mini_game.tscn")
 @onready var scene_transition = preload("res://Scenes/scene_transition.tscn")
 @onready var prev_transition_type = null
-@onready var current_score := 0
+@onready var current_score := 100
 @onready var game_time := 10.0
 @onready var pause_menu := preload("res://Scenes/pause_menu.tscn")
 # Called when the node enters the scene tree for the first time.
@@ -47,10 +47,10 @@ func nextGame(win):
 			transition_type = randi_range(1,4)
 		prev_transition_type = transition_type	
 		match transition_type:
-			1: transition.initialize("left-right", ogTheme, current_theme)
-			2: transition.initialize("right-left", ogTheme, current_theme)
-			3: transition.initialize("top-bottom", ogTheme, current_theme)
-			4: transition.initialize("bottom-top", ogTheme, current_theme)
+			1: transition.initialize("left-right", ogTheme, current_theme, current_score)
+			2: transition.initialize("right-left", ogTheme, current_theme, current_score)
+			3: transition.initialize("top-bottom", ogTheme, current_theme, current_score)
+			4: transition.initialize("bottom-top", ogTheme, current_theme, current_score)
 		
 		current_game = createGame(new_game_data)
 
