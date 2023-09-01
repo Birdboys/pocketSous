@@ -13,7 +13,7 @@ extends Node
 			"dont_burn":preload("res://Scenes/dont_burn_game.tscn"),
 			"horizontal_multi_slice":preload("res://Scenes/multi_slice_game.tscn"),
 			"vertical_multi_slice":preload("res://Scenes/multi_slice_game.tscn")}
-@onready var games = ["fill_cup"]#["rotate_food","collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn","vertical_multi_slice","horizontal_multi_slice"]
+@onready var games = ["rapid_tap", "fill_cup"]#["rotate_food","collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn","vertical_multi_slice","horizontal_multi_slice"]
 func getGame(game):
 	return game_types[game].instantiate()
 	
@@ -36,6 +36,7 @@ func generateRandomGame(): #generates data for random game, returns instantiatio
 		"vertical_multi_slice" : game_data = await getMultiSlice(90)
 		_: print("HOW'D WE GET HERE") #shouldn't hit, temp
 	game_data['type'] = new_game_type #set game data type to randomely selected type
+	game_data['color'] = Color(FoodMaster.food[game_data['food'][1]]['main_color']) 
 	return [game_data, game_types[new_game_type].instantiate()] #return game data and instantiated mini game
 	
 func getRandomCollectTap(): #generates game data for collect tap game
@@ -50,10 +51,10 @@ func getRandomCollectTap(): #generates game data for collect tap game
 	
 func getRandomRapidTap():
 	var game_data = {} #game data container
-	var tap_foods = [["beef","steak_raw"],["pork","pork_chop_raw"]] #list of rapid tapable foods
+	var tap_foods = [["beef","steak_raw"],["pork","pork_chop_raw"], ["egg","egg"],["egg","egg_white"]] #list of rapid tapable foods
 	game_data['num_tap'] = randf_range(10,25) #get number of taps necessary to complete from range
 	game_data['food'] = tap_foods[randi() % tap_foods.size()] #select tapable food
-	game_data['task'] = (tr("RAPID_TAP_TASK") % tr(FoodMaster.food[game_data['food'][1]]['name'])).to_upper()
+	game_data['task'] = (tr("RAPID_TAP_TASK_%s" % game_data['food'][1])).to_upper()
 	game_data['bg'] = 'diamonds'
 	return game_data #return game data
 
@@ -83,7 +84,6 @@ func getRandomFillCup():
 	game_data['food'] = fill_liquids[randi() % fill_liquids.size()] #get fillable liquid
 	game_data['task'] = (tr("FILL_CUP_TASK") % [fill_val, tr(FoodMaster.food[game_data['food'][1]]['name'])]).to_upper()
 	game_data['fill_val'] = fill_val #set fill val in game data
-	game_data['color'] = Color(FoodMaster.food[game_data['food'][1]]['main_color']) #Color.hex(0x8bf5c6ff) #get color of liquid - TODO : NOT FINISHED 
 	game_data['bg'] = 'circles'
 	return game_data #return game data
 

@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://daajdauhlgsf0"
+
+[deps]
+
+files=["res://Assets/foods/egg/translations.en.translation", "res://Assets/foods/egg/translations.es.translation", "res://Assets/foods/egg/translations.fr.translation", "res://Assets/foods/egg/translations.gr.translation", "res://Assets/foods/egg/translations.fi.translation", "res://Assets/foods/egg/translations.pt.translation", "res://Assets/foods/egg/translations.ru.translation", "res://Assets/foods/egg/translations.pl.translation"]
+
+source_file="res://Assets/foods/egg/translations.csv"
+dest_files=["res://Assets/foods/egg/translations.en.translation", "res://Assets/foods/egg/translations.es.translation", "res://Assets/foods/egg/translations.fr.translation", "res://Assets/foods/egg/translations.gr.translation", "res://Assets/foods/egg/translations.fi.translation", "res://Assets/foods/egg/translations.pt.translation", "res://Assets/foods/egg/translations.ru.translation", "res://Assets/foods/egg/translations.pl.translation"]
+
+[params]
+
+compress=true
+delimiter=0
