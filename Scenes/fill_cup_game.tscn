@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxs8r8o88wcm8"]
+[gd_scene load_steps=6 format=3 uid="uid://cxs8r8o88wcm8"]
 
 [ext_resource type="Script" path="res://Scripts/fill_cup_game.gd" id="1_0reas"]
+[ext_resource type="PackedScene" uid="uid://b6tn5pd2xhgam" path="res://Scenes/liquid_particles.tscn" id="2_7ccvd"]
 [ext_resource type="Shader" path="res://Scripts/fill_cup_game.gdshader" id="2_eyb2a"]
 [ext_resource type="Texture2D" uid="uid://dwubfpda6vhfo" path="res://Assets/foods/utensil/measuring_cup_liquid.svg" id="2_um18p"]
 
@@ -27,6 +28,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="liquidParticles" parent="cupMargin" instance=ExtResource("2_7ccvd")]
+emitting = false
+lifetime = 1.25
 
 [node name="cupContainer" type="Control" parent="cupMargin"]
 layout_mode = 2
