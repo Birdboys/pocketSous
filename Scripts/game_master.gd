@@ -45,6 +45,7 @@ func getRandomCollectTap(): #generates game data for collect tap game
 	game_data['num_collect'] = randi_range(5,15) #get num collectables generated from range 
 	game_data['food'] = collect_foods[randi() % collect_foods.size()] #grab random collectable food
 	game_data['task'] = (tr("COLLECT_TASK") % tr(FoodMaster.food[game_data['food'][1]]['name'])).to_upper()
+	game_data['bg'] = 'checkered'
 	return game_data #return game data
 	
 func getRandomRapidTap():
@@ -53,6 +54,7 @@ func getRandomRapidTap():
 	game_data['num_tap'] = randf_range(10,25) #get number of taps necessary to complete from range
 	game_data['food'] = tap_foods[randi() % tap_foods.size()] #select tapable food
 	game_data['task'] = (tr("RAPID_TAP_TASK") % tr(FoodMaster.food[game_data['food'][1]]['name'])).to_upper()
+	game_data['bg'] = 'diamonds'
 	return game_data #return game data
 
 func getRandomCenterPlate():
@@ -61,6 +63,7 @@ func getRandomCenterPlate():
 	["apple","yellow_apple"],["lime","lime"],["lemon","lemon"],["pork","pork_chop_cooked"],["beef","steak_cooked"]] #centerable foods
 	game_data['food'] = center_foods[randi() % center_foods.size()] #select centerable food
 	game_data['task'] = (tr("CENTER_PLATE_TASK") % tr(FoodMaster.food[game_data['food'][1]]['name'])).to_upper()
+	game_data['bg'] = 'circles'
 	return game_data #return game data
 
 func getRandomRotateFood():
@@ -70,6 +73,7 @@ func getRandomRotateFood():
 	["berry","raspberry"],["berry","blueberry"],["berry","blackberry"]] #rotatable foods
 	game_data['food'] = rotate_foods[randi() % rotate_foods.size()] #select rotatable food
 	game_data['task'] = (tr("ROTATE_TASK") % tr(FoodMaster.food[game_data['food'][1]]['name'])).to_upper()
+	game_data['bg'] = 'diagonals'
 	return game_data #return game data
 	
 func getRandomFillCup():
@@ -80,6 +84,7 @@ func getRandomFillCup():
 	game_data['task'] = (tr("FILL_CUP_TASK") % [fill_val, tr(FoodMaster.food[game_data['food'][1]]['name'])]).to_upper()
 	game_data['fill_val'] = fill_val #set fill val in game data
 	game_data['color'] = Color(FoodMaster.food[game_data['food'][1]]['main_color']) #Color.hex(0x8bf5c6ff) #get color of liquid - TODO : NOT FINISHED 
+	game_data['bg'] = 'circles'
 	return game_data #return game data
 
 func getRandomSingleHSlice():
@@ -88,6 +93,7 @@ func getRandomSingleHSlice():
 	game_data['food'] = cut_foods[randi() % cut_foods.size()] #get food
 	game_data['task'] = (tr("SLICE_TASK") % tr(FoodMaster.food[game_data['food'][1]]['name'])).to_upper()
 	game_data['cut_type'] = 0 #set cut type to be 0 for horizontal (no rotation)
+	game_data['bg'] = 'hstripes'
 	return game_data #return game data
 	
 func getRandomSingleVSlice():
@@ -97,6 +103,7 @@ func getRandomSingleVSlice():
 	game_data['food'] = cut_foods[randi() % cut_foods.size()]
 	game_data['task'] = (tr("SLICE_TASK") % tr(FoodMaster.food[game_data['food'][1]]['name'])).to_upper()
 	game_data['cut_type'] = 90 #set cut type to be 90 for vertical (90 degree rotation on instantiated cut)
+	game_data['bg'] = 'vstripes'
 	return game_data #return game data
 
 func getRandomRadialSlice():
@@ -105,6 +112,7 @@ func getRandomRadialSlice():
 	game_data['food'] = cut_foods[randi() % cut_foods.size()]
 	game_data['task'] = (tr("RADIAL_SLICE_TASK") % tr(FoodMaster.food[game_data['food'][1]]['name'])).to_upper()
 	game_data['num_cut'] = randi_range(2,5) #get number of slices from range
+	game_data['bg'] = 'squares'
 	return game_data #return game data
 	
 func getRandomDontBurn():
@@ -113,6 +121,7 @@ func getRandomDontBurn():
 	game_data['food'] = cut_foods[randi() % cut_foods.size()]
 	game_data['task'] = "DONT BURN THE %s" % [game_data['food'][0].to_upper()]
 	game_data['time_scale'] = randi_range(1,4) #get number of slices from range
+	game_data['bg'] = 'squares'
 	return game_data #return game data
 
 func getMultiSlice(type):
@@ -124,4 +133,5 @@ func getMultiSlice(type):
 	game_data['task'] = (tr("MULTI_SLICE_TASK") % tr(FoodMaster.food[game_data['food'][1]]['name'])).to_upper()
 	game_data['num_cut'] = randi_range(2,6)
 	game_data['cut_type'] = type
+	game_data['bg'] = 'diamonds'
 	return game_data

@@ -10,6 +10,7 @@ shader_parameter/shadow_color = null
 shader_parameter/offset_in_pixels = Vector2(-16, 16)
 
 [node name="shadowShader" type="ColorRect"]
+visible = false
 material = SubResource("ShaderMaterial_r3q35")
 anchors_preset = 15
 anchor_right = 1.0

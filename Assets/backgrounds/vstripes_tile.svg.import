@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2asjtdq0ls2g"
-path="res://.godot/imported/vstripes.svg-38c69d72f6fb07dc83c90f730dd5c0b0.ctex"
+path="res://.godot/imported/vstripes_tile.svg-9a16320e93381caca798d20c10973ed7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/backgrounds/vstripes.svg"
-dest_files=["res://.godot/imported/vstripes.svg-38c69d72f6fb07dc83c90f730dd5c0b0.ctex"]
+source_file="res://Assets/backgrounds/vstripes_tile.svg"
+dest_files=["res://.godot/imported/vstripes_tile.svg-9a16320e93381caca798d20c10973ed7.ctex"]
 
 [params]
 

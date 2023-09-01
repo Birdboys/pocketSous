@@ -5,7 +5,7 @@ extends Control
 @onready var mini_game = preload("res://Scenes/base_mini_game.tscn")
 @onready var scene_transition = preload("res://Scenes/scene_transition.tscn")
 @onready var prev_transition_type = null
-@onready var current_score := 100
+@onready var current_score := 1
 @onready var game_time := 10.0
 @onready var pause_menu := preload("res://Scenes/pause_menu.tscn")
 # Called when the node enters the scene tree for the first time.

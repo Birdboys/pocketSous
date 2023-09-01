@@ -10,12 +10,13 @@ extends Control
 @onready var current_game_type = null #type of current game
 @onready var current_task = null #task text for current game
 @onready var score_val #current score
+@export var shadow_shader : ColorRect
 @onready var finished := false
 @onready var paused := false
 @onready var win
 @onready var is_timed := false
 @onready var game_time := 0.0
-@onready var backgrounds = ["squares_tile","circles_tile","hstripes","vstripes"]
+@onready var backgrounds = ["squares_tile","circles_tile","hstripes_tile","vstripes_tile","diamonds_tile","diagonals_tile"]
 signal game_finished(win)
 signal pause
 
@@ -35,16 +36,15 @@ func initialize(game_data, time=null, current_score=null):
 	score_val = current_score
 	theme = load("res://Assets/themes/%sMinigame.tres" % FoodMaster.food[game_data[0]['food'][1]]['theme'])
 	var new_shader = shadowShader.instantiate()
-	var random_background = backgrounds[randi() % backgrounds.size()]
 	var background_color = theme.get_stylebox("panel","bg").bg_color
 	var shadow_color = theme.get_color("default_color","scoreLabel")
 	print(background_color, shadow_color, shadow_color.blend(background_color))
 	new_shader.get_material().set_shader_parameter("background_color",background_color)
 	new_shader.get_material().set_shader_parameter("shadow_color",shadow_color)
 	new_shader.get_material().set_shader_parameter("shadow_on_background_color",background_color.blend(shadow_color))
+	shadow_shader = new_shader
 	bgShader.get_material().set_shader_parameter("color",theme.get_color("default_color","scoreLabel"))
-
-	bgShader.get_material().set_shader_parameter("bg",load("res://Assets/backgrounds/%s.svg" % random_background))
+	bgShader.get_material().set_shader_parameter("bg",load("res://Assets/backgrounds/%s_tile.svg" % game_data[0]['bg']))
 	await createGame(game_data[0],game_data[1])
 	current_game.add_child(new_shader)
 	return 
@@ -91,7 +91,9 @@ func startTimer():
 		_: pass
 	
 func _on_game_timer_timeout():
-	gameLost()
+	if not finished:
+		finished = true
+		gameLost()
 	pass # Replace with function body.
 
 func gameFinished(): 
@@ -103,3 +105,9 @@ func fadeIn():
 func _on_task_gui_input(_event):
 	if Input.is_action_just_pressed("screen_touch"):# and not paused:
 		emit_signal("pause")
+
+func turnOffShadow():
+	shadow_shader.visible = false
+
+func turnOnShadow():
+	shadow_shader.visible = true

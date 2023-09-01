@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7op57wnsmyq7"
-path="res://.godot/imported/chevron.svg-763d1f42c710f11a8f5ccf005fd450a7.ctex"
+uid="uid://cgh4vdgw2808f"
+path="res://.godot/imported/diamonds_tile.svg-053251ee151f6f4b65656519ac7035f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/backgrounds/chevron.svg"
-dest_files=["res://.godot/imported/chevron.svg-763d1f42c710f11a8f5ccf005fd450a7.ctex"]
+source_file="res://Assets/backgrounds/diamonds_tile.svg"
+dest_files=["res://.godot/imported/diamonds_tile.svg-053251ee151f6f4b65656519ac7035f1.ctex"]
 
 [params]
 

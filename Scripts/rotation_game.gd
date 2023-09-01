@@ -29,7 +29,7 @@ func _on_touch_area_gui_input(event: InputEvent):
 					var initial_vector = (prev_position - rotation_center) #get vector from food center to previous pos
 					var current_vector = (event.position - rotation_center) #get vector from food center to current pos
 					var angle = initial_vector.angle_to(current_vector) #get angle between vectors
-					rotator.rotation += angle #add rotation to food
+					rotator.rotation += angle/2 #add rotation to food
 			prev_position = event.position #prev touch position equals current event position - used for next calc
 		if Input.is_action_just_released("screen_touch"): #if we release touch
 			prev_position = null #set previous position to null

@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://5fjtmugely5b" path="res://Assets/themes/lightGrayMinigame.tres" id="1_6k488"]
 [ext_resource type="Script" path="res://Scripts/base_mini_game.gd" id="2_07rfj"]
 [ext_resource type="Shader" path="res://Scripts/background.gdshader" id="3_ysosn"]
-[ext_resource type="Texture2D" uid="uid://c2asjtdq0ls2g" path="res://Assets/backgrounds/vstripes.svg" id="4_whi77"]
+[ext_resource type="Texture2D" uid="uid://c2asjtdq0ls2g" path="res://Assets/backgrounds/vstripes_tile.svg" id="4_ppjhc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x5ugd"]
 shader = ExtResource("3_ysosn")
@@ -11,11 +11,12 @@ shader_parameter/color = null
 shader_parameter/speed = 6.0
 shader_parameter/direction_x = -1.0
 shader_parameter/direction_y = 1.0
-shader_parameter/bg = ExtResource("4_whi77")
+shader_parameter/bg = ExtResource("4_ppjhc")
 
 [sub_resource type="Animation" id="Animation_7kcq6"]
 resource_name = "fade"
 length = 0.5
+step = 0.05
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -23,9 +24,12 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [],
+"method": &"turnOffShadow"
+}, {
 "args": [],
 "method": &"gameFinished"
 }]
@@ -38,7 +42,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(2, 1),
+"transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
@@ -49,15 +53,16 @@ tracks/2/path = NodePath("backgroundColor/backgroundShader:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(2, 1),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_cs3v5"]
 resource_name = "fade_in"
-length = 0.5
+length = 0.75
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -65,8 +70,8 @@ tracks/0/path = NodePath("margins:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.5, 1),
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(2, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
@@ -77,9 +82,12 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.4),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.35, 0.65),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [],
+"method": &"turnOnShadow"
+}, {
 "args": [],
 "method": &"startTimer"
 }]
@@ -91,8 +99,8 @@ tracks/2/path = NodePath("backgroundColor/backgroundShader:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.5, 1),
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(2, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }

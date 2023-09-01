@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
-   sodipodi:docname="hstripes.svg"
+   sodipodi:docname="vstripes.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,13 +24,13 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="0.76702439"
-     inkscape:cx="149.27817"
-     inkscape:cy="59.972017"
-     inkscape:window-width="958"
-     inkscape:window-height="1048"
-     inkscape:window-x="953"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
+     inkscape:cx="147.97443"
+     inkscape:cy="59.320148"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
      id="defs1" />
@@ -41,10 +41,9 @@
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
        id="rect3"
-       width="33.866665"
+       width="16.933332"
        height="67.73333"
-       x="-50.799999"
-       y="1.9073486e-06"
-       transform="rotate(-90)" />
+       x="25.400002"
+       y="1.7801921e-06" />
   </g>
 </svg>
