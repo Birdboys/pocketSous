@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di66wh8mi6jye"
-path="res://.godot/imported/beef.svg-a05f42b49def744c3dba36163cf6c58c.ctex"
+uid="uid://dktkk5ytqqvpp"
+path="res://.godot/imported/bowl.svg-f14931e5e3486237277ee3d9288db158.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/foods/beef.svg"
-dest_files=["res://.godot/imported/beef.svg-a05f42b49def744c3dba36163cf6c58c.ctex"]
+source_file="res://Assets/foods/utensil/bowl.svg"
+dest_files=["res://.godot/imported/bowl.svg-f14931e5e3486237277ee3d9288db158.ctex"]
 
 [params]
 

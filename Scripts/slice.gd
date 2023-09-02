@@ -14,7 +14,7 @@ extends Node2D
 signal sliced(i)
 
 func _process(delta):
-	sliceLineRect.get_material().set_shader_parameter("start",shine_point)
+	sliceLineRect.get_material().set_shader_parameter("start                           ",shine_point)
 	
 func initialize(x, y, length, rot, id=0):
 	position = Vector2(x,y)

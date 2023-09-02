@@ -180,5 +180,12 @@
     "name": "APPLE JUICE",
     "theme": "lightGreen",
     "main_color": "#be5a1e"
+  },
+  "bowl": {
+    "main_type": "utensil",
+    "sub_type": "bowl",
+    "name": "BOWL",
+    "theme": "lightGray",
+    "main_color": "#894835"
   }
 }

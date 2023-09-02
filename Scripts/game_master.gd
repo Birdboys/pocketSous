@@ -12,8 +12,9 @@ extends Node
 			"horizontal_slice":preload("res://Scenes/single_slice_game.tscn"),
 			"dont_burn":preload("res://Scenes/dont_burn_game.tscn"),
 			"horizontal_multi_slice":preload("res://Scenes/multi_slice_game.tscn"),
-			"vertical_multi_slice":preload("res://Scenes/multi_slice_game.tscn")}
-@onready var games = ["radial_slice", "vertical_multi_slice"]#["rotate_food","collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn","vertical_multi_slice","horizontal_multi_slice"]
+			"vertical_multi_slice":preload("res://Scenes/multi_slice_game.tscn"),
+			"food_bowl":preload("res://Scenes/food_bowl_game.tscn")}
+@onready var games = ["food_bowl"]#["rotate_food","collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn","vertical_multi_slice","horizontal_multi_slice"]
 func getGame(game):
 	return game_types[game].instantiate()
 	
@@ -34,6 +35,7 @@ func generateRandomGame(): #generates data for random game, returns instantiatio
 		"dont_burn" : game_data = await getRandomDontBurn()
 		"horizontal_multi_slice": game_data = await getMultiSlice(0)
 		"vertical_multi_slice" : game_data = await getMultiSlice(90)
+		"food_bowl" : game_data = await getRandomFoodBowl()
 		_: print("HOW'D WE GET HERE") #shouldn't hit, temp
 	game_data['type'] = new_game_type #set game data type to randomely selected type
 	game_data['color'] = Color(FoodMaster.food[game_data['food'][1]]['main_color']) 
@@ -134,4 +136,17 @@ func getMultiSlice(type):
 	game_data['num_cut'] = randi_range(2,6)
 	game_data['cut_type'] = type
 	game_data['bg'] = 'diamonds'
+	return game_data
+
+func getRandomFoodBowl():
+	var game_data = {}
+	var foods = [["egg","egg"],["egg","egg_white"],
+	["berry","raspberry"],["berry","blueberry"],["berry","blackberry"]]
+	var num_foods = randi_range(4,8)
+	game_data['food'] = ["utensil","bowl"]
+	game_data['foods'] = []
+	for x in range(0,num_foods):
+		game_data['foods'].append(foods[randi() % foods.size()])
+	game_data['task'] = "GATHER FOOD"
+	game_data['bg'] = 'checkered'
 	return game_data
