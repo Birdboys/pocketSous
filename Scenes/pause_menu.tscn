@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://12vkl8c40hos"]
+[gd_scene load_steps=3 format=3 uid="uid://12vkl8c40hos"]
 
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_v2y31"]
+[ext_resource type="FontFile" uid="uid://c7w5gskxa8sge" path="res://Assets/fonts/Oswald/static/Oswald-Bold.ttf" id="2_yw34a"]
 
 [node name="pauseMenu" type="Control"]
 process_mode = 2
@@ -24,4 +25,44 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.709804, 0.596078, 0.341176, 1)
 
-[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -391.5
+offset_top = -301.0
+offset_right = 391.5
+offset_bottom = 301.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="resume" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_yw34a")
+theme_override_font_sizes/font_size = 128
+text = "RESUME"
+flat = true
+
+[node name="main" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_yw34a")
+theme_override_font_sizes/font_size = 128
+text = "MAIN MENU"
+flat = true
+
+[node name="quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_yw34a")
+theme_override_font_sizes/font_size = 128
+text = "QUIT"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/main" to="." method="_on_main_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

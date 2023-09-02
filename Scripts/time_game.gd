@@ -65,4 +65,11 @@ func fadeInGame():
 func pauseGame():
 	var new_menu = pause_menu.instantiate()
 	add_child(new_menu)
+	new_menu.unpause.connect(unPauseGame)
 	get_tree().paused = true
+	
+func unPauseGame(id):
+	match id:
+		0: pass
+		1: get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+		2: get_tree().quit()

@@ -5,6 +5,7 @@ extends Control
 @onready var timeBar := $margins/gameArea/timeBar
 @onready var anim := $gameAnimtor
 @onready var bgShader := $backgroundColor/backgroundShader
+@onready var margin := $margins
 @onready var shadowShader := preload("res://Scenes/shadow_shader.tscn")
 @onready var current_game = null #current game playing
 @onready var current_game_type = null #type of current game
@@ -22,7 +23,8 @@ signal pause
 
 func _ready():
 	timeBar.custom_minimum_size = Vector2(0,size.y/20)
-	
+	margin.modulate.a = 0
+	bgShader.modulate.a = 0
 func _process(_delta):
 	if is_timed:
 		timeBar.value = float((gameTimer.time_left/game_time) * 100)

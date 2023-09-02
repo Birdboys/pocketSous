@@ -57,10 +57,10 @@ func setMargins(val):
 	cupMargin.add_theme_constant_override("margin_right", val)
 
 func _on_cup_container_gui_input(event: InputEvent):
-	if event.is_action_pressed("screen_touch"): #if screen touched
+	if event.is_action_pressed("screen_touch") and not finished: #if screen touched
 		is_filling = true #we are filling
 		liquidParticles.emitting = true
-	if event.is_action_released("screen_touch"): #if not 
+	if event.is_action_released("screen_touch") and not finished: #if not 
 		liquidParticles.emitting = false
 		is_filling = false #we are not filling
 

@@ -1,9 +1,17 @@
 extends Control
-signal unpause
+signal unpause(id)
 
-func _on_gui_input(_event):
-	if Input.is_action_just_pressed("screen_touch"):
-		print("YIPPEEE")
-		get_tree().paused = false
-		queue_free()
-	pass # Replace with function body.
+func _on_resume_pressed():
+	get_tree().paused = false
+	emit_signal("unpause",0)
+	queue_free()
+
+func _on_main_pressed():
+	get_tree().paused = false
+	emit_signal("unpause",1)
+	queue_free()
+
+func _on_quit_pressed():
+	get_tree().paused = false
+	emit_signal("unpause",2)
+	queue_free()

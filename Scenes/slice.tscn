@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0i6dxm1lekcr"]
+[gd_scene load_steps=8 format=3 uid="uid://c0i6dxm1lekcr"]
 
 [ext_resource type="Script" path="res://Scripts/slice.gd" id="1_gu7ys"]
+[ext_resource type="Shader" path="res://Scripts/slice.gdshader" id="2_o870k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_or1e2"]
 radius = 64.0
@@ -8,6 +9,32 @@ height = 512.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uqeb6"]
 size = Vector2(20, 128)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fkb5g"]
+shader = ExtResource("2_o870k")
+shader_parameter/start = null
+
+[sub_resource type="Animation" id="Animation_n0kfw"]
+resource_name = "shine"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:shine_point")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2.5, 0),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_phqsn"]
+_data = {
+"shine": SubResource("Animation_n0kfw")
+}
 
 [node name="slice" type="Node2D"]
 script = ExtResource("1_gu7ys")
@@ -24,8 +51,6 @@ shape = SubResource("CapsuleShape2D_or1e2")
 rotation = 1.57079
 shape = SubResource("CapsuleShape2D_or1e2")
 
-[node name="sliceLine" type="Line2D" parent="."]
-
 [node name="touchLine" type="Area2D" parent="."]
 
 [node name="touchLineShape" type="CollisionShape2D" parent="touchLine"]
@@ -38,6 +63,26 @@ shape = SubResource("CapsuleShape2D_or1e2")
 [node name="touchEndArea" type="CollisionShape2D" parent="touchLine"]
 rotation = 1.57079
 shape = SubResource("CapsuleShape2D_or1e2")
+
+[node name="sliceLineRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_fkb5g")
+custom_minimum_size = Vector2(0, 20)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_phqsn")
+}
 
 [connection signal="mouse_entered" from="touchBegin" to="." method="_on_touch_begin_mouse_entered"]
 [connection signal="mouse_entered" from="touchEnd" to="." method="_on_touch_end_mouse_entered"]
