@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1277.7297"
+   height="1277.7297"
+   viewBox="0 0 338.06599 338.06599"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="cheddar_slice.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.27118408"
+     inkscape:cx="318.97153"
+     inkscape:cy="1203.9792"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(135.4947,135.25079)">
+    <g
+       id="g2"
+       transform="matrix(6,0,0,6,-167.69147,-168.91105)">
+      <path
+         id="rect1"
+         style="fill:#d49733;stroke-width:5.53;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         d="m 10.734793,5.6100426 h 45.607002 c 2.974241,0 5.368666,2.3944249 5.368666,5.3686654 v 45.607003 c 0,2.97424 -2.394425,5.368665 -5.368666,5.368665 H 10.734793 c -2.9742406,0 -5.3686655,-2.394425 -5.3686655,-5.368665 V 10.978708 c 0,-2.9742405 2.3944249,-5.3686654 5.3686655,-5.3686654 z" />
+      <path
+         id="path1"
+         style="fill:none;stroke:#be5a1e;stroke-width:4.23333;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
+         d="m 12.322342,46.467884 c 0,4.52308 3.641326,8.164406 8.164406,8.164406"
+         sodipodi:nodetypes="cc" />
+      <path
+         id="path2"
+         style="fill:none;stroke:#feffe5;stroke-width:4.23333;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
+         d="m 54.634832,20.728121 c 0,-4.52308 -3.641326,-8.164406 -8.164406,-8.164406"
+         sodipodi:nodetypes="cc" />
+    </g>
+  </g>
+</svg>

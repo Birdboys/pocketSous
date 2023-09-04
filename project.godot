@@ -13,7 +13,6 @@ config_version=5
 config/name="pocketSous"
 run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
-config/icon="res://icon.svg"
 
 [autoload]
 

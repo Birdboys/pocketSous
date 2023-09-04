@@ -33,7 +33,7 @@ func initialize(game_data):
 		
 	num_foods = food_count
 	
-func foodPlaced(id, color):
+func foodPlaced(id, _color):
 	print("FOODPLACED")
 	foods[id] = null
 	num_foods -= 1

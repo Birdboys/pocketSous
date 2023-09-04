@@ -15,12 +15,8 @@ signal game_loss
 func _ready():
 	setMargins(offset)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func initialize(game_data):
-	food.texture = await load("res://Assets/foods/%s/%s.svg" % [game_data['food'][0], game_data['food'][1]]) #load food texture
+	food.texture = load("res://Assets/foods/%s/%s.svg" % [game_data['food'][0], game_data['food'][1]]) #load food texture
 	var texture_size = food.texture.get_size()
 	var max_dim = texture_size[texture_size.max_axis_index()]
 	var scale_factor = size[size.min_axis_index()]
@@ -46,16 +42,16 @@ func gameWon():
 func setCooked():
 	food_state = 1
 	print(food_type[0],food_type[1]+"_cooked")
-	food.texture = await load("res://Assets/foods/%s/%s.svg" % [food_type[0],food_type[1]+"_cooked"]) #load food texture
+	food.texture = load("res://Assets/foods/%s/%s.svg" % [food_type[0],food_type[1]+"_cooked"]) #load food texture
 func setBurned():
 	food_state = 2
-	food.texture = await load("res://Assets/foods/%s/%s.svg" % [food_type[0],food_type[1]+"_burned"]) #load food texture
+	food.texture = load("res://Assets/foods/%s/%s.svg" % [food_type[0],food_type[1]+"_burned"]) #load food texture
 
 func endGame():
 	match food_state:
 		0,2: emit_signal("game_loss")
 		1: emit_signal("game_win")
-func _on_food_gui_input(event):
+func _on_food_gui_input(_event):
 	if Input.is_action_just_pressed("screen_touch"):
 		endGame()
 		

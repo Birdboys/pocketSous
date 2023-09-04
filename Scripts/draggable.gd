@@ -25,7 +25,7 @@ func initialize(pos,food,scale_factor, zn, id=null):
 func disable():
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
-func _process(delta):
+func _process(_delta):
 	if in_drag:
 		global_position = get_viewport().get_mouse_position() - size/2
 
@@ -37,7 +37,7 @@ func _on_food_area_area_exited(area):
 	if area.get_parent().name == zone_name:
 		in_zone = false
 
-func _on_gui_input(event):
+func _on_gui_input(_event):
 	if Input.is_action_just_pressed("screen_touch"):
 		in_drag = true
 	elif Input.is_action_just_released("screen_touch"):

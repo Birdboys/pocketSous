@@ -55,7 +55,7 @@ func setMargins(val):
 	margin.add_theme_constant_override("margin_bottom", val)
 	margin.add_theme_constant_override("margin_right", val)
 	
-func _on_bread_gui_input(event):
+func _on_bread_gui_input(_event):
 	if not finished:
 		if Input.is_action_just_pressed("screen_touch") and not anim.is_playing():
 			anim.play("spread")

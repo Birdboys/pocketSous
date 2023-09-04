@@ -13,7 +13,7 @@ extends Node2D
 @export var shine_point := 0.0
 signal sliced(i)
 
-func _process(delta):
+func _process(_delta):
 	sliceLineRect.get_material().set_shader_parameter("start                           ",shine_point)
 	
 func initialize(x, y, length, rot, id=0):

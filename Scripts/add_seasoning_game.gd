@@ -14,12 +14,12 @@ func initialize(game_data):
 	seasonings = game_data['foods']
 	season_taps = game_data['season_taps']
 	var new_grad := Gradient.new()
-	var grad_offset = 1/seasonings.size()
+	var grad_offset = 1.0/seasonings.size()
 	for x in range(seasonings.size()):
 		new_grad.add_point(x*grad_offset,Color(FoodMaster.food[seasonings[x]]['main_color']))
 	seasoning_grad = new_grad
 	
-func _on_seasoned_gui_input(event):
+func _on_seasoned_gui_input(_event):
 	if Input.is_action_just_pressed("screen_touch") and season_taps > 0:
 		season_taps -= 1
 		var new_seasoning = seasoningParticles.instantiate()
