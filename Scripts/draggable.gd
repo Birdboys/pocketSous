@@ -6,9 +6,10 @@ extends TextureRect
 @onready var in_zone = false
 @onready var food_id
 @onready var color
+@onready var zone_name
 signal placed(id, color)
 
-func initialize(pos,food,scale_factor, id=null):
+func initialize(pos,food,scale_factor, zn, id=null):
 	texture = load("res://Assets/foods/%s/%s.svg" % [food[0], food[1]]) #load texture
 	var texture_size = texture.get_size() #get size of texture
 	var max_texture_dim = texture_size[texture_size.max_axis_index()] #get length of max texture dimension
@@ -19,19 +20,22 @@ func initialize(pos,food,scale_factor, id=null):
 	food_id = id
 	color = FoodMaster.food[food[1]]['main_color']
 	position = pos - size/2
+	zone_name = zn
+
+func disable():
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 func _process(delta):
 	if in_drag:
 		global_position = get_viewport().get_mouse_position() - size/2
 
 func _on_food_area_area_entered(area):
-	if area.get_parent().name == "bowl":
+	if area.get_parent().name == zone_name:
 		in_zone = true
 
 func _on_food_area_area_exited(area):
-	if area.get_parent().name == "bowl":
+	if area.get_parent().name == zone_name:
 		in_zone = false
-
 
 func _on_gui_input(event):
 	if Input.is_action_just_pressed("screen_touch"):
@@ -39,9 +43,5 @@ func _on_gui_input(event):
 	elif Input.is_action_just_released("screen_touch"):
 		if in_drag and in_zone:
 			emit_signal("placed",food_id, color)
-			queue_free()
 		in_drag = false
 
-func _on_mouse_exited():
-	print("MOUSEEXIT")
-	#in_drag = false

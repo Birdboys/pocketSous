@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://che1gm0ugg35u"]
+
+[ext_resource type="Script" path="res://Scripts/bread_spread_game.gd" id="1_ew4gs"]
+[ext_resource type="Texture2D" uid="uid://derrqsfw4qre1" path="res://Assets/foods/bread/bread_slice.svg" id="1_nysgv"]
+[ext_resource type="Shader" path="res://Scripts/bread_spread_game.gdshader" id="2_360b4"]
+[ext_resource type="Texture2D" uid="uid://dyl6xxnn1onx8" path="res://Assets/foods/bread/bread_slice_spread.svg" id="2_sjxuo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hmi0d"]
+shader = ExtResource("2_360b4")
+shader_parameter/og_color = Color(0, 0, 0, 0)
+shader_parameter/new_color = null
+shader_parameter/percent = 0.0
+shader_parameter/horizontal = true
+
+[sub_resource type="Animation" id="Animation_jjjfx"]
+resource_name = "spread"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:spread_percent")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [true],
+"method": &"set_process"
+}, {
+"args": [],
+"method": &"nextSpread"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rfrqj"]
+_data = {
+"spread": SubResource("Animation_jjjfx")
+}
+
+[node name="breadSpreadGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ew4gs")
+
+[node name="margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bread" type="TextureRect" parent="margin"]
+layout_mode = 2
+texture = ExtResource("1_nysgv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="spread" type="TextureRect" parent="margin"]
+material = SubResource("ShaderMaterial_hmi0d")
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_sjxuo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rfrqj")
+}
+
+[connection signal="gui_input" from="margin/bread" to="." method="_on_bread_gui_input"]

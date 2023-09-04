@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="256"
-   height="256"
-   viewBox="0 0 67.733332 67.733333"
+   width="925.03113"
+   height="945.32019"
+   viewBox="0 0 244.74782 250.11596"
    version="1.1"
    id="svg1"
    inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
-   sodipodi:docname="carroty.svg"
+   sodipodi:docname="bread_slice_spread.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="3.0680976"
-     inkscape:cx="124.34415"
-     inkscape:cy="120.75887"
+     inkscape:zoom="0.3835122"
+     inkscape:cx="320.71991"
+     inkscape:cy="517.58458"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
@@ -37,5 +37,11 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1" />
+     id="layer1"
+     transform="translate(88.507242,92.007546)">
+    <path
+       id="path3"
+       style="fill:#ffffff;stroke:none;stroke-width:15.5028;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;fill-opacity:1"
+       d="m 33.866669,-73.691789 a 104.28578,55.604207 0 0 0 -104.284893,55.603722 104.28578,55.604207 0 0 0 24.787202,35.818243 V 139.79266 H 113.36436 V 17.730176 A 104.28578,55.604207 0 0 0 138.15155,-18.088067 104.28578,55.604207 0 0 0 33.866669,-73.691789 Z" />
+  </g>
 </svg>

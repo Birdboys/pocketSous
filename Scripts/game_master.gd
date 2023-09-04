@@ -13,8 +13,10 @@ extends Node
 			"dont_burn":preload("res://Scenes/dont_burn_game.tscn"),
 			"horizontal_multi_slice":preload("res://Scenes/multi_slice_game.tscn"),
 			"vertical_multi_slice":preload("res://Scenes/multi_slice_game.tscn"),
-			"food_bowl":preload("res://Scenes/food_bowl_game.tscn")}
-@onready var games = ["food_bowl"]#["rotate_food","collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn","vertical_multi_slice","horizontal_multi_slice"]
+			"food_bowl":preload("res://Scenes/food_bowl_game.tscn"),
+			"plate_food":preload("res://Scenes/plate_food_game.tscn"),
+			"bread_spread":preload("res://Scenes/bread_spread_game.tscn")}
+@onready var games = ["bread_spread"]#["rotate_food","collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn","vertical_multi_slice","horizontal_multi_slice"]
 func getGame(game):
 	return game_types[game].instantiate()
 	
@@ -36,6 +38,8 @@ func generateRandomGame(): #generates data for random game, returns instantiatio
 		"horizontal_multi_slice": game_data = await getMultiSlice(0)
 		"vertical_multi_slice" : game_data = await getMultiSlice(90)
 		"food_bowl" : game_data = await getRandomFoodBowl()
+		"plate_food" : game_data = await getRandomPlateFood()
+		"bread_spread" : game_data = await getRandomBreadSpread()
 		_: print("HOW'D WE GET HERE") #shouldn't hit, temp
 	game_data['type'] = new_game_type #set game data type to randomely selected type
 	game_data['color'] = Color(FoodMaster.food[game_data['food'][1]]['main_color']) 
@@ -142,11 +146,36 @@ func getRandomFoodBowl():
 	var game_data = {}
 	var foods = [["egg","egg"],["egg","egg_white"],
 	["berry","raspberry"],["berry","blueberry"],["berry","blackberry"]]
+	var utensils = [["utensil","bowl"],["utensil","blender"]]
 	var num_foods = randi_range(4,8)
-	game_data['food'] = ["utensil","bowl"]
+	game_data['food'] = utensils[randi() % utensils.size()]
 	game_data['foods'] = []
 	for x in range(0,num_foods):
 		game_data['foods'].append(foods[randi() % foods.size()])
 	game_data['task'] = "GATHER FOOD"
+	game_data['bg'] = 'checkered'
+	return game_data
+
+func getRandomPlateFood():
+	var game_data = {}
+	var foods = [["beef","burger_raw"],["beef","steak_raw"],["pork","pork_chop_raw"],
+	["berry","raspberry"],["berry","blueberry"],["berry","blackberry"]]
+	var num_foods = randi_range(1,4)
+	game_data['food'] = ["utensil","plate"]
+	game_data['foods'] = []
+	for x in range(0,num_foods):
+		game_data['foods'].append(foods[randi() % foods.size()])
+	game_data['task'] = "PLATE FOOD"
+	game_data['bg'] = 'circles'
+	return game_data
+
+func getRandomBreadSpread():
+	var game_data = {}
+	var breads = [["bread","bread_slice"],["bread","bun_bottom"]]
+	var spreads = ["peanut_butter","jelly_strawberry","jelly_blueberry","jelly_grape","ketchup","mayo","mustard","relish","hot_sauce","butter_spread"]
+	var spread_choice = spreads[randi() % spreads.size()]
+	game_data['food'] = breads[randi() % breads.size()]
+	game_data['foods'] = [spread_choice, 'peanut_butter','mustard']
+	game_data['task'] = 'SPREAD THE %s' % spread_choice
 	game_data['bg'] = 'checkered'
 	return game_data

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1009.0943"
+   height="1009.0943"
+   viewBox="0 0 266.98954 266.98954"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="bun_buttom.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.3835122"
+     inkscape:cx="259.44416"
+     inkscape:cy="671.42584"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true">
+    <sodipodi:guide
+       position="-137.02694,112.45472"
+       orientation="1,0"
+       id="guide17"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(99.728634,94.513515)">
+    <circle
+       style="fill:#f1934c;stroke:none;stroke-width:6.34999;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="path17"
+       cx="33.766132"
+       cy="38.981251"
+       r="133.49477" />
+    <circle
+       style="fill:#feffe5;stroke:none;stroke-width:5.89056;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="circle21"
+       cx="33.766132"
+       cy="38.981251"
+       r="123.83623"
+       transform="translate(-1.6666668e-7)" />
+    <path
+       id="circle17"
+       style="fill:none;stroke:#fad5af;stroke-width:21.9237;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
+       d="m -12.866396,123.58612 c -19.12984,0 -34.637637,-15.5078 -34.637636,-34.637644"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>

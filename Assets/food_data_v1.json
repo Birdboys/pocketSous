@@ -187,5 +187,152 @@
     "name": "BOWL",
     "theme": "lightGray",
     "main_color": "#894835"
+  },
+  "plate": {
+    "main_type": "utensil",
+    "sub_type": "plate",
+    "name": "PLATE",
+    "theme": "lightGray",
+    "main_color": "#feffe5"
+  },
+  "blender": {
+    "main_type": "utensil",
+    "sub_type": "blender",
+    "name": "BLENDER",
+    "theme": "lightGray",
+    "main_color": "#2a2a41"
+  },
+  "bread_slice": {
+    "main_type": "bread",
+    "sub_type": "bread_slice",
+    "name": "BREAD",
+    "theme": "lightGreen",
+    "main_color": "#fad5af"
+  },
+  "bun": {
+    "main_type": "bread",
+    "sub_type": "bun",
+    "name": "BUN",
+    "theme": "darkBlue",
+    "main_color": "#d68552"
+  },
+  "bun_bottom": {
+    "main_type": "bread",
+    "sub_type": "bun_bottom",
+    "name": "BUN",
+    "theme": "darkBlue",
+    "main_color": "#d68552"
+  },
+  "bun_top": {
+    "main_type": "bread",
+    "sub_type": "bun_top",
+    "name": "BUN",
+    "theme": "darkBlue",
+    "main_color": "#d68552"
+  },
+  "peanut_butter": {
+    "main_type": "spread",
+    "sub_type": "peanut_butter",
+    "name": "PEANUT BUTTER",
+    "theme": "lightGray",
+    "main_color": "#be5a1e"
+  },
+  "jelly_strawberry": {
+    "main_type": "spread",
+    "sub_type": "jelly_strawberry",
+    "name": "STRAWBERRY JELLY",
+    "theme": "lightGray",
+    "main_color": "#81173f"
+  },
+  "jelly_grape": {
+    "main_type": "spread",
+    "sub_type": "jelly_grape",
+    "name": "GRAPE JELLY",
+    "theme": "lightGray",
+    "main_color": "#422490"
+  },
+  "jelly_blueberry": {
+    "main_type": "spread",
+    "sub_type": "jelly_blueberry",
+    "name": "BLUEBERRY JELLY",
+    "theme": "lightGray",
+    "main_color": "#2749d0"
+  },
+  "butter_spread": {
+    "main_type": "spread",
+    "sub_type": "butter_spread",
+    "name": "BUTTER",
+    "theme": "lightGray",
+    "main_color": "#e4cd5a"
+  },
+  "mustard": {
+    "main_type": "spread",
+    "sub_type": "mustard",
+    "name": "MAYO",
+    "theme": "lightGray",
+    "main_color": "#e4cd5a"
+  },
+  "ketchup": {
+    "main_type": "spread",
+    "sub_type": "ketchup",
+    "name": "KETCHUP",
+    "theme": "lightGray",
+    "main_color": "#cc1825"
+  },
+  "mayo": {
+    "main_type": "spread",
+    "sub_type": "mayo",
+    "name": "MAYO",
+    "theme": "lightGray",
+    "main_color": "#ffffff"
+  },
+  "relish": {
+    "main_type": "spread",
+    "sub_type": "relish",
+    "name": "RELISH",
+    "theme": "lightGray",
+    "main_color": "#439d40"
+  },
+  "hot_sauce": {
+    "main_type": "spread",
+    "sub_type": "hot_sauce",
+    "name": "HOT SAUCE",
+    "theme": "lightGray",
+    "main_color": "#dc4926"
+  },
+  "onion_yellow": {
+    "main_type": "onion",
+    "sub_type": "onion_yellow",
+    "name": "ONION",
+    "theme": "lightGray",
+    "main_color": "#f1934c"
+  },
+  "onion_yellow_half": {
+    "main_type": "onion",
+    "sub_type": "onion_yellow_half",
+    "name": "ONION",
+    "theme": "lightGray",
+    "main_color": "#feffe5"
+  },
+  "onion_red": {
+    "main_type": "onion",
+    "sub_type": "onion_red",
+    "name": "ONION",
+    "theme": "lightGray",
+    "main_color": "#81173f"
+  },
+  "onion_red_half": {
+    "main_type": "onion",
+    "sub_type": "onion_red_half",
+    "name": "ONION",
+    "theme": "lightGray",
+    "main_color": "#feffe5"
+  },
+  "carrot": {
+    "main_type": "carrot",
+    "sub_type": "carrot",
+    "name": "CARROT",
+    "theme": "lightGray",
+    "main_color": "#f1934c"
   }
 }

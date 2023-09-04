@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://35125vghp6f6"]
 
 [ext_resource type="Script" path="res://Scripts/food_bowl_game.gd" id="1_n12tq"]
-[ext_resource type="Texture2D" uid="uid://dktkk5ytqqvpp" path="res://Assets/foods/utensil/bowl.svg" id="2_0bcmu"]
+[ext_resource type="Texture2D" uid="uid://lb5evfy46jed" path="res://Assets/foods/utensil/blender.svg" id="2_un7si"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g74nu"]
 
@@ -18,16 +18,17 @@ script = ExtResource("1_n12tq")
 
 [node name="parts" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -40.0
+offset_top = -20.0
 offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 
 [node name="margin" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -40,10 +41,9 @@ mouse_filter = 2
 
 [node name="bowl" type="TextureRect" parent="margin"]
 layout_mode = 2
-size_flags_vertical = 8
 mouse_filter = 2
-texture = ExtResource("2_0bcmu")
-expand_mode = 5
+texture = ExtResource("2_un7si")
+expand_mode = 1
 stretch_mode = 5
 
 [node name="bowlArea" type="Area2D" parent="margin/bowl"]

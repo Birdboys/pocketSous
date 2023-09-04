@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfugy4lklr8ut"]
+
+[ext_resource type="Script" path="res://Scripts/plate_food_game.gd" id="1_v0id5"]
+[ext_resource type="Texture2D" uid="uid://co6lq6wxk8i06" path="res://Assets/foods/utensil/plate.svg" id="2_4j8v7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s3mwn"]
+
+[node name="plateFoodGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_v0id5")
+
+[node name="margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="plate" type="TextureRect" parent="margin"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_4j8v7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="plateArea" type="Area2D" parent="margin/plate"]
+
+[node name="plateAreaShape" type="CollisionShape2D" parent="margin/plate/plateArea"]
+shape = SubResource("CircleShape2D_s3mwn")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2chwgotnjyh5"
-path="res://.godot/imported/carroty.svg-a1002aa746a56dd0af3077d40f6ca898.ctex"
+uid="uid://x37iu0wytb6u"
+path="res://.godot/imported/onion_red.svg-02b096a206a7cd9b5d7bef71b574ba0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/foods/carrot/carroty.svg"
-dest_files=["res://.godot/imported/carroty.svg-a1002aa746a56dd0af3077d40f6ca898.ctex"]
+source_file="res://Assets/foods/onion/onion_red.svg"
+dest_files=["res://.godot/imported/onion_red.svg-02b096a206a7cd9b5d7bef71b574ba0e.ctex"]
 
 [params]
 
