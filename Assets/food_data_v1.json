@@ -334,5 +334,68 @@
     "name": "CARROT",
     "theme": "lightGray",
     "main_color": "#f1934c"
+  },
+  "salt": {
+    "main_type": "seasoning",
+    "sub_type": "salt",
+    "name": "SALT",
+    "theme": "lightGray",
+    "main_color": "#ffffff"
+  },
+  "pepper": {
+    "main_type": "seasoning",
+    "sub_type": "pepper",
+    "name": "PEPPER",
+    "theme": "lightGray",
+    "main_color": "#000000"
+  },
+  "cayenne": {
+    "main_type": "seasoning",
+    "sub_type": "cayenne",
+    "name": "CAYENNE",
+    "theme": "lightGray",
+    "main_color": "#dc4926"
+  },
+  "chili": {
+    "main_type": "seasoning",
+    "sub_type": "chili",
+    "name": "CHILI",
+    "theme": "lightGray",
+    "main_color": "#602631"
+  },
+  "cinnamon": {
+    "main_type": "seasoning",
+    "sub_type": "cinnamon",
+    "name": "CINNAMON",
+    "theme": "lightGray",
+    "main_color": "#894835"
+  },
+  "thyme": {
+    "main_type": "seasoning",
+    "sub_type": "thyme",
+    "name": "THYME",
+    "theme": "lightGray",
+    "main_color": "#439d40"
+  },
+  "oregano": {
+    "main_type": "seasoning",
+    "sub_type": "oregano",
+    "name": "OREGANO",
+    "theme": "lightGray",
+    "main_color": "#29694e"
+  },
+  "paprika": {
+    "main_type": "seasoning",
+    "sub_type": "paprika",
+    "name": "PAPRIKA",
+    "theme": "lightGray",
+    "main_color": "#cc1825"
+  },
+  "cumin": {
+    "main_type": "seasoning",
+    "sub_type": "cumin",
+    "name": "CUMIN",
+    "theme": "lightGray",
+    "main_color": "#926d3c"
   }
 }

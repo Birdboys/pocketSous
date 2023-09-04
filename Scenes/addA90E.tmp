@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://t20hxoxpany8"]
+
+[ext_resource type="Script" path="res://Scripts/add_seasoning_game.gd" id="1_lauw1"]
+[ext_resource type="Texture2D" uid="uid://d4nhu1iw3bjkf" path="res://Assets/foods/beef/steak_cooked.svg" id="2_ojh7s"]
+
+[node name="addSeasoningGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_lauw1")
+
+[node name="margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="seasoned" type="TextureRect" parent="margin"]
+layout_mode = 2
+texture = ExtResource("2_ojh7s")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="gui_input" from="margin/seasoned" to="." method="_on_seasoned_gui_input"]
