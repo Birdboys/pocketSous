@@ -28,7 +28,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(-2.5, 0),
 "update": 0,
-"values": [-0.5, 1.0]
+"values": [0.0, 1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_phqsn"]
@@ -38,6 +38,7 @@ _data = {
 
 [node name="slice" type="Node2D"]
 script = ExtResource("1_gu7ys")
+shine_point = -0.5
 
 [node name="touchBegin" type="Area2D" parent="."]
 

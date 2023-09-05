@@ -15,7 +15,7 @@ signal game_loss
 func _ready():
 	setMargins(offset)
 	
-func _process_(_delta):
+func _process(_delta):
 	sliceable.get_material().set_shader_parameter("percent",slice_anim_percent) #set slice shader params based on animation
 	
 func initialize(game_data):

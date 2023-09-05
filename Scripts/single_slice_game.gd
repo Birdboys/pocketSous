@@ -43,7 +43,7 @@ func cutSliced(_data): #if we slice the cut
 	cut = null #get rid of cut pointer so code doesn't break
 	sliceAnim.play("sliced") #play sliced animation to update shader and win game
 	
-func gameWon(_id):
+func gameWon():
 	emit_signal("game_win")
 	print("WON THE GAME")
 

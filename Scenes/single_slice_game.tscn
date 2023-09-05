@@ -1,14 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjnu6cv1x2sw6"]
+[gd_scene load_steps=7 format=3 uid="uid://cjnu6cv1x2sw6"]
 
 [ext_resource type="Script" path="res://Scripts/single_slice_game.gd" id="1_1uwsv"]
-[ext_resource type="Shader" path="res://Scripts/sliceable.gdshader" id="2_4xhlm"]
+[ext_resource type="Shader" path="res://Scripts/sliceable_multi.gdshader" id="2_bif5r"]
+[ext_resource type="Texture2D" uid="uid://cbrnf0i0yjor5" path="res://Assets/foods/apple/red_apple.svg" id="3_wtss6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kf7vi"]
-shader = ExtResource("2_4xhlm")
-shader_parameter/percent = 0.5
-shader_parameter/cut = null
-shader_parameter/cut_time = 2.655
-shader_parameter/horizontal = null
+shader = ExtResource("2_bif5r")
+shader_parameter/percent = 0.8
+shader_parameter/horizontal = false
 
 [sub_resource type="Animation" id="Animation_bjqfw"]
 resource_name = "sliced"
@@ -36,7 +35,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.3),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": [null],
+"args": [],
 "method": &"gameWon"
 }]
 }
@@ -69,6 +68,7 @@ grow_vertical = 2
 material = SubResource("ShaderMaterial_kf7vi")
 layout_mode = 2
 mouse_filter = 2
+texture = ExtResource("3_wtss6")
 expand_mode = 1
 stretch_mode = 5
 
