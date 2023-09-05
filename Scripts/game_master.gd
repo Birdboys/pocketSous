@@ -17,7 +17,7 @@ extends Node
 			"plate_food":preload("res://Scenes/plate_food_game.tscn"),
 			"bread_spread":preload("res://Scenes/bread_spread_game.tscn"),
 			"add_seasoning":preload("res://Scenes/add_seasoning_game.tscn")}
-@onready var games = ["add_seasoning"]#["rotate_food","collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn","vertical_multi_slice","horizontal_multi_slice"]
+@onready var games = ["rotate_food","collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn","vertical_multi_slice","horizontal_multi_slice","plate_food","add_seasoning","bread_spread"]
 func getGame(game):
 	return game_types[game].instantiate()
 	
@@ -177,7 +177,7 @@ func getRandomBreadSpread():
 	var spreads = ["peanut_butter","jelly_strawberry","jelly_blueberry","jelly_grape","ketchup","mayo","mustard","relish","hot_sauce","butter_spread"]
 	var spread_choice = spreads[randi() % spreads.size()]
 	game_data['food'] = breads[randi() % breads.size()]
-	game_data['foods'] = [spread_choice, 'peanut_butter','mustard']
+	game_data['foods'] = [spread_choice]
 	game_data['task'] = 'SPREAD %s' % spread_choice
 	game_data['bg'] = 'checkered'
 	return game_data

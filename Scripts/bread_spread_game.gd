@@ -47,7 +47,6 @@ func nextSpread():
 func gameWon():
 	finished = true
 	emit_signal("game_win")
-	print("WON THE GAME")
 
 func setMargins(val):
 	margin.add_theme_constant_override("margin_top", val) #set margins of collect space
@@ -60,4 +59,12 @@ func _on_bread_gui_input(_event):
 		if Input.is_action_just_pressed("screen_touch") and not anim.is_playing():
 			anim.play("spread")
 			print("STARTING SPREAD")
-		
+
+func _on_swipe_area_swiped(type, length):
+	if not finished and not anim.is_playing():
+		match type:
+			0: spread.get_material().set_shader_parameter("horizontal",true) 
+			1: spread.get_material().set_shader_parameter("horizontal",false) 
+		if length < 0: spread.get_material().set_shader_parameter("direction",-1) 
+		else: spread.get_material().set_shader_parameter("direction",1) 
+		anim.play("spread")

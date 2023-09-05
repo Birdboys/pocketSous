@@ -9,6 +9,9 @@ extends Control
 signal game_win
 signal game_loss
 
+func _ready():
+	setMargins(offset)
+	
 func initialize(game_data):
 	seasoned.texture = load("res://Assets/foods/%s/%s.svg" % [game_data['food'][0],game_data['food'][1]])
 	seasonings = game_data['foods']
@@ -32,3 +35,9 @@ func _on_seasoned_gui_input(_event):
 func gameWon():
 	emit_signal("game_win")
 	print("WON THE GAME")
+
+func setMargins(val):
+	margin.add_theme_constant_override("margin_top", val) #set margins of collect space
+	margin.add_theme_constant_override("margin_left", val)
+	margin.add_theme_constant_override("margin_bottom", val)
+	margin.add_theme_constant_override("margin_right", val)

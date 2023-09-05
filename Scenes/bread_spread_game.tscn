@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://che1gm0ugg35u"]
+[gd_scene load_steps=9 format=3 uid="uid://che1gm0ugg35u"]
 
 [ext_resource type="Script" path="res://Scripts/bread_spread_game.gd" id="1_ew4gs"]
 [ext_resource type="Texture2D" uid="uid://derrqsfw4qre1" path="res://Assets/foods/bread/bread_slice.svg" id="1_nysgv"]
 [ext_resource type="Shader" path="res://Scripts/bread_spread_game.gdshader" id="2_360b4"]
 [ext_resource type="Texture2D" uid="uid://dyl6xxnn1onx8" path="res://Assets/foods/bread/bread_slice_spread.svg" id="2_sjxuo"]
+[ext_resource type="PackedScene" uid="uid://b73pcxlqvqfhj" path="res://Scenes/swipe_area.tscn" id="3_faepp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hmi0d"]
 shader = ExtResource("2_360b4")
@@ -11,6 +12,7 @@ shader_parameter/og_color = Color(0, 0, 0, 0)
 shader_parameter/new_color = null
 shader_parameter/percent = 0.0
 shader_parameter/horizontal = true
+shader_parameter/direction = 1
 
 [sub_resource type="Animation" id="Animation_jjjfx"]
 resource_name = "spread"
@@ -87,4 +89,8 @@ libraries = {
 "": SubResource("AnimationLibrary_rfrqj")
 }
 
+[node name="swipeArea" parent="." instance=ExtResource("3_faepp")]
+layout_mode = 1
+
 [connection signal="gui_input" from="margin/bread" to="." method="_on_bread_gui_input"]
+[connection signal="swiped" from="swipeArea" to="." method="_on_swipe_area_swiped"]
