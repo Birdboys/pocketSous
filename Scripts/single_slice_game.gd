@@ -14,7 +14,7 @@ signal game_loss
 
 func _ready():
 	setMargins(offset)
-	
+	sliceable.get_material().set_shader_parameter("cut_time",0.0) #set slice shader params based on animation
 func _process(_delta):
 	if cut == null:
 		sliceable.get_material().set_shader_parameter("cut_time",slice_anim_percent) #set slice shader params based on animation

@@ -1,401 +1,401 @@
 {
   "green_apple": {
-    "main_type": "apple",
-    "sub_type": "green_apple",
-    "name": "GREEN APPLE",
-    "theme": "orange",
-    "main_color": "#85c448"
+	"main_type": "apple",
+	"sub_type": "green_apple",
+	"name": "GREEN APPLE",
+	"theme": "orange",
+	"main_color": "#85c448"
   },
   "yellow_apple": {
-    "main_type": "apple",
-    "sub_type": "yellow_apple",
-    "name": "YELLOW APPLE",
-    "theme": "pink",
-    "main_color": "#e4cd5a"
+	"main_type": "apple",
+	"sub_type": "yellow_apple",
+	"name": "YELLOW APPLE",
+	"theme": "pink",
+	"main_color": "#e4cd5a"
   },
   "red_apple": {
-    "main_type": "apple",
-    "sub_type": "red_apple",
-    "name": "RED APPLE",
-    "theme": "tan",
-    "main_color": "#cc1825"
+	"main_type": "apple",
+	"sub_type": "red_apple",
+	"name": "RED APPLE",
+	"theme": "tan",
+	"main_color": "#cc1825"
   },
   "banana": {
-    "main_type": "banana",
-    "sub_type": "banana",
-    "name": "BANANA",
-    "theme": "blue",
-    "main_color": "#e4cd5a"
+	"main_type": "banana",
+	"sub_type": "banana",
+	"name": "BANANA",
+	"theme": "blue",
+	"main_color": "#e4cd5a"
   },
   "steak_raw": {
-    "main_type": "beef",
-    "sub_type": "steak_raw",
-    "name": "STEAK",
-    "theme": "darkGreen",
-    "main_color": "#d16363"
+	"main_type": "beef",
+	"sub_type": "steak_raw",
+	"name": "STEAK",
+	"theme": "darkGreen",
+	"main_color": "#d16363"
   },
   "steak_cooked": {
-    "main_type": "beef",
-    "sub_type": "steak_cooked",
-    "name": "STEAK",
-    "theme": "darkBlue",
-    "main_color": "#602631"
+	"main_type": "beef",
+	"sub_type": "steak_cooked",
+	"name": "STEAK",
+	"theme": "darkBlue",
+	"main_color": "#602631"
   },
   "burger_raw": {
-    "main_type": "beef",
-    "sub_type": "burger_raw",
-    "name": "BURGER",
-    "theme": "darkBlue",
-    "main_color": "#d16363"
+	"main_type": "beef",
+	"sub_type": "burger_raw",
+	"name": "BURGER",
+	"theme": "darkBlue",
+	"main_color": "#d16363"
   },
   "burger_cooked": {
-    "main_type": "beef",
-    "sub_type": "burger_cooked",
-    "name": "BURGER",
-    "theme": "darkBlue",
-    "main_color": "#602631"
+	"main_type": "beef",
+	"sub_type": "burger_cooked",
+	"name": "BURGER",
+	"theme": "darkBlue",
+	"main_color": "#602631"
   },
   "blueberry": {
-    "main_type": "berry",
-    "sub_type": "blueberry",
-    "name": "BLUEBERRY",
-    "theme": "orange",
-    "main_color": "#4477ff"
+	"main_type": "berry",
+	"sub_type": "blueberry",
+	"name": "BLUEBERRY",
+	"theme": "orange",
+	"main_color": "#4477ff"
   },
   "raspberry": {
-    "main_type": "berry",
-    "sub_type": "raspberry",
-    "name": "RASPBERRY",
-    "theme": "yellow",
-    "main_color": "#ff82a0"
+	"main_type": "berry",
+	"sub_type": "raspberry",
+	"name": "RASPBERRY",
+	"theme": "yellow",
+	"main_color": "#ff82a0"
   },
   "blackberry": {
-    "main_type": "berry",
-    "sub_type": "blackberry",
-    "name": "BLACKBERRY",
-    "theme": "pink",
-    "main_color": "#2a2a41"
+	"main_type": "berry",
+	"sub_type": "blackberry",
+	"name": "BLACKBERRY",
+	"theme": "pink",
+	"main_color": "#2a2a41"
   },
   "butter_pat": {
-    "main_type": "butter",
-    "sub_type": "butter_pat",
-    "name": "BUTTER",
-    "theme": "blue",
-    "main_color": "#e4cd5a"
+	"main_type": "butter",
+	"sub_type": "butter_pat",
+	"name": "BUTTER",
+	"theme": "blue",
+	"main_color": "#e4cd5a"
   },
   "egg": {
-    "main_type": "egg",
-    "sub_type": "egg",
-    "name": "EGG",
-    "theme": "lightGray",
-    "main_color": "#fad5af"
+	"main_type": "egg",
+	"sub_type": "egg",
+	"name": "EGG",
+	"theme": "lightGray",
+	"main_color": "#fad5af"
   },
   "egg_white": {
-    "main_type": "egg",
-    "sub_type": "egg_white",
-    "name": "EGG",
-    "theme": "lightGreen",
-    "main_color": "#feffe5"
+	"main_type": "egg",
+	"sub_type": "egg_white",
+	"name": "EGG",
+	"theme": "lightGreen",
+	"main_color": "#feffe5"
   },
   "lemon": {
-    "main_type": "lemon",
-    "sub_type": "lemon",
-    "name": "LEMON",
-    "theme": "blue",
-    "main_color": "#e4cd5a"
+	"main_type": "lemon",
+	"sub_type": "lemon",
+	"name": "LEMON",
+	"theme": "blue",
+	"main_color": "#e4cd5a"
   },
   "lemon_vertical": {
-    "main_type": "lemon",
-    "sub_type": "lemon_vertical",
-    "name": "LEMON",
-    "theme": "blue",
-    "main_color": "#e4cd5a"
+	"main_type": "lemon",
+	"sub_type": "lemon_vertical",
+	"name": "LEMON",
+	"theme": "blue",
+	"main_color": "#e4cd5a"
   },
   "lime": {
-    "main_type": "lime",
-    "sub_type": "lime",
-    "name": "LIME",
-    "theme": "pink",
-    "main_color": "#85c448"
+	"main_type": "lime",
+	"sub_type": "lime",
+	"name": "LIME",
+	"theme": "pink",
+	"main_color": "#85c448"
   },
   "lime_vertical": {
-    "main_type": "lime",
-    "sub_type": "lime_vertical",
-    "name": "LIME",
-    "theme": "pink",
-    "main_color": "#85c448"
+	"main_type": "lime",
+	"sub_type": "lime_vertical",
+	"name": "LIME",
+	"theme": "pink",
+	"main_color": "#85c448"
   },
   "pork_chop_raw": {
-    "main_type": "pork",
-    "sub_type": "pork_chop_raw",
-    "name": "PORK CHOP",
-    "theme": "darkBlue",
-    "main_color": "#ed9d7c"
+	"main_type": "pork",
+	"sub_type": "pork_chop_raw",
+	"name": "PORK CHOP",
+	"theme": "darkBlue",
+	"main_color": "#ed9d7c"
   },
   "pork_chop_cooked": {
-    "main_type": "pork",
-    "sub_type": "pork_chop_cooked",
-    "name": "PORK CHOP",
-    "theme": "darkBlue",
-    "main_color": "#fad5af"
+	"main_type": "pork",
+	"sub_type": "pork_chop_cooked",
+	"name": "PORK CHOP",
+	"theme": "darkBlue",
+	"main_color": "#fad5af"
   },
   "zucchini": {
-    "main_type": "zucchini",
-    "sub_type": "zucchini",
-    "name": "ZUCCHINI",
-    "theme": "orange",
-    "main_color": "#439d40"
+	"main_type": "zucchini",
+	"sub_type": "zucchini",
+	"name": "ZUCCHINI",
+	"theme": "orange",
+	"main_color": "#439d40"
   },
   "milk": {
-    "main_type": "liquid",
-    "sub_type": "milk",
-    "name": "MILK",
-    "theme": "tan",
-    "main_color": "#feffe5"
+	"main_type": "liquid",
+	"sub_type": "milk",
+	"name": "MILK",
+	"theme": "tan",
+	"main_color": "#feffe5"
   },
   "water": {
-    "main_type": "liquid",
-    "sub_type": "water",
-    "name": "WATER",
-    "theme": "yellow",
-    "main_color": "#8bf5c6"
+	"main_type": "liquid",
+	"sub_type": "water",
+	"name": "WATER",
+	"theme": "yellow",
+	"main_color": "#8bf5c6"
   },
   "oil": {
-    "main_type": "liquid",
-    "sub_type": "oil",
-    "name": "OIL",
-    "theme": "pink",
-    "main_color": "#e4cd5a"
+	"main_type": "liquid",
+	"sub_type": "oil",
+	"name": "OIL",
+	"theme": "pink",
+	"main_color": "#e4cd5a"
   },
   "orange_juice": {
-    "main_type": "liquid",
-    "sub_type": "orange_juice",
-    "name": "ORANGE JUICE",
-    "theme": "darkGreen",
-    "main_color": "#f1934c"
+	"main_type": "liquid",
+	"sub_type": "orange_juice",
+	"name": "ORANGE JUICE",
+	"theme": "darkGreen",
+	"main_color": "#f1934c"
   },
   "apple_juice": {
-    "main_type": "liquid",
-    "sub_type": "apple_juice",
-    "name": "APPLE JUICE",
-    "theme": "lightGreen",
-    "main_color": "#be5a1e"
+	"main_type": "liquid",
+	"sub_type": "apple_juice",
+	"name": "APPLE JUICE",
+	"theme": "lightGreen",
+	"main_color": "#be5a1e"
   },
   "bowl": {
-    "main_type": "utensil",
-    "sub_type": "bowl",
-    "name": "BOWL",
-    "theme": "lightGray",
-    "main_color": "#894835"
+	"main_type": "utensil",
+	"sub_type": "bowl",
+	"name": "BOWL",
+	"theme": "lightGray",
+	"main_color": "#894835"
   },
   "plate": {
-    "main_type": "utensil",
-    "sub_type": "plate",
-    "name": "PLATE",
-    "theme": "lightGray",
-    "main_color": "#feffe5"
+	"main_type": "utensil",
+	"sub_type": "plate",
+	"name": "PLATE",
+	"theme": "lightGray",
+	"main_color": "#feffe5"
   },
   "blender": {
-    "main_type": "utensil",
-    "sub_type": "blender",
-    "name": "BLENDER",
-    "theme": "lightGray",
-    "main_color": "#2a2a41"
+	"main_type": "utensil",
+	"sub_type": "blender",
+	"name": "BLENDER",
+	"theme": "lightGray",
+	"main_color": "#2a2a41"
   },
   "bread_slice": {
-    "main_type": "bread",
-    "sub_type": "bread_slice",
-    "name": "BREAD",
-    "theme": "lightGreen",
-    "main_color": "#fad5af"
+	"main_type": "bread",
+	"sub_type": "bread_slice",
+	"name": "BREAD",
+	"theme": "lightGreen",
+	"main_color": "#fad5af"
   },
   "bun": {
-    "main_type": "bread",
-    "sub_type": "bun",
-    "name": "BUN",
-    "theme": "darkBlue",
-    "main_color": "#d68552"
+	"main_type": "bread",
+	"sub_type": "bun",
+	"name": "BUN",
+	"theme": "darkBlue",
+	"main_color": "#d68552"
   },
   "bun_bottom": {
-    "main_type": "bread",
-    "sub_type": "bun_bottom",
-    "name": "BUN",
-    "theme": "darkBlue",
-    "main_color": "#d68552"
+	"main_type": "bread",
+	"sub_type": "bun_bottom",
+	"name": "BUN",
+	"theme": "darkBlue",
+	"main_color": "#d68552"
   },
   "bun_top": {
-    "main_type": "bread",
-    "sub_type": "bun_top",
-    "name": "BUN",
-    "theme": "darkBlue",
-    "main_color": "#d68552"
+	"main_type": "bread",
+	"sub_type": "bun_top",
+	"name": "BUN",
+	"theme": "darkBlue",
+	"main_color": "#d68552"
   },
   "peanut_butter": {
-    "main_type": "spread",
-    "sub_type": "peanut_butter",
-    "name": "PEANUT BUTTER",
-    "theme": "lightGray",
-    "main_color": "#be5a1e"
+	"main_type": "spread",
+	"sub_type": "peanut_butter",
+	"name": "PEANUT BUTTER",
+	"theme": "lightGray",
+	"main_color": "#be5a1e"
   },
   "jelly_strawberry": {
-    "main_type": "spread",
-    "sub_type": "jelly_strawberry",
-    "name": "STRAWBERRY JELLY",
-    "theme": "lightGray",
-    "main_color": "#81173f"
+	"main_type": "spread",
+	"sub_type": "jelly_strawberry",
+	"name": "STRAWBERRY JELLY",
+	"theme": "lightGray",
+	"main_color": "#81173f"
   },
   "jelly_grape": {
-    "main_type": "spread",
-    "sub_type": "jelly_grape",
-    "name": "GRAPE JELLY",
-    "theme": "lightGray",
-    "main_color": "#422490"
+	"main_type": "spread",
+	"sub_type": "jelly_grape",
+	"name": "GRAPE JELLY",
+	"theme": "lightGray",
+	"main_color": "#422490"
   },
   "jelly_blueberry": {
-    "main_type": "spread",
-    "sub_type": "jelly_blueberry",
-    "name": "BLUEBERRY JELLY",
-    "theme": "lightGray",
-    "main_color": "#2749d0"
+	"main_type": "spread",
+	"sub_type": "jelly_blueberry",
+	"name": "BLUEBERRY JELLY",
+	"theme": "lightGray",
+	"main_color": "#2749d0"
   },
   "butter_spread": {
-    "main_type": "spread",
-    "sub_type": "butter_spread",
-    "name": "BUTTER",
-    "theme": "lightGray",
-    "main_color": "#e4cd5a"
+	"main_type": "spread",
+	"sub_type": "butter_spread",
+	"name": "BUTTER",
+	"theme": "lightGray",
+	"main_color": "#e4cd5a"
   },
   "mustard": {
-    "main_type": "spread",
-    "sub_type": "mustard",
-    "name": "MAYO",
-    "theme": "lightGray",
-    "main_color": "#e4cd5a"
+	"main_type": "spread",
+	"sub_type": "mustard",
+	"name": "MAYO",
+	"theme": "lightGray",
+	"main_color": "#e4cd5a"
   },
   "ketchup": {
-    "main_type": "spread",
-    "sub_type": "ketchup",
-    "name": "KETCHUP",
-    "theme": "lightGray",
-    "main_color": "#cc1825"
+	"main_type": "spread",
+	"sub_type": "ketchup",
+	"name": "KETCHUP",
+	"theme": "lightGray",
+	"main_color": "#cc1825"
   },
   "mayo": {
-    "main_type": "spread",
-    "sub_type": "mayo",
-    "name": "MAYO",
-    "theme": "lightGray",
-    "main_color": "#ffffff"
+	"main_type": "spread",
+	"sub_type": "mayo",
+	"name": "MAYO",
+	"theme": "lightGray",
+	"main_color": "#ffffff"
   },
   "relish": {
-    "main_type": "spread",
-    "sub_type": "relish",
-    "name": "RELISH",
-    "theme": "lightGray",
-    "main_color": "#439d40"
+	"main_type": "spread",
+	"sub_type": "relish",
+	"name": "RELISH",
+	"theme": "lightGray",
+	"main_color": "#439d40"
   },
   "hot_sauce": {
-    "main_type": "spread",
-    "sub_type": "hot_sauce",
-    "name": "HOT SAUCE",
-    "theme": "lightGray",
-    "main_color": "#dc4926"
+	"main_type": "spread",
+	"sub_type": "hot_sauce",
+	"name": "HOT SAUCE",
+	"theme": "lightGray",
+	"main_color": "#dc4926"
   },
   "onion_yellow": {
-    "main_type": "onion",
-    "sub_type": "onion_yellow",
-    "name": "ONION",
-    "theme": "lightGray",
-    "main_color": "#f1934c"
+	"main_type": "onion",
+	"sub_type": "onion_yellow",
+	"name": "ONION",
+	"theme": "lightGray",
+	"main_color": "#f1934c"
   },
   "onion_yellow_half": {
-    "main_type": "onion",
-    "sub_type": "onion_yellow_half",
-    "name": "ONION",
-    "theme": "lightGray",
-    "main_color": "#feffe5"
+	"main_type": "onion",
+	"sub_type": "onion_yellow_half",
+	"name": "ONION",
+	"theme": "lightGray",
+	"main_color": "#feffe5"
   },
   "onion_red": {
-    "main_type": "onion",
-    "sub_type": "onion_red",
-    "name": "ONION",
-    "theme": "lightGray",
-    "main_color": "#81173f"
+	"main_type": "onion",
+	"sub_type": "onion_red",
+	"name": "ONION",
+	"theme": "lightGray",
+	"main_color": "#81173f"
   },
   "onion_red_half": {
-    "main_type": "onion",
-    "sub_type": "onion_red_half",
-    "name": "ONION",
-    "theme": "lightGray",
-    "main_color": "#feffe5"
+	"main_type": "onion",
+	"sub_type": "onion_red_half",
+	"name": "ONION",
+	"theme": "lightGray",
+	"main_color": "#feffe5"
   },
   "carrot": {
-    "main_type": "carrot",
-    "sub_type": "carrot",
-    "name": "CARROT",
-    "theme": "lightGray",
-    "main_color": "#f1934c"
+	"main_type": "carrot",
+	"sub_type": "carrot",
+	"name": "CARROT",
+	"theme": "lightGray",
+	"main_color": "#f1934c"
   },
   "salt": {
-    "main_type": "seasoning",
-    "sub_type": "salt",
-    "name": "SALT",
-    "theme": "lightGray",
-    "main_color": "#ffffff"
+	"main_type": "seasoning",
+	"sub_type": "salt",
+	"name": "SALT",
+	"theme": "lightGray",
+	"main_color": "#ffffff"
   },
   "pepper": {
-    "main_type": "seasoning",
-    "sub_type": "pepper",
-    "name": "PEPPER",
-    "theme": "lightGray",
-    "main_color": "#000000"
+	"main_type": "seasoning",
+	"sub_type": "pepper",
+	"name": "PEPPER",
+	"theme": "lightGray",
+	"main_color": "#000000"
   },
   "cayenne": {
-    "main_type": "seasoning",
-    "sub_type": "cayenne",
-    "name": "CAYENNE",
-    "theme": "lightGray",
-    "main_color": "#dc4926"
+	"main_type": "seasoning",
+	"sub_type": "cayenne",
+	"name": "CAYENNE",
+	"theme": "lightGray",
+	"main_color": "#dc4926"
   },
   "chili": {
-    "main_type": "seasoning",
-    "sub_type": "chili",
-    "name": "CHILI",
-    "theme": "lightGray",
-    "main_color": "#602631"
+	"main_type": "seasoning",
+	"sub_type": "chili",
+	"name": "CHILI",
+	"theme": "lightGray",
+	"main_color": "#602631"
   },
   "cinnamon": {
-    "main_type": "seasoning",
-    "sub_type": "cinnamon",
-    "name": "CINNAMON",
-    "theme": "lightGray",
-    "main_color": "#894835"
+	"main_type": "seasoning",
+	"sub_type": "cinnamon",
+	"name": "CINNAMON",
+	"theme": "lightGray",
+	"main_color": "#894835"
   },
   "thyme": {
-    "main_type": "seasoning",
-    "sub_type": "thyme",
-    "name": "THYME",
-    "theme": "lightGray",
-    "main_color": "#439d40"
+	"main_type": "seasoning",
+	"sub_type": "thyme",
+	"name": "THYME",
+	"theme": "lightGray",
+	"main_color": "#439d40"
   },
   "oregano": {
-    "main_type": "seasoning",
-    "sub_type": "oregano",
-    "name": "OREGANO",
-    "theme": "lightGray",
-    "main_color": "#29694e"
+	"main_type": "seasoning",
+	"sub_type": "oregano",
+	"name": "OREGANO",
+	"theme": "lightGray",
+	"main_color": "#29694e"
   },
   "paprika": {
-    "main_type": "seasoning",
-    "sub_type": "paprika",
-    "name": "PAPRIKA",
-    "theme": "lightGray",
-    "main_color": "#cc1825"
+	"main_type": "seasoning",
+	"sub_type": "paprika",
+	"name": "PAPRIKA",
+	"theme": "lightGray",
+	"main_color": "#cc1825"
   },
   "cumin": {
-    "main_type": "seasoning",
-    "sub_type": "cumin",
-    "name": "CUMIN",
-    "theme": "lightGray",
-    "main_color": "#926d3c"
+	"main_type": "seasoning",
+	"sub_type": "cumin",
+	"name": "CUMIN",
+	"theme": "lightGray",
+	"main_color": "#926d3c"
   }
 }

@@ -16,8 +16,9 @@ extends Node
 			"food_bowl":preload("res://Scenes/food_bowl_game.tscn"),
 			"plate_food":preload("res://Scenes/plate_food_game.tscn"),
 			"bread_spread":preload("res://Scenes/bread_spread_game.tscn"),
-			"add_seasoning":preload("res://Scenes/add_seasoning_game.tscn")}
-@onready var games = ["vertical_multi_slice","horizontal_multi_slice"]#["rotate_food","collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn","vertical_multi_slice","horizontal_multi_slice","plate_food","add_seasoning","bread_spread"]
+			"add_seasoning":preload("res://Scenes/add_seasoning_game.tscn"),
+			"dice_food":preload("res://Scenes/dice_food_game.tscn")}
+@onready var games = ["rotate_food","collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn","vertical_multi_slice","horizontal_multi_slice","plate_food","add_seasoning","bread_spread"]
 func getGame(game):
 	return game_types[game].instantiate()
 	
@@ -42,6 +43,7 @@ func generateRandomGame(): #generates data for random game, returns instantiatio
 		"plate_food" : game_data = await getRandomPlateFood()
 		"bread_spread" : game_data = await getRandomBreadSpread()
 		"add_seasoning" : game_data = await getRandomAddSeasoning()
+		"dice_food" : game_data = await getRandomDiceFood()
 		_: print("HOW'D WE GET HERE") #shouldn't hit, temp
 	game_data['type'] = new_game_type #set game data type to randomely selected type
 	game_data['color'] = Color(FoodMaster.food[game_data['food'][1]]['main_color']) 
@@ -194,4 +196,13 @@ func getRandomAddSeasoning():
 		game_data['foods'].append(seasonings.pop_at(randi() % seasonings.size()))
 	game_data['task'] = 'SEASON %s' % game_data['food'][1]
 	game_data['bg'] = 'circles'
+	return game_data
+
+func getRandomDiceFood():
+	var game_data = {}
+	var foods = [["carrot","carrot"],["onion","onion_yellow_half"],["onion","onion_red_half"]]
+	game_data['food'] = foods[randi() % foods.size()]
+	game_data['num_swipe'] = randi_range(5,10)
+	game_data['task'] = 'DICE %s' % game_data['food'][1]
+	game_data['bg'] = 'diamonds'
 	return game_data

@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://dj061elqkrpyb"]
+
+[ext_resource type="Script" path="res://Scripts/dice_food_game.gd" id="1_e07t7"]
+[ext_resource type="PackedScene" uid="uid://b73pcxlqvqfhj" path="res://Scenes/swipe_area.tscn" id="2_5ulot"]
+[ext_resource type="Shader" path="res://Scripts/dice.gdshader" id="2_uysnx"]
+[ext_resource type="Texture2D" uid="uid://cansbpaf4ki53" path="res://Assets/foods/apple/green_apple.svg" id="3_6q4pp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o5gpp"]
+shader = ExtResource("2_uysnx")
+shader_parameter/dice_percent = 0.0
+
+[node name="diceFoodGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_e07t7")
+
+[node name="margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="food" type="TextureRect" parent="margin"]
+material = SubResource("ShaderMaterial_o5gpp")
+layout_mode = 2
+texture = ExtResource("3_6q4pp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="parts" type="Control" parent="margin/food"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="swipeArea" parent="." instance=ExtResource("2_5ulot")]
+layout_mode = 1
+
+[connection signal="swiped" from="swipeArea" to="." method="_on_swipe_area_swiped"]
