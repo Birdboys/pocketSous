@@ -64,6 +64,7 @@ func createGame(game_data, game_scene): #initializes minigame from game data
 		_: pass
 	await get_tree().process_frame #await process frame so rects update (weird sizes if we don't wait for expansion, dont like this code)
 	await get_tree().process_frame
+	await get_tree().process_frame
 	current_game.initialize(game_data) #initialize th 
 	return 
 

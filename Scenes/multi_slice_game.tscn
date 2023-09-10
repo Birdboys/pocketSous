@@ -45,7 +45,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0)
+color = Color(1, 0.858824, 1, 0.721569)
 
 [connection signal="gui_input" from="sliceArea" to="." method="_on_slice_area_gui_input"]
 [connection signal="mouse_entered" from="sliceArea" to="." method="_on_slice_area_mouse_entered"]

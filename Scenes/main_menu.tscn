@@ -71,6 +71,14 @@ theme_override_font_sizes/font_size = 128
 text = "ENDLESS_BUTTON"
 flat = true
 
+[node name="recipe_book" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_ghwhb")
+theme_override_font_sizes/font_size = 128
+text = "RECIPE_BUTTON"
+flat = true
+
 [node name="language" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ghwhb")
@@ -87,4 +95,5 @@ flat = true
 
 [connection signal="pressed" from="VBoxContainer/timed_game" to="." method="_on_timed_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/endless_game" to="." method="_on_endless_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/recipe_book" to="." method="_on_recipe_book_pressed"]
 [connection signal="pressed" from="VBoxContainer/change_language" to="." method="_on_change_language_pressed"]

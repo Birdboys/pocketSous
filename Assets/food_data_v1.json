@@ -397,5 +397,82 @@
 	"name": "CUMIN",
 	"theme": "lightGray",
 	"main_color": "#926d3c"
+  },
+  "bread_loaf": {
+	"main_type": "bread",
+	"sub_type": "bread_loaf",
+	"name": "BREAD",
+	"theme": "lightGray",
+	"main_color": "#f1934c"
+  },
+  "bread_slice_peanut_butter": {
+	"main_type": "bread",
+	"sub_type": "bread_slice_peanut_butter",
+	"name": "BREAD",
+	"theme": "lightGray",
+	"main_color": "#be5a1e"
+  },
+  "bread_slice_jelly_strawberry": {
+	"main_type": "bread",
+	"sub_type": "bread_slice_jelly_strawberry",
+	"name": "BREAD",
+	"theme": "lightGray",
+	"main_color": "#81173f"
+  },
+  "bread_slice_jelly_grape": {
+	"main_type": "bread",
+	"sub_type": "bread_slice_jelly_grape",
+	"name": "BREAD",
+	"theme": "lightGray",
+	"main_color": "#422490"
+  },
+  "bread_slice_jelly_blueberry": {
+	"main_type": "bread",
+	"sub_type": "bread_slice_jelly_blueberry",
+	"name": "BREAD",
+	"theme": "lightGray",
+	"main_color": "#2749d0"
+  },
+  "bread_slice_butter_spread": {
+	"main_type": "bread",
+	"sub_type": "bread_slice_butter_spread",
+	"name": "BREAD",
+	"theme": "lightGray",
+	"main_color": "#e4cd5a"
+  },
+  "bread_slice_mustard": {
+	"main_type": "bread",
+	"sub_type": "bread_slice_mustard",
+	"name": "BREAD",
+	"theme": "lightGray",
+	"main_color": "#e4cd5a"
+  },
+  "bread_slice_ketchup": {
+	"main_type": "bread",
+	"sub_type": "bread_slice_ketchup",
+	"name": "BREAD",
+	"theme": "lightGray",
+	"main_color": "#cc1825"
+  },
+  "bread_slice_mayo": {
+	"main_type": "bread",
+	"sub_type": "bread_slice_mayo",
+	"name": "BREAD",
+	"theme": "lightGray",
+	"main_color": "#ffffff"
+  },
+  "bread_slice_relish": {
+	"main_type": "bread",
+	"sub_type": "bread_slice_relish",
+	"name": "BREAD",
+	"theme": "lightGray",
+	"main_color": "#439d40"
+  },
+  "bread_slice_hot_sauce": {
+	"main_type": "bread",
+	"sub_type": "bread_slice_hot_sauce",
+	"name": "BREAD",
+	"theme": "lightGray",
+	"main_color": "#dc4926"
   }
 }

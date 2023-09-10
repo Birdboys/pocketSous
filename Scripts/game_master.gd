@@ -18,9 +18,9 @@ extends Node
 			"bread_spread":preload("res://Scenes/bread_spread_game.tscn"),
 			"add_seasoning":preload("res://Scenes/add_seasoning_game.tscn"),
 			"dice_food":preload("res://Scenes/dice_food_game.tscn")}
-@onready var games = ["rotate_food","collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn","vertical_multi_slice","horizontal_multi_slice","plate_food","add_seasoning","bread_spread"]
+@onready var games = ["vertical_multi_slice"]#["rotate_food","collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn","vertical_multi_slice","horizontal_multi_slice","plate_food","add_seasoning","bread_spread"]
 func getGame(game):
-	return game_types[game].instantiate()
+	return game_types[game]
 	
 func generateRandomGame(): #generates data for random game, returns instantiation for game and game data
 	print("GENERATING RANDOM GAME")
@@ -62,7 +62,7 @@ func getRandomCollectTap(): #generates game data for collect tap game
 func getRandomRapidTap():
 	var game_data = {} #game data container
 	var tap_foods = [["beef","steak_raw"],["pork","pork_chop_raw"], ["egg","egg"],["egg","egg_white"]] #list of rapid tapable foods
-	game_data['num_tap'] = randf_range(10,25) #get number of taps necessary to complete from range
+	game_data['num_tap'] = randi_range(10,25) #get number of taps necessary to complete from range
 	game_data['food'] = tap_foods[randi() % tap_foods.size()] #select tapable food
 	game_data['task'] = (tr("RAPID_TAP_TASK_%s" % game_data['food'][1])).to_upper()
 	game_data['bg'] = 'diamonds'
@@ -137,7 +137,7 @@ func getRandomDontBurn():
 func getMultiSlice(type):
 	var game_data = {}
 	var horizontal_cut_foods = [["banana","banana"],["zucchini","zucchini"], ["lemon","lemon_vertical"],["lime","lime_vertical"]]
-	var vertical_cut_foods = [["lemon","lemon"],["apple","red_apple"]]
+	var vertical_cut_foods = [["bread","bread_loaf"]]#[["lemon","lemon"],["apple","red_apple"]]
 	if type == 0: game_data['food'] = horizontal_cut_foods[randi() % horizontal_cut_foods.size()]
 	else: game_data['food'] = vertical_cut_foods[randi() % vertical_cut_foods.size()]
 	game_data['task'] = (tr("MULTI_SLICE_TASK") % tr(FoodMaster.food[game_data['food'][1]]['name'])).to_upper()

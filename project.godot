@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.1", "Mobile")
 
 GameMaster="*res://Scripts/game_master.gd"
 FoodMaster="*res://Scripts/food_master.gd"
+RecipeManager="*res://Scripts/recipe_manager.gd"
 
 [display]
 

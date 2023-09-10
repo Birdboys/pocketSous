@@ -1,0 +1,13 @@
+{
+	"recipe":"pbj_blueberry",
+	"tags":[],
+	"games":[
+		{"num_collect": 10, "food": ["berry", "blueberry"], "task": "COLLECT BLUEBERRY", "bg": "checkered", "type": "collect_tap", "color":"#4477ff"},
+		{"food": ["bread", "bread_loaf"], "task": "SLICE BREAD", "num_cut": 3, "cut_type": 0, "bg": "diamonds", "type": "horizontal_multi_slice", "color":"#f1934c"},
+		{"num_tap": 10, "food": ["berry", "blueberry"], "task": "SQUISH BLUEBERRY", "bg": "diamonds", "type": "rapid_tap", "color":"#4477ff"},
+		{"food": ["bread", "bread_slice"], "task": "ROTATE BREAD", "bg": "diagonals", "type": "rotate_food", "color": "#f1934c"},
+		{"food": ["bread", "bread_slice"], "foods": ["peanut_butter","jelly_blueberry"], "task": "SPREAD", "bg": "checkered", "type": "bread_spread", "color":"#f1934c"},
+		{"food": ["utensil", "plate"], "foods": [["bread", "bread_slice_jelly_blueberry"], ["bread","bread_slice"]], "task": "PLATE FOOD", "bg": "circles", "type": "plate_food", "color":"#feffe5"}
+	],
+	"num_games":6
+}

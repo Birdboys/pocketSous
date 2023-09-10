@@ -17,6 +17,7 @@ func _process(_delta):
 	sliceLineRect.get_material().set_shader_parameter("start",shine_point)
 	
 func initialize(x, y, length, rot, id=0):
+	print("%s, %s, %s, %s, %s" % [x, y, length, rot, id])
 	position = Vector2(x,y)
 	var end_points = [Vector2(-length/4,0),Vector2(length/4,0)]
 	touchLineShape.shape.size=Vector2(length/2,drag_width)

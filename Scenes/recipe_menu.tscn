@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0mkai3grthqv"]
+
+[ext_resource type="Script" path="res://Scripts/recipe_menu.gd" id="1_m00tw"]
+[ext_resource type="FontFile" uid="uid://c7w5gskxa8sge" path="res://Assets/fonts/Oswald/static/Oswald-Bold.ttf" id="2_7250a"]
+
+[node name="recipeMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m00tw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.298039, 0.772549, 0.894118, 1)
+
+[node name="stuff" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="title" type="Label" parent="stuff"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_7250a")
+theme_override_font_sizes/font_size = 128
+text = "POCKET SOUS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="recipeScroll" type="ScrollContainer" parent="stuff"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="recipeContainer" type="VBoxContainer" parent="stuff/recipeScroll"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="back" type="Button" parent="stuff"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7250a")
+theme_override_font_sizes/font_size = 64
+text = "BACK"
+flat = true
+
+[connection signal="pressed" from="stuff/back" to="." method="_on_back_pressed"]

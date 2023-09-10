@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://ual3cs7b16c2"]
+
+[ext_resource type="Texture2D" uid="uid://butmrf8i5ap38" path="res://Assets/foods/egg/egg.svg" id="1_q7t3k"]
+[ext_resource type="Script" path="res://Scripts/recipe_panel.gd" id="1_r088n"]
+[ext_resource type="FontFile" uid="uid://c7w5gskxa8sge" path="res://Assets/fonts/Oswald/static/Oswald-Bold.ttf" id="2_t0sq8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_10txs"]
+bg_color = Color(0.266667, 0.466667, 1, 1)
+
+[node name="recipePanel" type="Panel"]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_10txs")
+script = ExtResource("1_r088n")
+
+[node name="container" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="food" type="TextureRect" parent="container"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_q7t3k")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="food_name" type="Label" parent="container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_t0sq8")
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+
+[node name="touch_area" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[connection signal="gui_input" from="touch_area" to="." method="_on_touch_area_gui_input"]

@@ -25,6 +25,5 @@ script = ExtResource("2_see0j")
 shape = SubResource("CircleShape2D_hks5i")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="area_entered" from="foodArea" to="." method="_on_food_area_area_entered"]
 [connection signal="area_exited" from="foodArea" to="." method="_on_food_area_area_exited"]

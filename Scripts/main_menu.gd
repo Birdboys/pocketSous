@@ -21,3 +21,6 @@ func _on_change_language_pressed():
 	TranslationServer.set_locale(locales[locale_index])
 	$VBoxContainer/language.text = locales[locale_index].to_upper()
 	pass # Replace with function body.
+
+func _on_recipe_book_pressed():
+	get_tree().change_scene_to_file("res://Scenes/recipe_menu.tscn")

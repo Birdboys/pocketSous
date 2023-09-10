@@ -22,14 +22,14 @@ func initialize(game_data):
 	sliceable.texture = load("res://Assets/foods/%s/%s.svg" %[game_data['food'][0],game_data['food'][1]]) #load food sprite
 	cut_type = game_data['cut_type']
 	particle_color = FoodMaster.food[game_data['food'][1]]['main_color']
-	for x in range(game_data['num_cut']):
+	for x in range(int(game_data['num_cut'])):
 		var cut = slice.instantiate() #instantaite new slice
 		sliceable.add_child(cut) #add to margin
 		cut.sliced.connect(cutSliced) #connect sliced event so game can end
 		cuts.append(cut)
 		#sliceable.get_material().set_shader_parameter("percent",cut_site) #set percent for shader based on cut location
 		var min_dim = sliceable.size[sliceable.size.min_axis_index()] #get minimum axis size for calculating cut length
-		match game_data['cut_type']: #match for horizontal and vertical slices
+		match int(game_data['cut_type']): #match for horizontal and vertical slices
 			0: cut.initialize(sliceable.size.x/2,  (x+1) * (sliceable.size.y/(game_data['num_cut']+1)),min_dim,0,x);sliceable.get_material().set_shader_parameter("horizontal",true) #instantiate slice - horizontal so dont rotate it - tell shader cut is horizontal
 			90: cut.initialize((x+1) * (sliceable.size.x/(game_data['num_cut']+1)), sliceable.size.y/2,min_dim,90,x);sliceable.get_material().set_shader_parameter("horizontal",false) #instantiate slice - horizontal so dont rotate it - tell shader cut is horizontal
 		if x > 0:
@@ -64,7 +64,6 @@ func _on_slice_area_gui_input(event):
 		for cut in cuts:
 			if cut:
 				cut.inDrag = true
-
 		
 	if event.is_action_released("screen_touch"):
 		print("ENDING")
