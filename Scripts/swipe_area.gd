@@ -20,6 +20,7 @@ func _on_gui_input(_event):
 			if abs(swipe_length) > min_swipe_dist:
 				emit_signal("swiped", swipe_type, swipe_length)
 		in_swipe = false
+		
 func setSwipeDist(dist):
 	min_swipe_dist = dist
 

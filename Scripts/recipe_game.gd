@@ -6,12 +6,12 @@ extends Control
 @onready var scene_transition = preload("res://Scenes/scene_transition.tscn")
 @onready var prev_transition_type = null
 @onready var pause_menu := preload("res://Scenes/pause_menu.tscn")
-
-#@onready var recipe_data := {}
+@onready var game_time := 0.0
 @onready var games := []
 @onready var num_games := 0
 @onready var current_game_num := 0
 @onready var dish := ""
+@onready var timer = $timer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var data = RecipeManager.getRecipe(RecipeManager.current_recipe_buffer)
@@ -24,7 +24,10 @@ func _ready():
 	current_game = await createGame(current_game_data)
 	current_theme = FoodMaster.food[current_game_data[0]['food'][1]]['theme']
 	current_game.fadeIn()
-
+	
+func _process(delta):
+	game_time += delta
+	timer.text = "%.1f" % game_time + " "
 func createGame(game_data):
 	var new_game = mini_game.instantiate()
 	add_child(new_game)

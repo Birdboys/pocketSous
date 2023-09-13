@@ -25,6 +25,7 @@ func _ready():
 	timeBar.custom_minimum_size = Vector2(0,size.y/20)
 	margin.modulate.a = 0
 	bgShader.modulate.a = 0
+	
 func _process(_delta):
 	if is_timed:
 		timeBar.value = float((gameTimer.time_left/game_time) * 100)

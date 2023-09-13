@@ -474,5 +474,19 @@
 	"name": "BREAD",
 	"theme": "lightGray",
 	"main_color": "#dc4926"
+  },
+  "white_rice": {
+	"main_type": "rice",
+	"sub_type": "white_rice",
+	"name": "RICE",
+	"theme": "darkBlue",
+	"main_color": "#ffffff"
+  },
+  "brown_rice": {
+	"main_type": "rice",
+	"sub_type": "brown_rice",
+	"name": "RICE",
+	"theme": "lightGreen",
+	"main_color": "#b59857"
   }
 }

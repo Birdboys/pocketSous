@@ -18,7 +18,7 @@ extends Node
 			"bread_spread":preload("res://Scenes/bread_spread_game.tscn"),
 			"add_seasoning":preload("res://Scenes/add_seasoning_game.tscn"),
 			"dice_food":preload("res://Scenes/dice_food_game.tscn")}
-@onready var games = ["vertical_multi_slice"]#["rotate_food","collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn","vertical_multi_slice","horizontal_multi_slice","plate_food","add_seasoning","bread_spread"]
+@onready var games = ["fill_cup"]#["rotate_food","collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn","vertical_multi_slice","horizontal_multi_slice","plate_food","add_seasoning","bread_spread"]
 func getGame(game):
 	return game_types[game]
 	
@@ -89,7 +89,7 @@ func getRandomRotateFood():
 	
 func getRandomFillCup():
 	var game_data = {} #game data container
-	var fill_liquids = [["liquid","milk"],["liquid","water"],["liquid","oil"],["liquid","orange_juice"],["liquid","apple_juice"]] #fillable liquids
+	var fill_liquids = [["liquid","milk"],["liquid","water"],["liquid","oil"],["liquid","orange_juice"],["liquid","apple_juice"],["rice","white_rice"],["rice","brown_rice"]] #fillable liquids
 	var fill_val = randi_range(1,4) #get number of cups to fill from range
 	game_data['food'] = fill_liquids[randi() % fill_liquids.size()] #get fillable liquid
 	game_data['task'] = (tr("FILL_CUP_TASK") % [fill_val, tr(FoodMaster.food[game_data['food'][1]]['name'])]).to_upper()

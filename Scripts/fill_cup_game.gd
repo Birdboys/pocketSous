@@ -38,6 +38,7 @@ func initialize(game_data):
 	desired_fill = game_data['fill_val'] * 25 #set desired fill from game data - fill_val is int from 1-4 so multiply to get 25-100 percent
 	measuringCup.texture = load("res://Assets/foods/utensil/measuring_cup_%s.svg" % game_data['fill_val']) #load cup variation based on fill val
 	liquidParticles.position = cupMargin.position + Vector2(cupMargin.size.x/2,32)
+	liquidParticles.texture = load("res://Assets/foods/particle/%s_particle.svg" % game_data['food'][0])
 	liquidParticles.color = game_data['color']
 	
 func gameWon():
