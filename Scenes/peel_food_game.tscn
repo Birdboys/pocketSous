@@ -1,0 +1,109 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0nikoe6q0v7c"]
+
+[ext_resource type="Script" path="res://Scripts/peel_food_game.gd" id="1_248s1"]
+[ext_resource type="Texture2D" uid="uid://ba4cesxo3g43e" path="res://Assets/foods/corn/corn.svg" id="2_cgk3w"]
+[ext_resource type="Texture2D" uid="uid://baq5wjm1ywah3" path="res://Assets/foods/corn/corn_peel.svg" id="3_008fn"]
+[ext_resource type="PackedScene" uid="uid://b73pcxlqvqfhj" path="res://Scenes/swipe_area.tscn" id="4_ld5mh"]
+
+[sub_resource type="Animation" id="Animation_7flx0"]
+resource_name = "peeled"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:finished")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("margin/peel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"gameWon"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p1f1l"]
+_data = {
+"peeled": SubResource("Animation_7flx0")
+}
+
+[node name="peelFoodGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_248s1")
+finished = true
+
+[node name="margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="food" type="TextureRect" parent="margin"]
+layout_mode = 2
+texture = ExtResource("2_cgk3w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="particleCont" type="Control" parent="margin/food"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="peel" type="TextureRect" parent="margin"]
+layout_mode = 2
+texture = ExtResource("3_008fn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="swipeArea" parent="." instance=ExtResource("4_ld5mh")]
+layout_mode = 1
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_p1f1l")
+}
+
+[connection signal="swiped" from="swipeArea" to="." method="_on_swipe_area_swiped"]

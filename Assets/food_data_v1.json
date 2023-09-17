@@ -488,5 +488,19 @@
 	"name": "RICE",
 	"theme": "lightGreen",
 	"main_color": "#b59857"
+  },
+  "corn": {
+	"main_type": "corn",
+	"sub_type": "corn",
+	"name": "CORN",
+	"theme": "pink",
+	"main_color": "#e4cd5a"
+  },
+  "corn_peel": {
+	"main_type": "corn",
+	"sub_type": "corn_peel",
+	"name": "CORN HUSK",
+	"theme": "lightGray",
+	"main_color": "#85c448"
   }
 }

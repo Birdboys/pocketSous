@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1016.5829"
+   height="1511.6173"
+   viewBox="0 0 268.9709 399.94875"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="corn_peel.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.36925856"
+     inkscape:cx="318.20521"
+     inkscape:cy="1006.0701"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(100.33652,166.11666)">
+    <rect
+       style="display:none;fill:#c8d6ac;stroke:none;stroke-width:27.3144;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="rect2"
+       width="104.79192"
+       height="52.395958"
+       x="-20.081722"
+       y="181.43613"
+       rx="20.033739"
+       ry="52.395958" />
+    <path
+       id="rect1"
+       style="display:none;fill:#e4cd5a;stroke-width:20.6375;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       d="m 32.314238,-166.11666 c 45.840158,0 82.743962,62.42435 82.743962,139.964916 V 141.92612 c 0,84.1443 -165.487928,97.29002 -165.487928,0 V -26.151744 c 0,-77.540566 36.903808,-139.964916 82.743966,-139.964916 z"
+       sodipodi:nodetypes="ssssss" />
+    <path
+       d="m 45.434638,-139.45975 c 27.77021,0 50.126739,37.817 50.126739,84.791499"
+       style="display:none;fill:none;stroke:#feffe5;stroke-width:13.7584;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
+       id="path1" />
+    <path
+       id="path1-8"
+       style="display:none;fill:none;stroke:#d49733;stroke-width:14.9474;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       d="m -34.84501,144.10889 c 0,32.83027 26.0177973,48.29071 53.809704,49.28462"
+       sodipodi:nodetypes="cc" />
+    <g
+       id="g2-8"
+       transform="matrix(7.095686,1.7262807,-1.7262807,7.095686,42.766388,-161.70381)">
+      <path
+         id="path2-1"
+         style="fill:#85c448;stroke-width:4.23333;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         d="m 23.018395,29.511913 c 0,13.92462 -4.09956,17.33097 -9.04614,17.330971 -4.9465794,0 -8.8670087,-3.40635 -8.8670085,-17.330971 0,-13.92462 4.009995,-25.2127551 8.9565745,-25.2127549 4.946579,6e-7 8.956574,11.2881349 8.956574,25.2127549 z"
+         sodipodi:nodetypes="sssss" />
+      <path
+         d="m 13.672344,44.043991 c -3.120338,0 -5.5933731,-2.148751 -5.5933731,-10.932503"
+         style="fill:none;stroke:#439d40;stroke-width:2.67042;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="path1-7-4" />
+    </g>
+    <g
+       id="g2"
+       transform="matrix(7.2919132,-2.5506597,2.5506597,7.2919132,-186.49121,-84.062863)">
+      <path
+         id="path2"
+         style="fill:#85c448;stroke-width:4.23333;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         d="m 23.018395,29.511913 c 0,13.92462 -4.09956,17.33097 -9.04614,17.330971 -4.9465794,0 -8.8670087,-3.40635 -8.8670085,-17.330971 0,-13.92462 4.009995,-25.2127551 8.9565745,-25.2127549 4.946579,6e-7 8.956574,11.2881349 8.956574,25.2127549 z"
+         sodipodi:nodetypes="sssss" />
+      <path
+         d="m 13.672344,44.043991 c -3.120338,0 -5.5933731,-2.148751 -5.5933731,-10.932503"
+         style="fill:none;stroke:#439d40;stroke-width:2.67042;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="path1-7" />
+    </g>
+  </g>
+</svg>

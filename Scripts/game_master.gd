@@ -17,8 +17,9 @@ extends Node
 			"plate_food":preload("res://Scenes/plate_food_game.tscn"),
 			"bread_spread":preload("res://Scenes/bread_spread_game.tscn"),
 			"add_seasoning":preload("res://Scenes/add_seasoning_game.tscn"),
-			"dice_food":preload("res://Scenes/dice_food_game.tscn")}
-@onready var games = ["fill_cup"]#["rotate_food","collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn","vertical_multi_slice","horizontal_multi_slice","plate_food","add_seasoning","bread_spread"]
+			"dice_food":preload("res://Scenes/dice_food_game.tscn"),
+			"peel_food":preload("res://Scenes/peel_food_game.tscn")}
+@onready var games = ["peel_food"]#["rotate_food","collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn","vertical_multi_slice","horizontal_multi_slice","plate_food","add_seasoning","bread_spread"]
 func getGame(game):
 	return game_types[game]
 	
@@ -44,6 +45,7 @@ func generateRandomGame(): #generates data for random game, returns instantiatio
 		"bread_spread" : game_data = await getRandomBreadSpread()
 		"add_seasoning" : game_data = await getRandomAddSeasoning()
 		"dice_food" : game_data = await getRandomDiceFood()
+		"peel_food" : game_data = await getRandomPeelFood()
 		_: print("HOW'D WE GET HERE") #shouldn't hit, temp
 	game_data['type'] = new_game_type #set game data type to randomely selected type
 	game_data['color'] = Color(FoodMaster.food[game_data['food'][1]]['main_color']) 
@@ -205,4 +207,12 @@ func getRandomDiceFood():
 	game_data['num_swipe'] = randi_range(5,10)
 	game_data['task'] = 'DICE %s' % game_data['food'][1]
 	game_data['bg'] = 'diamonds'
+	return game_data
+
+func getRandomPeelFood():
+	var game_data = {}
+	var foods = [["corn","corn"]]
+	game_data['food'] = foods[randi() % foods.size()]
+	game_data['task'] = 'PEEL %s' % game_data['food'][1]
+	game_data['bg'] = 'checkered'
 	return game_data

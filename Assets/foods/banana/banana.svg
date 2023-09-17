@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="946.38336"
-   height="1978.0179"
-   viewBox="0 0 250.39727 523.35058"
+   width="485.04041"
+   height="1548.0107"
+   viewBox="0 0 128.33361 409.57784"
    version="1.1"
    id="svg1"
    inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
@@ -23,58 +23,50 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.27118408"
-     inkscape:cx="22.125193"
-     inkscape:cy="1108.1034"
+     inkscape:zoom="0.4351149"
+     inkscape:cx="37.921018"
+     inkscape:cy="828.5168"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
-     inkscape:window-x="-8"
+     inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1"
+     showgrid="false" />
   <defs
      id="defs1" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="matrix(4.5,0,0,4.5,-17.52283,-68.887754)">
-    <ellipse
-       style="fill:#4b0c30;stroke:#e4cd5a;stroke-width:0;stroke-linecap:round;stroke-dasharray:none;paint-order:stroke markers fill"
-       id="path3"
-       cx="-42.384159"
-       cy="118.2211"
-       rx="2.5511317"
-       ry="3.6603196"
-       transform="rotate(-24.141524)" />
+     transform="matrix(4.5,0,0,4.5,13.952647,101.81137)">
     <rect
-       style="fill:#602631;stroke:#e4cd5a;stroke-width:0;stroke-linecap:round;stroke-dasharray:none;paint-order:stroke markers fill"
+       style="fill:#602631;stroke:none;stroke-width:2.72432;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
+       id="rect2"
+       width="6.7496734"
+       height="10.046025"
+       x="12.685349"
+       y="-22.624748"
+       rx="0"
+       ry="1.7855183" />
+    <path
+       id="rect1"
+       style="fill:#e4cd5a;stroke-width:6.11482;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       d="m 13.042959,-16.844228 h 6.077045 c 3.391499,0 6.105645,3.413416 6.121837,7.6523004 l 0.17615,46.6959806 c -0.784277,6.677879 -0.0182,15.96205 -3.379344,22.35725 -4.175288,6.552176 -6.390345,8.531244 -13.1258985,8.531244 -4.2393715,0 -10.3562517,-3.179124 -11.3516754,-7.299975 C -5.6312043,47.877214 3.7257095,41.813247 4.45486,37.504053 L 6.921116,-9.1919276 c 0.220805,-4.2331644 2.730338,-7.6523004 6.121837,-7.6523004 z"
+       sodipodi:nodetypes="ssscssscsss" />
+    <path
+       d="m 22.375666,-11.240442 0.2691,12.3510014"
+       style="fill:none;stroke:#feffe5;stroke-width:3.0574;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
+       id="path1-2" />
+    <rect
+       style="fill:#602631;stroke:none;stroke-width:3.34548;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
        id="rect3"
-       width="7.58885"
-       height="11.210801"
-       x="-0.1054057"
-       y="23.12986"
-       ry="2.9320557"
-       transform="rotate(-36.499049)" />
-    <path
-       style="fill:none;stroke:#d49733;stroke-width:18.85;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-       d="m 25.411003,28.773546 c 0,0 61.997116,75.927954 -10.54202,93.680134"
-       id="path1" />
-    <path
-       style="fill:none;stroke:#e4cd5a;stroke-width:18.85;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-       d="m 25.411003,28.773546 c 0,0 17.120798,25.56212 17.949737,51.972566 0.508206,16.191725 -0.921948,34.960528 -28.491757,41.707568"
-       id="path2"
-       sodipodi:nodetypes="csc" />
-    <rect
-       style="fill:#602631;stroke:#e4cd5a;stroke-width:0;stroke-linecap:round;stroke-dasharray:none;paint-order:stroke markers fill"
-       id="rect4"
-       width="5.5131845"
-       height="8.1444769"
-       x="12.064919"
-       y="-127.41843"
-       ry="2.1300941"
-       transform="rotate(169.92668)"
-       inkscape:transform-center-y="1.0252298"
-       inkscape:transform-center-x="0.14070748" />
+       width="10.05447"
+       height="10.169958"
+       x="24.046791"
+       y="46.538624"
+       rx="5.027235"
+       ry="5.0849791"
+       transform="rotate(22.947634)" />
   </g>
 </svg>
