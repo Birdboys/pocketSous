@@ -1,12 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://cjnu6cv1x2sw6"]
 
 [ext_resource type="Script" path="res://Scripts/single_slice_game.gd" id="1_1uwsv"]
-[ext_resource type="Shader" path="res://Scripts/sliceable_multi.gdshader" id="2_bif5r"]
+[ext_resource type="Shader" path="res://Scripts/sliceable.gdshader" id="2_yul3c"]
 [ext_resource type="Texture2D" uid="uid://cbrnf0i0yjor5" path="res://Assets/foods/apple/red_apple.svg" id="3_wtss6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kf7vi"]
-shader = ExtResource("2_bif5r")
-shader_parameter/percent = 0.8
+shader = ExtResource("2_yul3c")
+shader_parameter/percent = 0.79
+shader_parameter/cut = null
+shader_parameter/cut_time = null
 shader_parameter/horizontal = false
 
 [sub_resource type="Animation" id="Animation_bjqfw"]

@@ -18,7 +18,10 @@ func _on_gui_input(_event):
 			var swipe_type = abs(pos_diff).max_axis_index()
 			var swipe_length = pos_diff.length()
 			if abs(swipe_length) > min_swipe_dist:
-				emit_signal("swiped", swipe_type, swipe_length)
+				if pos_diff[swipe_type] < 0:
+					emit_signal("swiped", swipe_type, -swipe_length)
+				else:
+					emit_signal("swiped", swipe_type, swipe_length)
 		in_swipe = false
 		
 func setSwipeDist(dist):
