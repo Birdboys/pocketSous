@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1199.9619"
+   height="1199.9619"
+   viewBox="0 0 317.48991 317.48991"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="pot_tomato_soup.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.38351221"
+     inkscape:cx="328.54234"
+     inkscape:cy="778.33246"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     id="g8"
+     transform="matrix(5,0,0,5,-29.682741,-53.138056)">
+    <g
+       inkscape:label="Layer 1"
+       inkscape:groupmode="layer"
+       id="layer1">
+      <circle
+         style="fill:#59607a;stroke:none;stroke-width:1.10067;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="path1"
+         cx="37.685539"
+         cy="42.376602"
+         r="31.748991" />
+      <circle
+         style="fill:#2a2a41;stroke:none;stroke-width:1.02604;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="circle1"
+         cx="37.685539"
+         cy="42.376602"
+         r="29.596516" />
+      <circle
+         style="opacity:1;fill:#cc1825;fill-opacity:1;stroke:none;stroke-width:0.982517;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="circle2"
+         cx="37.685539"
+         cy="42.376602"
+         r="28.340906" />
+      <circle
+         style="opacity:1;fill:#81173f;fill-opacity:1;stroke:none;stroke-width:0.170241;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="circle3"
+         cx="17.589495"
+         cy="49.301758"
+         r="4.9106593" />
+      <circle
+         style="opacity:1;fill:#81173f;fill-opacity:1;stroke:none;stroke-width:0.0983083;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="circle4"
+         cx="21.912256"
+         cy="57.947281"
+         r="2.8357332" />
+    </g>
+  </g>
+</svg>

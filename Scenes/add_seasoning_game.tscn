@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://t20hxoxpany8"]
+[gd_scene load_steps=5 format=3 uid="uid://t20hxoxpany8"]
 
 [ext_resource type="Script" path="res://Scripts/add_seasoning_game.gd" id="1_lauw1"]
-[ext_resource type="Texture2D" uid="uid://d4nhu1iw3bjkf" path="res://Assets/foods/beef/steak_cooked.svg" id="2_ojh7s"]
+[ext_resource type="Shader" path="res://Scripts/fill_utensil.gdshader" id="2_v4gcs"]
+[ext_resource type="Texture2D" uid="uid://df3ripjugddeq" path="res://Assets/foods/prepared/pot_tomato_soup.svg" id="3_pfmg5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cwi61"]
+shader = ExtResource("2_v4gcs")
+shader_parameter/food_color = Color(0.764706, 0, 0, 1)
+shader_parameter/doing = true
 
 [node name="addSeasoningGame" type="Control"]
 layout_mode = 3
@@ -23,8 +29,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="seasoned" type="TextureRect" parent="margin"]
+material = SubResource("ShaderMaterial_cwi61")
 layout_mode = 2
-texture = ExtResource("2_ojh7s")
+texture = ExtResource("3_pfmg5")
 expand_mode = 1
 stretch_mode = 5
 

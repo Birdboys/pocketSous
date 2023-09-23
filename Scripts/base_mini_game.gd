@@ -49,6 +49,7 @@ func initialize(game_data, time=null, current_score=null):
 	bgShader.get_material().set_shader_parameter("color",theme.get_color("default_color","scoreLabel"))
 	bgShader.get_material().set_shader_parameter("bg",load("res://Assets/backgrounds/%s_tile.svg" % game_data[0]['bg']))
 	await createGame(game_data[0],game_data[1])
+	print(game_data[0])
 	current_game.add_child(new_shader)
 	return 
 	

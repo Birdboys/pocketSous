@@ -10,6 +10,7 @@ extends TextureRect
 signal placed(id, color)
 
 func initialize(pos,food,scale_factor, zn, id=null):
+	print(food)
 	texture = load("res://Assets/foods/%s/%s.svg" % [food[0], food[1]]) #load texture
 	var texture_size = texture.get_size() #get size of texture
 	var max_texture_dim = texture_size[texture_size.max_axis_index()] #get length of max texture dimension

@@ -29,9 +29,9 @@ func initialize(game_data):
 	cut.sliced.connect(cutSliced) #connect sliced event so game can end
 	sliceable.get_material().set_shader_parameter("percent",cut_site) #set percent for shader based on cut location
 	var min_dim = sliceable.size[sliceable.size.min_axis_index()] #get minimum axis size for calculating cut length
-	match game_data['cut_type']: #match for horizontal and vertical slices
-		0: cut.initialize(sliceable.size.x/2,sliceable.size.y*cut_site,min_dim,0);sliceable.get_material().set_shader_parameter("horizontal",true) #instantiate slice - horizontal so dont rotate it - tell shader cut is horizontal
-		90: cut.initialize(sliceable.size.x*cut_site,sliceable.size.y/2,min_dim,90);sliceable.get_material().set_shader_parameter("horizontal",false) #instantiate slice - vertical so rotate 90 - tell shader cut is not horizontal
+	match int(game_data['cut_type']): #match for horizontal and vertical slices
+		0: cut.initialize(sliceable.size.x/2,sliceable.size.y*cut_site,min_dim,0);sliceable.get_material().set_shader_parameter("horizontal",true); print("GOOBIS") #instantiate slice - horizontal so dont rotate it - tell shader cut is horizontal
+		90: cut.initialize(sliceable.size.x*cut_site,sliceable.size.y/2,min_dim,90);sliceable.get_material().set_shader_parameter("horizontal",false); print("PEETA") #instantiate slice - vertical so rotate 90 - tell shader cut is not horizontal
 
 func cutSliced(_data): #if we slice the cut
 	var parts = sliceParticle.instantiate()

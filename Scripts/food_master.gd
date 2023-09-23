@@ -1,5 +1,6 @@
 extends Node
 @onready var food := {}
+@onready var colors := {"red":"#cc1825"}
 const FOOD_DATA_PATH := "res://Assets/food_data_v1.json"
 
 func _ready():

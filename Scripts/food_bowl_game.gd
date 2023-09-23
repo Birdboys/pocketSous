@@ -7,7 +7,7 @@ extends Control
 @onready var bowl := $margin/bowl
 @onready var particleArea := $parts
 @onready var bowl_particles := preload("res://Scenes/bowl_particles.tscn")
-@onready var offset = 256 #length of collect margin
+@onready var offset = 64 #length of collect margin
 @onready var food_offset = 64
 @onready var foods = []
 @onready var num_foods
@@ -22,7 +22,7 @@ func _ready():
 func initialize(game_data):
 	bowl.texture = load("res://Assets/foods/utensil/%s.svg" % game_data['food'][1])
 	bowlArea.position = bowl.size/2
-	bowlAreaShape.shape.size = bowl.size
+	bowlAreaShape.shape.size = bowl.size/2
 	var food_count = 0
 	var scale_factor = size[size.min_axis_index()]/food_ratio
 	for food in game_data['foods']:
