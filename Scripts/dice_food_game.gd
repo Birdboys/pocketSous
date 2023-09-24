@@ -1,22 +1,31 @@
 extends Control
 @onready var margin := $margin
+@onready var anim := $anim
 @onready var food := $margin/food
+@onready var food_diced := $margin/food_diced
 @onready var parts_area := $margin/food/parts
 @onready var diceParts := preload("res://Scenes/dice_particles.tscn")
 @onready var offset = 128 #offset for tapper margin
 @onready var num_swipe := 0.0
 @onready var current_swipe := 0.0
 @onready var part_color
-@onready var finished := false
+@export var finished := false
 signal game_win 
 signal game_loss
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setMargins(offset)
 	food.get_material().set_shader_parameter("dice_percent", 0.0) 
-	
+	food_diced.get_material().set_shader_parameter("color", Color.WHITE) 
+	food_diced.modulate.a = 0.0
 func initialize(game_data):
 	food.texture = load("res://Assets/foods/%s/%s.svg" %[game_data['food'][0],game_data['food'][1]]) #load food sprite
+	match game_data['food'][1]:
+		"%sonion":print("ADSDA")
+		_: 
+			food_diced.texture = load('res://Assets/foods/prepared/diced.svg')
+			food_diced.get_material().set_shader_parameter("color",Color(FoodMaster.food[game_data['food'][1]]['main_color']))
+		
 	num_swipe = game_data['num_swipe']
 	part_color =  FoodMaster.food[game_data['food'][1]]['main_color']
 	
@@ -34,9 +43,11 @@ func _on_swipe_area_swiped(type, length):
 		parts_area.add_child(new_parts)
 		new_parts.color = part_color
 		if current_swipe == num_swipe:
-			gameWon()
+			diceFinished()
+
+func diceFinished():
+	if not finished:
+		anim.play("finished")
 
 func gameWon():
-	if not finished:
-		finished = true
-		emit_signal("game_win")
+	emit_signal("game_win")

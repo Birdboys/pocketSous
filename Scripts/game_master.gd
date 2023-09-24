@@ -19,7 +19,7 @@ extends Node
 			"add_seasoning":preload("res://Scenes/add_seasoning_game.tscn"),
 			"dice_food":preload("res://Scenes/dice_food_game.tscn"),
 			"peel_food":preload("res://Scenes/peel_food_game.tscn")}
-@onready var games = ["add_seasoning"]#["rotate_food","collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn","vertical_multi_slice","horizontal_multi_slice","plate_food","add_seasoning","bread_spread","peel_food"]
+@onready var games = ["dice_food"]#["rotate_food","collect_tap","rapid_tap","center_plate","horizontal_slice","vertical_slice","radial_slice","fill_cup","dont_burn","vertical_multi_slice","horizontal_multi_slice","plate_food","add_seasoning","bread_spread","peel_food"]
 func getGame(game):
 	return game_types[game]
 	

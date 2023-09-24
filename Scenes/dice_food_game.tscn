@@ -1,13 +1,66 @@
-[gd_scene load_steps=6 format=3 uid="uid://dj061elqkrpyb"]
+[gd_scene load_steps=11 format=3 uid="uid://dj061elqkrpyb"]
 
 [ext_resource type="Script" path="res://Scripts/dice_food_game.gd" id="1_e07t7"]
 [ext_resource type="PackedScene" uid="uid://b73pcxlqvqfhj" path="res://Scenes/swipe_area.tscn" id="2_5ulot"]
 [ext_resource type="Shader" path="res://Scripts/dice.gdshader" id="2_uysnx"]
 [ext_resource type="Texture2D" uid="uid://cansbpaf4ki53" path="res://Assets/foods/apple/green_apple.svg" id="3_6q4pp"]
+[ext_resource type="Shader" path="res://Scripts/color_prep.gdshader" id="4_4xbl6"]
+[ext_resource type="Texture2D" uid="uid://d07a6rom78aaa" path="res://Assets/foods/prepared/diced.svg" id="5_3rr1y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o5gpp"]
 shader = ExtResource("2_uysnx")
 shader_parameter/dice_percent = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_afbis"]
+shader = ExtResource("4_4xbl6")
+shader_parameter/color = Color(0.764706, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_5njoe"]
+resource_name = "finished"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("margin/food_diced:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.6),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"gameWon"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:finished")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sxm3w"]
+_data = {
+"finished": SubResource("Animation_5njoe")
+}
 
 [node name="diceFoodGame" type="Control"]
 layout_mode = 3
@@ -49,7 +102,19 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="food_diced" type="TextureRect" parent="margin"]
+material = SubResource("ShaderMaterial_afbis")
+layout_mode = 2
+texture = ExtResource("5_3rr1y")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="swipeArea" parent="." instance=ExtResource("2_5ulot")]
 layout_mode = 1
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_sxm3w")
+}
 
 [connection signal="swiped" from="swipeArea" to="." method="_on_swipe_area_swiped"]
