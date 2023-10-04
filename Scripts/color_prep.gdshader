@@ -1,6 +1,8 @@
 shader_type canvas_item;
 uniform vec4 color : source_color;
+uniform bool set_color;
 void fragment() {
-	COLOR = COLOR * color;
-	// Place fragment code here.
+	if (set_color){
+		COLOR = COLOR * color;
+	}
 }

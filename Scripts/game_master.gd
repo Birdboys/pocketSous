@@ -63,7 +63,7 @@ func getRandomCollectTap(): #generates game data for collect tap game
 	
 func getRandomRapidTap():
 	var game_data = {} #game data container
-	var tap_foods = [["beef","steak_raw"],["pork","pork_chop_raw"], ["egg","egg"],["egg","egg_white"]] #list of rapid tapable foods
+	var tap_foods = [["pork","pork_chop_raw"],["garlic","garlic"]]#[["beef","steak_raw"],["pork","pork_chop_raw"],["garlic","garlic"]] #list of rapid tapable foods
 	game_data['num_tap'] = randi_range(10,25) #get number of taps necessary to complete from range
 	game_data['food'] = tap_foods[randi() % tap_foods.size()] #select tapable food
 	game_data['task'] = (tr("RAPID_TAP_TASK_%s" % game_data['food'][1])).to_upper()
@@ -91,7 +91,7 @@ func getRandomRotateFood():
 	
 func getRandomFillCup():
 	var game_data = {} #game data container
-	var fill_liquids = [["liquid","milk"],["liquid","water"],["liquid","oil"],["liquid","orange_juice"],["liquid","apple_juice"],["rice","white_rice"],["rice","brown_rice"]] #fillable liquids
+	var fill_liquids = [["liquid","milk"],["liquid","water"],["liquid","oil"],["liquid","orange_juice"],["liquid","apple_juice"],["liquid","broth"],["rice","white_rice"],["rice","brown_rice"]] #fillable liquids
 	var fill_val = randi_range(1,4) #get number of cups to fill from range
 	game_data['food'] = fill_liquids[randi() % fill_liquids.size()] #get fillable liquid
 	game_data['task'] = (tr("FILL_CUP_TASK") % [fill_val, tr(FoodMaster.food[game_data['food'][1]]['name'])]).to_upper()
@@ -202,7 +202,7 @@ func getRandomAddSeasoning():
 
 func getRandomDiceFood():
 	var game_data = {}
-	var foods = [["carrot","carrot"],["onion","onion_yellow_half"],["onion","onion_red_half"]]
+	var foods = [["carrot","carrot"],["onion","onion_yellow_half"],["onion","onion_red_half"],["beef","steak_raw"]]
 	game_data['food'] = foods[randi() % foods.size()]
 	game_data['num_swipe'] = randi_range(5,10)
 	game_data['task'] = 'DICE %s' % game_data['food'][1]

@@ -1,11 +1,83 @@
-[gd_scene load_steps=4 format=3 uid="uid://2v4onkgqky2s"]
+[gd_scene load_steps=8 format=3 uid="uid://2v4onkgqky2s"]
 
 [ext_resource type="Script" path="res://Scripts/rapid_tap_game.gd" id="1_84j4v"]
+[ext_resource type="Texture2D" uid="uid://21vj8p6a2o5k" path="res://Assets/foods/garlic/garlic.svg" id="2_on5hi"]
+[ext_resource type="Texture2D" uid="uid://dyftulyitpxxh" path="res://Assets/foods/garlic/garlic_clove.svg" id="3_w2flg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r6b0f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xb23"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_dac6o"]
+resource_name = "finished"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("margins/post_tap:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:finished")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"gameWon"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("tapBar:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("margins/tapper:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_neclf"]
+_data = {
+"finished": SubResource("Animation_dac6o")
+}
 
 [node name="rapidTapGame" type="Control"]
 layout_mode = 3
@@ -17,6 +89,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_84j4v")
+finished = true
 
 [node name="margins" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -32,6 +105,28 @@ theme_override_constants/margin_bottom = 128
 
 [node name="tapper" type="TextureRect" parent="margins"]
 layout_mode = 2
+texture = ExtResource("2_on5hi")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="partArea" type="Control" parent="margins/tapper"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="post_tap" type="TextureRect" parent="margins"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_w2flg")
 expand_mode = 1
 stretch_mode = 5
 
@@ -53,5 +148,10 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_0xb23")
 step = 1.0
 fill_mode = 3
 show_percentage = false
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_neclf")
+}
 
 [connection signal="gui_input" from="margins/tapper" to="." method="_on_tapper_gui_input"]

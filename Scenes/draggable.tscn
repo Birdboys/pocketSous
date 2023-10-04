@@ -1,11 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnphcwetgd80m"]
+[gd_scene load_steps=5 format=3 uid="uid://dnphcwetgd80m"]
 
+[ext_resource type="Shader" path="res://Scripts/color_prep.gdshader" id="1_cgxjs"]
 [ext_resource type="Script" path="res://Scripts/draggable.gd" id="2_see0j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_afnrr"]
+resource_local_to_scene = true
+shader = ExtResource("1_cgxjs")
+shader_parameter/color = null
+shader_parameter/set_color = null
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hks5i"]
 radius = 32.0
 
 [node name="foodSprite" type="TextureRect"]
+material = SubResource("ShaderMaterial_afnrr")
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

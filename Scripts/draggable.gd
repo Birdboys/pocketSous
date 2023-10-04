@@ -11,7 +11,19 @@ signal placed(id, color)
 
 func initialize(pos,food,scale_factor, zn, id=null):
 	print(food)
-	texture = load("res://Assets/foods/%s/%s.svg" % [food[0], food[1]]) #load texture
+	match food[0]:
+		"diced": 
+			texture = load("res://Assets/foods/prepared/diced.svg")
+			get_material().set_shader_parameter("color",Color(FoodMaster.food[food[1]]['main_color']))
+			get_material().set_shader_parameter("set_color",true)
+			#print(get_material().get_shader_parameter("color"), Color(FoodMaster.food[food[1]]['main_color']),FoodMaster.food[food[1]] )
+		"sliced":
+			texture = load("res://Assets/foods/prepared/sliced.svg")
+			get_material().set_shader_parameter("color",Color(FoodMaster.food[food[1]]['main_color']))
+			get_material().set_shader_parameter("set_color",true)
+		_: 
+			texture = load("res://Assets/foods/%s/%s.svg" % [food[0], food[1]]) #load texture
+			get_material().set_shader_parameter("set_color",false)
 	var texture_size = texture.get_size() #get size of texture
 	var max_texture_dim = texture_size[texture_size.max_axis_index()] #get length of max texture dimension
 	size = texture_size * (scale_factor/max_texture_dim) #use max texutre dim length and min width provided by parent container to scale collectable

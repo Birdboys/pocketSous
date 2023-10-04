@@ -33,8 +33,9 @@ func _process(delta):
 		gameLost()
 
 func initialize(game_data):
+	print(game_data['color'])
 	measuringLiquid.get_material().set_shader_parameter("percent", int(0)) #initialize shader parameters
-	measuringLiquid.get_material().set_shader_parameter("color",game_data['color']) #get liquid color from game data
+	measuringLiquid.get_material().set_shader_parameter("color",Color(game_data['color'])) #get liquid color from game data
 	desired_fill = game_data['fill_val'] * 25 #set desired fill from game data - fill_val is int from 1-4 so multiply to get 25-100 percent
 	measuringCup.texture = load("res://Assets/foods/utensil/measuring_cup_%s.svg" % game_data['fill_val']) #load cup variation based on fill val
 	liquidParticles.position = cupMargin.position + Vector2(cupMargin.size.x/2,32)

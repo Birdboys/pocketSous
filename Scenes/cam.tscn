@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://2ncqma6jevh3"]
+
+[ext_resource type="Script" path="res://Scripts/cam.gd" id="1_df777"]
+
+[node name="cam" type="Camera2D"]
+anchor_mode = 0
+script = ExtResource("1_df777")
+
+[node name="anim" type="AnimationPlayer" parent="."]

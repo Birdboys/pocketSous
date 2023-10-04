@@ -1,0 +1,17 @@
+{
+	"recipe":"broccoli_cheddar_soup",
+	"tags":["soup"],
+	"games":[
+		{ "food": ["broccoli", "broccoli"], "task": "CUT BROCCOLI", "num_cut": 6, "cut_type": 0, "bg": "diamonds", "type": "horizontal_multi_slice", "color":"#29694e"},
+		{ "food": ["onion", "onion_yellow"], "task": "CUT ONION", "cut_type": 90, "bg": "vstripes", "type": "vertical_slice", "color":"#f1934c"},
+		{ "food": ["liquid", "broth"], "task": "FILL 3 CUPS BROTH", "fill_val": 3, "bg": "circles", "type": "fill_cup", "color":"#894835"},
+		{ "food": ["butter", "butter_stick"], "task": "CUT BUTTER", "num_cut": 3, "cut_type": 0, "bg": "diamonds", "type": "horizontal_multi_slice", "color":"#e4cd5a"},
+		{ "food": ["onion", "onion_yellow_half"], "num_swipe": 6, "task": "DICE ONION", "bg": "diamonds", "type": "dice_food", "color": "#feffe5" },
+		{ "food": ["liquid", "cream"], "task": "FILL 1 CUPS CREAM", "fill_val": 1, "bg": "circles", "type": "fill_cup", "color":"#feffe5"},
+		{ "food": ["carrot", "carrot"], "task": "CUT CARROT", "num_cut": 8, "cut_type": 0, "bg": "diamonds", "type": "horizontal_multi_slice", "color":"#f1934c"},
+		{ "food": ["deli", "cheddar"], "num_swipe": 12, "task": "SHRED CHEDDAR", "bg": "diamonds", "type": "dice_food", "color": "#dc4926" },
+		{ "food": ["utensil", "pot"], "foods": [["butter", "butter_pat"], ["diced","onion_yellow_half"], ["sliced", "cheddar"], ["sliced", "carrot"],["diced", "broccoli"],["liquid","broth"],["liquid","cream"]], "task": "GATHER FOOD", "bg": "checkered", "type": "food_bowl", "color": "#9da5ae"},
+		{ "food": ["prepared", "pot_broccoli_cheddar_soup"], "foods": ["salt", "pepper", "garlic","paprika"], "season_taps": 8, "task": "SEASON SOUP", "bg": "circles", "type": "add_seasoning", "color": "#4cc5e4" }
+	],
+	"num_games":10
+}

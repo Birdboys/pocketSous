@@ -9,7 +9,7 @@
 		{ "food": ["tomato", "tomato"], "num_swipe": 12, "task": "DICE TOMATO", "bg": "diamonds", "type": "dice_food", "color": "#cc1825" },
 		{ "food": ["liquid", "broth"], "task": "FILL 2 CUPS BROTH", "fill_val": 2, "bg": "circles", "type": "fill_cup", "color":"#894835"},
 		{ "food": ["butter", "butter_stick"], "task": "CUT BUTTER", "num_cut": 2, "cut_type": 0, "bg": "diamonds", "type": "horizontal_multi_slice", "color":"#e4cd5a"},
-		{ "food": ["utensil", "pot"], "foods": [["butter", "butter_pat"], ["onion","onion_yellow_half"], ["tomato", "tomato"], ["garlic", "garlic_clove"]], "task": "GATHER FOOD", "bg": "checkered", "type": "food_bowl", "color": "#9da5ae"},
+		{ "food": ["utensil", "pot"], "foods": [["butter", "butter_pat"], ["diced","onion_yellow_half"], ["diced", "tomato"], ["garlic", "garlic_clove"], ["liquid","broth"]], "task": "GATHER FOOD", "bg": "checkered", "type": "food_bowl", "color": "#9da5ae"},
 		{ "food": ["prepared", "pot_tomato_soup"], "foods": ["salt", "pepper", "thyme"], "season_taps": 5, "task": "SEASON SOUP", "bg": "circles", "type": "add_seasoning", "color": "#4cc5e4" }
 	],
 	"num_games":9

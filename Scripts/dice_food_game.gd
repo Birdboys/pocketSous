@@ -14,6 +14,7 @@ signal game_win
 signal game_loss
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	finished = false
 	setMargins(offset)
 	food.get_material().set_shader_parameter("dice_percent", 0.0) 
 	food_diced.get_material().set_shader_parameter("color", Color.WHITE) 
@@ -21,11 +22,12 @@ func _ready():
 func initialize(game_data):
 	food.texture = load("res://Assets/foods/%s/%s.svg" %[game_data['food'][0],game_data['food'][1]]) #load food sprite
 	match game_data['food'][1]:
-		"%sonion":print("ADSDA")
+		"cheddar":
+			food_diced.texture = load('res://Assets/foods/prepared/sliced.svg')
 		_: 
 			food_diced.texture = load('res://Assets/foods/prepared/diced.svg')
-			food_diced.get_material().set_shader_parameter("color",Color(FoodMaster.food[game_data['food'][1]]['main_color']))
-		
+	food_diced.get_material().set_shader_parameter("color",Color(FoodMaster.food[game_data['food'][1]]['main_color']))
+	food_diced.get_material().set_shader_parameter("set_color",true)
 	num_swipe = game_data['num_swipe']
 	part_color =  FoodMaster.food[game_data['food'][1]]['main_color']
 	
@@ -36,6 +38,7 @@ func setMargins(val):
 	margin.add_theme_constant_override("margin_right", val)
 	
 func _on_swipe_area_swiped(type, length):
+	print("SWIPED")
 	if not finished:
 		current_swipe += 1.0
 		food.get_material().set_shader_parameter("dice_percent", 1.0/num_swipe*current_swipe) 

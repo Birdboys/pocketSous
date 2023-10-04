@@ -1,6 +1,6 @@
 extends Node
 @onready var recipe_path := "res://Assets/recipes/%s.json"
-@onready var recipes := ['pbj_blueberry','tomato_soup','pbj_blueberry','pbj_blueberry','pbj_blueberry','pbj_blueberry','pbj_blueberry','pbj_blueberry','pbj_blueberry','pbj_blueberry','pbj_blueberry','pbj_blueberry']
+@onready var recipes := ['pbj_blueberry','tomato_soup','broccoli_cheddar_soup']
 @onready var current_recipe_buffer := ""
 func getRecipe(dish):
 	if dish not in recipes:
